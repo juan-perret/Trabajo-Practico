@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,27 @@ namespace LogicaPrincipal
             de ingrediente. Este metodo siempre nos va a mandar a comprar la cantidad 
             necesaria hasta llegar al punto de pedido a su vez debe ir sumando todos 
             los precios para mostrar el total de la compra.*/
+            List<string> listaSuper = new List<string>();
+            decimal costoTotalCompra = 0;
+            foreach (Despensa ingrediente in Ingredientes)
+            {
+                if (ingrediente.Cantidad<ingrediente.PuntoPedido)
+                {
+                    costoTotalCompra = costoTotalCompra + ingrediente.Precio;
+                    string caracteristicasIngrediente = $"{ingrediente.TipoCategoria} | {ingrediente.Precio} | {costoTotalCompra}";
+                    listaSuper.Add(caracteristicasIngrediente);
+                }
+            }
         }
         public void FiltrarListaSuper() { }
 
+        public void FiltrarComida()
+        {
+            //La aplicación debe permitir registrar comidas. Es decir, debe permitir seleccionar 
+            //las recetas que tengan todos los ingredientes disponibles y filtrar por el tipo de
+            //comida.Una vez que registra la comida, se debe descontar las cantidades utilizadas de 
+            //todos los ingredientes de la receta.
+
+        }
     }
 }
