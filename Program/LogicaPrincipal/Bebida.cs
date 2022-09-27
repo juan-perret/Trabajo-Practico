@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    public class Despensa : Archivo
+    internal class Bebida :Cantidad
     {
-        List<Producto> despensa = new List<Producto>();
-
-        //guardad()
+        public enum VariedadBebida { alcoholica, altaEnAzucar, normal}
+        public VariedadBebida TipoBebida { get; set; }
     }
 }

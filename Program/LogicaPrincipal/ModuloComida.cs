@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    public class Despensa : Archivo
+    internal class ModuloComida :Archivo
     {
-        List<Producto> despensa = new List<Producto>();
+        List<Comida> comidas = new List<Comida>();
 
-        //guardad()
+        //guarda(), al guardar modificar en despensa las cantidades
     }
 }

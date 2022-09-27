@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    public class Despensa : Archivo
+    internal class Lacteo : Producto
     {
-        List<Producto> despensa = new List<Producto>();
-
-        //guardad()
+        public double Litros { get; set; }
     }
 }

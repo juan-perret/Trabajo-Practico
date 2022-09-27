@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Comida
+    internal class Comida :ModuloComida
     {
         public Receta RecetaElegida { get; set; }
         public DateTime FechaDeRegistro { get; set; }
-        
-
     }
 }

@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Receta
+    internal class Receta :ModuloReceta
     {
-        public enum TiposDeReceta
-        {
-            Desayuno, Almuerzo, Merienda, Cena
-        }
-        public TiposDeReceta TipoReceta { get; set; }
-        public string TipoComida { get; set; }
-        public List<Despensa> ListaIngredientes { get; set; }
+        public enum TiposComida { Desayuno, Almuerzo, Merienda, Cena }
+        public string Nombre { get; set; }
+        public TiposComida TipoComida { get; set; }
+        public bool Saludable { get; set; }
+        public List<Producto> Ingredientes { get; set; }
+
     }
 }
