@@ -11,19 +11,23 @@ namespace LogicaPrincipal
     public class Despensa : Archivo
     {
         List<Producto> despensa = new List<Producto>();
-        List<Bebida> bebida = new List<Bebida>();
+        List<Bebida> bebidas = new List<Bebida>();
         string direccion = @"C:\despensa.txt";
 
         public void GuardarPBebida(string nombre, int puntoPedido, decimal precio, int cantidadProducto, int tipoBebida)
         {
             Bebida bebida = new Bebida(nombre, puntoPedido, precio, cantidadProducto, tipoBebida);
-            //bebida.GuardarBebida(nombre, puntoPedido, precio, cantidadProducto, tipoBebida);
             GuardarProducto(bebida);
+        }
+        public void GuardarPCarne(string nombre, int puntoPedido, decimal precio, double kg)
+        {
+            Carne carne = new Carne(nombre, puntoPedido, precio, kg);
+            GuardarProducto(carne);
         }
         public void GuardarProducto(Producto ingrediente)
         {
             despensa.Add(ingrediente);
-            EscribirProducto(despensa, direccion);
+            EscribirProducto(despensa);
         }
 
         internal List<Producto> Leer()

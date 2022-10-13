@@ -13,6 +13,7 @@ namespace Prueba
 {
     public partial class Form1 : Form
     {
+        Despensa despensa = new Despensa();
         public Form1()
         {
             InitializeComponent();
@@ -20,9 +21,14 @@ namespace Prueba
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Despensa despensa = new Despensa();
             despensa.GuardarPBebida("Sprite", 3, 123, 231, 0);
             despensa.GuardarPBebida("Coca", 5, 542, 34, 1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            despensa.GuardarPCarne("Costilla", 6, 1250, 9);
+            despensa.GuardarPCarne("Vacio", 3, 1600, 5);
         }
     }
 }

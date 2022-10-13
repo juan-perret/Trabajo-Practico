@@ -12,23 +12,11 @@ namespace LogicaPrincipal
         public VariedadBebida TipoBebida { get; set; }
         public void GuardarBebida(string nombre, int puntoPedido, decimal precio, int cantidadProducto, int tipoBebida)
         {
-            Nombre = nombre;
-            PuntoPedido = puntoPedido;
-            Precio = precio;
-            CantidadProducto = cantidadProducto;
-            switch (tipoBebida)
-            {
-                case 0:
-                    TipoBebida = VariedadBebida.alcoholica;
-                    break;
-                case 1:
-                    TipoBebida = VariedadBebida.altaEnAzucar;
-                    break;
-                case 2:
-                    TipoBebida = VariedadBebida.normal;
-                    break;
-            }        
+            Bebida bebida = new Bebida(nombre, puntoPedido, precio, cantidadProducto, tipoBebida);
+            Despensa despensa = new Despensa();
+            despensa.GuardarProducto(bebida);
         }
+        public Bebida() { }
         public Bebida(string nombre, int puntoPedido, decimal precio, int cantidadProducto, int tipoBebida)
         {
             Nombre = nombre;
