@@ -8,5 +8,6 @@ namespace LogicaPrincipal
 {
     internal class Carne : Kilogramo
     {
+
     }
 }

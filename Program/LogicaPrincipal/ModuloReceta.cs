@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace LogicaPrincipal
 {
@@ -10,6 +12,9 @@ namespace LogicaPrincipal
     {
 
         List<Receta> recetas = new List<Receta>();
+        string direccion = @"C:\receta.txt";
+        
+
         //guardad()
     }
 }

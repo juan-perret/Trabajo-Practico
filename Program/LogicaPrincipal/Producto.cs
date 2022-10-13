@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Producto
+    public abstract class Producto
     {
         public string Nombre { get; set; }
         public double PuntoPedido { get; set; }
         public decimal Precio { get; set; }
+
     }
 }
