@@ -13,22 +13,26 @@ namespace Prueba
 {
     public partial class Form1 : Form
     {
-        Despensa despensa = new Despensa();
+        private Despensa despensa;
         public Form1()
         {
             InitializeComponent();
+            despensa = new Despensa();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            despensa.GuardarPBebida("Sprite", 3, 123, 231, 0);
-            despensa.GuardarPBebida("Coca", 5, 542, 34, 1);
+            Bebida bebida = new Bebida();
+            bebida.Nombre = textBox1.Text;
+            despensa.GuardarProducto(bebida);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            despensa.GuardarPCarne("Costilla", 6, 1250, 9);
-            despensa.GuardarPCarne("Vacio", 3, 1600, 5);
+            //genero instancia de carga de valores
+            Carne carne = new Carne();
+            carne.Nombre = textBox1.Text;
+            despensa.GuardarProducto(carne);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Kilogramo : Producto
+    public class Kilogramo : Producto
     {
         public double Kg { get; set; }
     }

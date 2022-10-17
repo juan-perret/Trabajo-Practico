@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Carne : Kilogramo
+    public class Carne : Kilogramo
     {
         public Carne() { }
         public Carne(string nombre, int puntoPedido, decimal precio, double kg)
