@@ -118,7 +118,8 @@
             "Pesacados",
             "Panaderia",
             "Bebidas (Alta en Azucar)",
-            "Bebidas (Normal)"});
+            "Bebidas (Normal)",
+            "Bebidas (Alcoholicas)"});
             this.CmbBoxCategoria.Location = new System.Drawing.Point(161, 135);
             this.CmbBoxCategoria.Name = "CmbBoxCategoria";
             this.CmbBoxCategoria.Size = new System.Drawing.Size(121, 21);
