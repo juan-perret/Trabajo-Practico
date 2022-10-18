@@ -42,14 +42,28 @@ namespace LogicaPrincipal
         
         public List<Producto> LeerProductos()
         {
-            List<Producto> productos = new List<Producto>();    
+            List<Producto> productos = new List<Producto>(); 
+            //Bebidas
             List<Bebida> bebidas = new List<Bebida>();
-            List<Carne> carnes = new List<Carne>();
-            //Leer("bebidas");
+            if (!File.Exists(direccion + "bebidas.txt"))
+            {
+                return new List<Producto>();
+            }
             using (StreamReader reader = new StreamReader(direccion + "bebidas.txt"))
             {
                 string bebida = reader.ReadToEnd();
                 bebidas = JsonConvert.DeserializeObject<List<Bebida>>(bebida);
+            }
+            foreach (Producto p in bebidas)
+            {
+                productos.Add(p);
+            }
+            //
+            //Carnes
+            List<Carne> carnes = new List<Carne>();
+            if (!File.Exists(direccion + "carnes.txt"))
+            {
+                return new List<Producto>();
             }
             using (StreamReader reader = new StreamReader(direccion + "carnes.txt"))
             {
@@ -60,23 +74,36 @@ namespace LogicaPrincipal
             {
                 productos.Add(p);
             }
-            foreach (Producto p in bebidas)
-            {
-                productos.Add(p);
-            }
+            //
             return productos;
         }
+        //public List<Producto> CrearArchivo(string ubicacion, List<Producto> lista)
+        //{
+        //    if (!File.Exists(direccion + ubicacion + ".txt"))
+        //    {
+        //        return new List<Producto>();
+        //    }
+        //    else
+        //    {
+        //        using (StreamReader reader = new StreamReader(direccion + ubicacion + ".txt"))
+        //        {
+        //            string objeto = reader.ReadToEnd();
+        //            lista = JsonConvert.DeserializeObject<List<Producto>>(objeto);
+        //        }
+        //        return lista;
+        //    }
+        //}
         //public List<Producto> Leer(string ubicacion)
         //{
 
-        //    using (StreamReader reader = new StreamReader(direccion + ubicacion +".txt"))
-        //    {
-        //        string bebida = reader.ReadToEnd();
-        //        bebidas = JsonConvert.DeserializeObject<List<Bebida>>(bebida);
-        //    }
-        //}
-        
+            //    using (StreamReader reader = new StreamReader(direccion + ubicacion +".txt"))
+            //    {
+            //        string bebida = reader.ReadToEnd();
+            //        bebidas = JsonConvert.DeserializeObject<List<Bebida>>(bebida);
+            //    }
+            //}
 
-        //metodo escribir y leer json's
-    }
+
+            //metodo escribir y leer json's
+        }
 }
