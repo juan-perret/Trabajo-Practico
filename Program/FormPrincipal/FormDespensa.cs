@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaPrincipal;
 
 namespace FormPrincipal
 {
     public partial class FormDespensa : Form
     {
+        private Despensa logica;
         public FormDespensa()
         {
             InitializeComponent();
+            logica = new Despensa();
         }
 
         private void cargarUnIngredienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +45,11 @@ namespace FormPrincipal
         private void ActualizarGrilla()
         {
             dgvDespensa.DataSource = null;
-            dgvDespensa.DataSource = 
+            dgvDespensa.DataSource = logica.LeerProductos();
+        }
+        public void CargarGrilla()
+        {
+            ActualizarGrilla();
         }
     }
 }

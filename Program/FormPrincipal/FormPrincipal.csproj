@@ -147,5 +147,11 @@
   <ItemGroup>
     <None Include="Resources\5dfb70fe26266074c99911272330eb03.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogicaPrincipal\LogicaPrincipal.csproj">
+      <Project>{fd28b29f-8a51-487d-b89f-1d4097d3027b}</Project>
+      <Name>LogicaPrincipal</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
