@@ -96,6 +96,7 @@
     <Compile Include="FormRecetas.Designer.cs">
       <DependentUpon>FormRecetas.cs</DependentUpon>
     </Compile>
+    <Compile Include="UtilidadesGrilla.cs" />
     <EmbeddedResource Include="FormAltaIngredientes.resx">
       <DependentUpon>FormAltaIngredientes.cs</DependentUpon>
     </EmbeddedResource>

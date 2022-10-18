@@ -27,5 +27,22 @@ namespace FormPrincipal
         {
             this.Close();
         }
+
+        
+        private void dgvDespensa_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            UtilidadesGrilla.CargarCamposAcciones(dgvDespensa);
+        }
+
+        private void FormDespensa_Load(object sender, EventArgs e)
+        {
+            dgvDespensa.AutoGenerateColumns = false;
+            ActualizarGrilla();
+        }
+        private void ActualizarGrilla()
+        {
+            dgvDespensa.DataSource = null;
+            dgvDespensa.DataSource = 
+        }
     }
 }
