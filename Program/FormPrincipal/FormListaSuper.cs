@@ -7,29 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaPrincipal;
 
 namespace FormPrincipal
 {
     public partial class FormListaSuper : Form
     {
+        private Super logica;
         public FormListaSuper()
         {
             InitializeComponent();
+            logica = new Super();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormListaSuper_Load(object sender, EventArgs e)
+        {
+            dgvListaSuper.AutoGenerateColumns = false;
+            ActualizarGrilla();
+        }
+
+        private void dgvListaSuper_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            UtilidadesGrilla.CargarCamposAcciones(dgvListaSuper);
+        }
+        private void ActualizarGrilla()
+        {
+            dgvListaSuper.DataSource = null;
+            //dgvListaSuper.DataSource = logica.LeerProductos();
+        }
+        public void CargarGrilla()
+        {
+            ActualizarGrilla();
         }
     }
 }

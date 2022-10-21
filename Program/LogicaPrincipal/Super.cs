@@ -8,7 +8,7 @@ using System.IO;
 
 namespace LogicaPrincipal
 {
-    internal class Super
+    public class Super
     {
         List<Producto> ingredientesFaltantes = new List<Producto>();
         string direccion = @"C:\super.txt";

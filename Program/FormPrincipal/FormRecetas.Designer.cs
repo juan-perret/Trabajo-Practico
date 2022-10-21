@@ -28,21 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GridRecetas = new System.Windows.Forms.DataGridView();
+            this.dgvRecetas = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.crearRecetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.GridRecetas)).BeginInit();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo_de_receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saludable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ingredientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // GridRecetas
+            // dgvRecetas
             // 
-            this.GridRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridRecetas.Location = new System.Drawing.Point(12, 27);
-            this.GridRecetas.Name = "GridRecetas";
-            this.GridRecetas.Size = new System.Drawing.Size(700, 350);
-            this.GridRecetas.TabIndex = 0;
+            this.dgvRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Tipo_de_receta,
+            this.Saludable,
+            this.Ingredientes,
+            this.Editar,
+            this.Eliminar});
+            this.dgvRecetas.Location = new System.Drawing.Point(12, 27);
+            this.dgvRecetas.Name = "dgvRecetas";
+            this.dgvRecetas.Size = new System.Drawing.Size(700, 350);
+            this.dgvRecetas.TabIndex = 0;
+            this.dgvRecetas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.GridRecetas_DataBindingComplete);
             // 
             // menuStrip1
             // 
@@ -69,17 +83,48 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Tipo_de_receta
+            // 
+            this.Tipo_de_receta.HeaderText = "Tipo de Receta";
+            this.Tipo_de_receta.Name = "Tipo_de_receta";
+            // 
+            // Saludable
+            // 
+            this.Saludable.HeaderText = "Es Saludable?";
+            this.Saludable.Name = "Saludable";
+            // 
+            // Ingredientes
+            // 
+            this.Ingredientes.HeaderText = "Ingredientes";
+            this.Ingredientes.Name = "Ingredientes";
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // FormRecetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 384);
-            this.Controls.Add(this.GridRecetas);
+            this.Controls.Add(this.dgvRecetas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormRecetas";
             this.Text = "Recetas";
-            ((System.ComponentModel.ISupportInitialize)(this.GridRecetas)).EndInit();
+            this.Load += new System.EventHandler(this.FormRecetas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -89,9 +134,15 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView GridRecetas;
+        private System.Windows.Forms.DataGridView dgvRecetas;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem crearRecetaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_receta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saludable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ingredientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
     }
 }
