@@ -21,6 +21,11 @@ namespace LogicaPrincipal
             despensa.Add(ingrediente);
             EscribirProducto(despensa);
         }
+        public Producto Ingrediente(int idBuscado)
+        {
+            Producto producto = despensa.Find(x => x.Id == idBuscado);
+            return producto;
+        }
 
 
         //guardad()

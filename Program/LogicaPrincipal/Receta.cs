@@ -14,8 +14,6 @@ namespace LogicaPrincipal
         public TiposComida TipoComida { get; set; }
         public bool Saludable { get; set; }
         public List<Producto> Ingredientes { get; set; }
-        [JsonIgnore]
         public List<int> CodigosIngredientes { get; set; }
-
     }
 }

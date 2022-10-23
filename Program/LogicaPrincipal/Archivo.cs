@@ -11,7 +11,10 @@ namespace LogicaPrincipal
     public class Archivo
     {   
         string direccion = @"C:/";
-        internal bool EscribirProducto(List<Producto> lista)
+        //
+        //Despensa
+        //
+        public bool EscribirProducto(List<Producto> lista)
         {
             List<Producto> bebidas = new List<Producto>();
             List<Producto> carnes = new List<Producto>();
@@ -70,6 +73,32 @@ namespace LogicaPrincipal
             productos.AddRange(carnes);
             //
             return productos;
+        }
+        //
+        //
+        //
+        public bool EscribirReceta(List<Receta> lista)
+        {
+            using (StreamWriter writer = new StreamWriter(direccion + "recetas.txt"))
+            {
+                string archivo = JsonConvert.SerializeObject(lista);
+                writer.WriteLine(archivo);
+                return true;
+            }
+        }
+        public List<Receta> LeerRecetas()
+        {
+            List<Receta> listadoRecetas = new List<Receta>();
+            if (!File.Exists(direccion+ "recetas.txt"))
+            {
+                return new List<Receta>();
+            }
+            using (StreamReader reader = new StreamReader(direccion + "recetas.txt"))
+            {
+                string recetas = reader.ReadToEnd();
+                listadoRecetas = JsonConvert.DeserializeObject<List<Receta>>(recetas);
+            }
+            return listadoRecetas;
         }
             //metodo escribir y leer json's
         }

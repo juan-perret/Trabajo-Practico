@@ -52,75 +52,94 @@
             this.Ingredientes,
             this.Editar,
             this.Eliminar});
-            this.dgvRecetas.Location = new System.Drawing.Point(12, 27);
+            this.dgvRecetas.Location = new System.Drawing.Point(16, 33);
+            this.dgvRecetas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRecetas.Name = "dgvRecetas";
-            this.dgvRecetas.Size = new System.Drawing.Size(700, 350);
+            this.dgvRecetas.RowHeadersWidth = 51;
+            this.dgvRecetas.Size = new System.Drawing.Size(933, 431);
             this.dgvRecetas.TabIndex = 0;
             this.dgvRecetas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.GridRecetas_DataBindingComplete);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearRecetaToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(722, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(963, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // crearRecetaToolStripMenuItem
             // 
             this.crearRecetaToolStripMenuItem.Name = "crearRecetaToolStripMenuItem";
-            this.crearRecetaToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.crearRecetaToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.crearRecetaToolStripMenuItem.Text = "Crear Receta";
             this.crearRecetaToolStripMenuItem.Click += new System.EventHandler(this.crearRecetaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // Nombre
             // 
+            this.Nombre.DataPropertyName = "Nombre";
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
             // 
             // Tipo_de_receta
             // 
+            this.Tipo_de_receta.DataPropertyName = "TipoComida";
             this.Tipo_de_receta.HeaderText = "Tipo de Receta";
+            this.Tipo_de_receta.MinimumWidth = 6;
             this.Tipo_de_receta.Name = "Tipo_de_receta";
+            this.Tipo_de_receta.Width = 125;
             // 
             // Saludable
             // 
+            this.Saludable.DataPropertyName = "Saludable";
             this.Saludable.HeaderText = "Es Saludable?";
+            this.Saludable.MinimumWidth = 6;
             this.Saludable.Name = "Saludable";
+            this.Saludable.Width = 125;
             // 
             // Ingredientes
             // 
             this.Ingredientes.HeaderText = "Ingredientes";
+            this.Ingredientes.MinimumWidth = 6;
             this.Ingredientes.Name = "Ingredientes";
+            this.Ingredientes.Width = 125;
             // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
+            this.Editar.Width = 125;
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 125;
             // 
             // FormRecetas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 384);
+            this.ClientSize = new System.Drawing.Size(963, 473);
             this.Controls.Add(this.dgvRecetas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRecetas";
             this.Text = "Recetas";
             this.Load += new System.EventHandler(this.FormRecetas_Load);

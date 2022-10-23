@@ -8,13 +8,33 @@ using System.IO;
 
 namespace LogicaPrincipal
 {
-    internal class ModuloReceta :Archivo
+    public class ModuloReceta : Archivo
     {
-
+        private Despensa logica;
         List<Receta> recetas = new List<Receta>();
-        string direccion = @"C:\receta.txt";
+        public ModuloReceta()
+        {
+            logica = new Despensa();
+            recetas=LeerRecetas();
+            foreach (Receta rec in recetas)
+            {
+                List<Producto> ingredientes = new List<Producto>();
+                foreach (int idBuscado in rec.CodigosIngredientes)
+                {
+                    ingredientes.Add(logica.Ingrediente(idBuscado));
+                }
+            }
+        }
         
-
+        public void GuardarReceta(Receta receta)
+        {
+            recetas.Add(receta);
+            EscribirReceta(recetas);
+        }
+        public void LeerReceta()
+        {
+            LeerRecetas();
+        }
         //guardad()
     }
 }
