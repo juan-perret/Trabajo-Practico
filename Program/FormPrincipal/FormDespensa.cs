@@ -51,5 +51,10 @@ namespace FormPrincipal
         {
             ActualizarGrilla();
         }
+
+        private void dgvDespensa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

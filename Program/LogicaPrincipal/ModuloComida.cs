@@ -8,11 +8,25 @@ using System.IO;
 
 namespace LogicaPrincipal
 {
-    internal class ModuloComida :Archivo
+    public class ModuloComida :Archivo
     {
         List<Comida> comidas = new List<Comida>();
-        string direccion = @"C:\comidas.txt";
-        
+        private ModuloReceta logica;
+        public ModuloComida()
+        {
+            logica = new ModuloReceta();
+            comidas = LeerComidas();
+            //foreach buscando la receta por ID.
+        }
+        public void GuardarComida(Comida comida)
+        {
+            comidas.Add(comida);
+            EscribirComidas(comidas);
+        }
+        public void LeerComida()
+        {
+
+        }
 
         //guarda(), al guardar modificar en despensa las cantidades
     }

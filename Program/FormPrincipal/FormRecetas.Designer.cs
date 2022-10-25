@@ -35,7 +35,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_de_receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saludable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ingredientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).BeginInit();
@@ -49,7 +49,7 @@
             this.Nombre,
             this.Tipo_de_receta,
             this.Saludable,
-            this.Ingredientes,
+            this.Detalles,
             this.Editar,
             this.Eliminar});
             this.dgvRecetas.Location = new System.Drawing.Point(16, 33);
@@ -110,12 +110,12 @@
             this.Saludable.Name = "Saludable";
             this.Saludable.Width = 125;
             // 
-            // Ingredientes
+            // Detalles
             // 
-            this.Ingredientes.HeaderText = "Ingredientes";
-            this.Ingredientes.MinimumWidth = 6;
-            this.Ingredientes.Name = "Ingredientes";
-            this.Ingredientes.Width = 125;
+            this.Detalles.HeaderText = "Detalles";
+            this.Detalles.MinimumWidth = 6;
+            this.Detalles.Name = "Detalles";
+            this.Detalles.Width = 125;
             // 
             // Editar
             // 
@@ -160,7 +160,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_receta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saludable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ingredientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Detalles;
         private System.Windows.Forms.DataGridViewTextBoxColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
     }

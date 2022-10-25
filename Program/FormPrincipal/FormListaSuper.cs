@@ -18,9 +18,7 @@ namespace FormPrincipal
         {
             InitializeComponent();
             logica = new Super();
-        }
-
-        
+        }     
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,14 +30,10 @@ namespace FormPrincipal
             ActualizarGrilla();
         }
 
-        private void dgvListaSuper_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            UtilidadesGrilla.CargarCamposAcciones(dgvListaSuper);
-        }
         private void ActualizarGrilla()
         {
             dgvListaSuper.DataSource = null;
-            //dgvListaSuper.DataSource = logica.LeerProductos();
+            dgvListaSuper.DataSource = logica.DevolverLista();
         }
         public void CargarGrilla()
         {

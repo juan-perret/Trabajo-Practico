@@ -9,6 +9,7 @@ namespace LogicaPrincipal
     public class Comida
     {
         public Receta RecetaElegida { get; set; }
+        public int CodigoReceta { get; set; }
         public DateTime FechaDeRegistro { get; set; }
     }
 }

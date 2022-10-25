@@ -10,29 +10,17 @@ namespace LogicaPrincipal
 {
     public class Super
     {
+        private Despensa logica;
         List<Producto> ingredientesFaltantes = new List<Producto>();
-        string direccion = @"C:\super.txt";
-        internal bool Guardar()
+        public Super()
         {
-            using (StreamWriter writer = new StreamWriter(direccion))
-            {
-                string archivo = JsonConvert.SerializeObject(ingredientesFaltantes);
-                writer.WriteLine(archivo);
-                return true;
-            }
+            logica = new Despensa();
+            ingredientesFaltantes = logica.ProductosAComprar();
         }
-        internal List<Producto> Leer()
+                                               // aca va metodo de los productos
+        public List<Producto> DevolverLista()
         {
-            if (!File.Exists(direccion))
-            {
-                return new List<Producto>();
-            }
-            using (StreamReader reader = new StreamReader(direccion))
-            {
-                string archivo = reader.ReadToEnd();
-                ingredientesFaltantes = JsonConvert.DeserializeObject<List<Producto>>(archivo);
-                return ingredientesFaltantes;
-            }
+            return ingredientesFaltantes;
         }
         //Pedir de despensa, que devuelva una lista con los productos que tienen cant menor
         //a la minima

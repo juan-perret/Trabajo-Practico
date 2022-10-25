@@ -27,7 +27,24 @@ namespace LogicaPrincipal
             return producto;
         }
 
-
+        //Metodo que devuelva lista<productos> que esten bajo de su
+        //punto de pedido 
+        public List<Producto> ProductosAComprar()
+        {
+            List<Producto> listaAComprar = new List<Producto>();
+            foreach (Producto p in despensa)
+            {
+                if (p is Bebida)
+                {
+                    Bebida bebida = (Bebida)p;
+                    if (bebida.CantidadProducto < p.PuntoPedido)
+                    {
+                        listaAComprar.Add(p);
+                    }
+                }
+            }
+            return listaAComprar;
+        }
         //guardad()
     }
 }

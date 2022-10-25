@@ -75,7 +75,7 @@ namespace LogicaPrincipal
             return productos;
         }
         //
-        //
+        //Recetas
         //
         public bool EscribirReceta(List<Receta> lista)
         {
@@ -100,6 +100,35 @@ namespace LogicaPrincipal
             }
             return listadoRecetas;
         }
-            //metodo escribir y leer json's
+        //
+        //Comidas
+        //
+        public bool EscribirComidas(List<Comida> lista)
+        {
+            using (StreamWriter writer = new StreamWriter(direccion + "comidas.txt"))
+            {
+                string archivo = JsonConvert.SerializeObject(lista);
+                writer.WriteLine(archivo);
+                return true;
+            }
         }
+        public List<Comida> LeerComidas()
+        {
+            List<Comida> listadoComidas= new List<Comida>();
+            if (!File.Exists(direccion + "comidas.txt"))
+            {
+                return new List<Comida>();
+            }
+            using (StreamReader reader = new StreamReader(direccion + "comidas.txt"))
+            {
+                string comidas = reader.ReadToEnd();
+                listadoComidas = JsonConvert.DeserializeObject<List<Comida>>(comidas);
+            }
+            return listadoComidas;
+        }
+        //
+        //super
+        //
+        //metodo escribir y leer json's
+    }
 }

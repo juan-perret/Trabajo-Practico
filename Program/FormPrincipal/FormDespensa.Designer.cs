@@ -33,8 +33,6 @@
             this.cargarUnIngredienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nombre_ingrediente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -48,8 +46,6 @@
             this.dgvDespensa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDespensa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre_ingrediente,
-            this.Categoria,
-            this.Cantidad,
             this.Precio,
             this.puntoPedido,
             this.Editar,
@@ -60,6 +56,7 @@
             this.dgvDespensa.RowHeadersWidth = 51;
             this.dgvDespensa.Size = new System.Drawing.Size(1003, 431);
             this.dgvDespensa.TabIndex = 0;
+            this.dgvDespensa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDespensa_CellContentClick);
             this.dgvDespensa.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDespensa_DataBindingComplete);
             // 
             // menuStrip1
@@ -97,22 +94,6 @@
             this.nombre_ingrediente.MinimumWidth = 6;
             this.nombre_ingrediente.Name = "nombre_ingrediente";
             this.nombre_ingrediente.Width = 125;
-            // 
-            // Categoria
-            // 
-            this.Categoria.DataPropertyName = "CmbBoxCategoria.Text";
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.MinimumWidth = 6;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Kg";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
             // 
             // Precio
             // 
@@ -175,8 +156,6 @@
         private System.Windows.Forms.ToolStripMenuItem cargarUnIngredienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_ingrediente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn puntoPedido;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;

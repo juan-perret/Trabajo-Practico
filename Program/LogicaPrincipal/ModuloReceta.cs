@@ -28,13 +28,11 @@ namespace LogicaPrincipal
         
         public void GuardarReceta(Receta receta)
         {
+            receta.Id = recetas.Count + 1;
             recetas.Add(receta);
             EscribirReceta(recetas);
         }
-        public void LeerReceta()
-        {
-            LeerRecetas();
-        }
+        //Generar metodo que devuelva receta por ID
         //guardad()
     }
 }
