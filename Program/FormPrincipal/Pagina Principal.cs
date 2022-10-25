@@ -11,9 +11,9 @@ using LogicaPrincipal;
 
 namespace FormPrincipal
 {
-    public partial class Form1 : Form
+    public partial class Pag_Principal : Form
     {
-        public Form1()
+        public Pag_Principal()
         {
             InitializeComponent();
         }

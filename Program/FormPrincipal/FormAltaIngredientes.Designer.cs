@@ -115,7 +115,7 @@
             "Quesos",
             "Lacteos",
             "Carnes",
-            "Pesacados",
+            "Pescados",
             "Panaderia",
             "Bebidas (Alta en Azucar)",
             "Bebidas (Normal)",
@@ -186,7 +186,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblTitulo);
             this.Name = "FormAltaIngredientes";
-            this.Text = "FormAltaIngredientes";
+            this.Text = "Dar de alta un Ingrediente";
             this.Load += new System.EventHandler(this.FormAltaIngredientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
