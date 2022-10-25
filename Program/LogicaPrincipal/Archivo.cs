@@ -11,7 +11,10 @@ namespace LogicaPrincipal
     public class Archivo
     {   
         string direccion = @"C:/";
-        internal bool EscribirProducto(List<Producto> lista)
+        //
+        //Despensa
+        //
+        public bool EscribirProducto(List<Producto> lista)
         {
             List<Producto> bebidas = new List<Producto>();
             List<Producto> carnes = new List<Producto>();
@@ -54,10 +57,7 @@ namespace LogicaPrincipal
                 string bebida = reader.ReadToEnd();
                 bebidas = JsonConvert.DeserializeObject<List<Bebida>>(bebida);
             }
-            foreach (Producto p in bebidas)
-            {
-                productos.Add(p);
-            }
+            productos.AddRange(bebidas);
             //
             //Carnes
             List<Carne> carnes = new List<Carne>();
@@ -70,40 +70,36 @@ namespace LogicaPrincipal
                 string carne = reader.ReadToEnd();
                 carnes = JsonConvert.DeserializeObject<List<Carne>>(carne);
             }
-            foreach (Producto p in carnes)
-            {
-                productos.Add(p);
-            }
+            productos.AddRange(carnes);
             //
             return productos;
         }
-        //public List<Producto> CrearArchivo(string ubicacion, List<Producto> lista)
-        //{
-        //    if (!File.Exists(direccion + ubicacion + ".txt"))
-        //    {
-        //        return new List<Producto>();
-        //    }
-        //    else
-        //    {
-        //        using (StreamReader reader = new StreamReader(direccion + ubicacion + ".txt"))
-        //        {
-        //            string objeto = reader.ReadToEnd();
-        //            lista = JsonConvert.DeserializeObject<List<Producto>>(objeto);
-        //        }
-        //        return lista;
-        //    }
-        //}
-        //public List<Producto> Leer(string ubicacion)
-        //{
-
-            //    using (StreamReader reader = new StreamReader(direccion + ubicacion +".txt"))
-            //    {
-            //        string bebida = reader.ReadToEnd();
-            //        bebidas = JsonConvert.DeserializeObject<List<Bebida>>(bebida);
-            //    }
-            //}
-
-
+        //
+        //
+        //
+        public bool EscribirReceta(List<Receta> lista)
+        {
+            using (StreamWriter writer = new StreamWriter(direccion + "recetas.txt"))
+            {
+                string archivo = JsonConvert.SerializeObject(lista);
+                writer.WriteLine(archivo);
+                return true;
+            }
+        }
+        public List<Receta> LeerRecetas()
+        {
+            List<Receta> listadoRecetas = new List<Receta>();
+            if (!File.Exists(direccion+ "recetas.txt"))
+            {
+                return new List<Receta>();
+            }
+            using (StreamReader reader = new StreamReader(direccion + "recetas.txt"))
+            {
+                string recetas = reader.ReadToEnd();
+                listadoRecetas = JsonConvert.DeserializeObject<List<Receta>>(recetas);
+            }
+            return listadoRecetas;
+        }
             //metodo escribir y leer json's
         }
 }

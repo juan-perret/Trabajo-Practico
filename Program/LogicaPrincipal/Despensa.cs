@@ -17,19 +17,15 @@ namespace LogicaPrincipal
         }        
         public void GuardarProducto(Producto ingrediente)
         {
+            ingrediente.Id = despensa.Count + 1;
             despensa.Add(ingrediente);
             EscribirProducto(despensa);
         }
-        //public void GuardarPBebida(string nombre, int puntoPedido, decimal precio, int cantidadProducto, int tipoBebida)
-        //{
-        //    Bebida bebida = new Bebida(nombre, puntoPedido, precio, cantidadProducto, tipoBebida);
-        //    GuardarProducto(bebida);
-        //}
-        //public void GuardarPCarne(string nombre, int puntoPedido, decimal precio, double kg)
-        //{
-        //    Carne carne = new Carne(nombre, puntoPedido, precio, kg);
-        //    GuardarProducto(carne);
-        //}
+        public Producto Ingrediente(int idBuscado)
+        {
+            Producto producto = despensa.Find(x => x.Id == idBuscado);
+            return producto;
+        }
 
 
         //guardad()

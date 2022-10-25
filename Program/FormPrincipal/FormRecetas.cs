@@ -13,11 +13,11 @@ namespace FormPrincipal
 {
     public partial class FormRecetas : Form
     {
-        private Receta logica;
+        private ModuloReceta logica;
         public FormRecetas()
         {
             InitializeComponent();
-            logica = new Receta();
+            logica = new ModuloReceta();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace FormPrincipal
         private void ActualizarGrilla()
         {
             dgvRecetas.DataSource = null;
-            //dgvRecetas.DataSource = logica.
+            dgvRecetas.DataSource = logica.LeerRecetas();
         }
 
         private void CargarGrilla()
