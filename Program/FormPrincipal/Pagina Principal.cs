@@ -69,5 +69,6 @@ namespace FormPrincipal
             FormRegistrarComida registrarComida = new FormRegistrarComida();
             registrarComida.ShowDialog();
         }
+
     }
 }

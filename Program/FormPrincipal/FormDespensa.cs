@@ -52,9 +52,17 @@ namespace FormPrincipal
             ActualizarGrilla();
         }
 
-        private void dgvDespensa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        //Falta ver que sea darle click solo al editar para  llamar a algo como esto, para llamar a abrir neuvamente el winform FormAltaIngredientes
+        //para poder editar los datos
 
+        private void dgvDespensa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDespensa.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                DataGridViewRow row = dgvDespensa.Rows[e.RowIndex];
+                
+
+            }
         }
     }
 }

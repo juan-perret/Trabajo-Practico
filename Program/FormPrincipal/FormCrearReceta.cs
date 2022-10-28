@@ -15,6 +15,7 @@ namespace FormPrincipal
     public partial class FormCrearReceta : Form
     {
         private ModuloReceta logica;
+        List<int> listaIngredientes = new List<int>();
         public FormCrearReceta()
         {
             InitializeComponent();
@@ -27,6 +28,20 @@ namespace FormPrincipal
             this.Close();
         }
 
+        private void FormCrearReceta_Load(object sender, EventArgs e)
+        {
+            dgvIngredientesRecetas.AutoGenerateColumns = false;
+            ActualizarGrilla();
+        }
+        private void ActualizarGrilla()
+        {
+            dgvIngredientesRecetas.DataSource = null;
+            dgvIngredientesRecetas.DataSource = logica.LeerProductos();
+        }
+        public void CargarGrilla()
+        {
+            ActualizarGrilla();
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Receta receta = new Receta();
@@ -49,10 +64,32 @@ namespace FormPrincipal
                     break;
             }
             List<int> codigos = new List<int>();
-            List<Producto> ingredientes = new List<Producto>();
-            receta.Ingredientes = ingredientes;
             receta.CodigosIngredientes = codigos;
             logica.GuardarReceta(receta);
         }
+
+        //Aca busco checkear el checkbox pero al descheckearlo me tira error, debo buscar la solucion. Ademas
+        //me falta ver como tomar el valor id o la forma de guardar en una lista los codigos.
+        //Lo mas probable que eso de guardar los codigos o productos se haga en el ModuloReceta,llamando desde de Despensa.
+
+        private void dgvIngredientesRecetas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvIngredientesRecetas.Columns[e.ColumnIndex].Name == "Seleccion")
+            {
+                DataGridViewRow row = dgvIngredientesRecetas.Rows[e.RowIndex];
+                DataGridViewCheckBoxCell cellSelecion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(cellSelecion.Value))
+                {
+
+                }
+            }
+        }
+
+        //private List<int> CrearListaIngredientes( DataGridViewRow row )
+        //{
+        //    DataGridViewCell cellId = row.Cells["Id"] as DataGridViewCell;
+        //    int asd = cellId.Value;
+        //    return listaIngredientes;
+        //}
     }
 }

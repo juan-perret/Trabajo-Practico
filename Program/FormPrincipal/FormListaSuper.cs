@@ -32,12 +32,21 @@ namespace FormPrincipal
 
         private void ActualizarGrilla()
         {
+            decimal total = 0;
             dgvListaSuper.DataSource = null;
             dgvListaSuper.DataSource = logica.DevolverLista();
+            foreach (DataGridViewRow row in dgvListaSuper.Rows)
+            {
+                row.Cells["Total"].Value = Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+                total += Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+            }
+            lblResultadoTotal.Text = Convert.ToString(total);
         }
         public void CargarGrilla()
         {
             ActualizarGrilla();
         }
+
+
     }
 }

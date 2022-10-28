@@ -38,66 +38,66 @@
             this.checkbSaludable = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.dgvIngredientesRecetas = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientesRecetas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(39, 42);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(29, 34);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(135, 43);
+            this.lblTitulo.Size = new System.Drawing.Size(108, 33);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "RECETAS";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(43, 117);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(32, 95);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 16);
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
             // lblTipoReceta
             // 
             this.lblTipoReceta.AutoSize = true;
-            this.lblTipoReceta.Location = new System.Drawing.Point(43, 160);
-            this.lblTipoReceta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoReceta.Location = new System.Drawing.Point(32, 130);
             this.lblTipoReceta.Name = "lblTipoReceta";
-            this.lblTipoReceta.Size = new System.Drawing.Size(101, 16);
+            this.lblTipoReceta.Size = new System.Drawing.Size(81, 13);
             this.lblTipoReceta.TabIndex = 2;
             this.lblTipoReceta.Text = "Tipo de Receta";
             // 
             // lblSaludable
             // 
             this.lblSaludable.AutoSize = true;
-            this.lblSaludable.Location = new System.Drawing.Point(43, 212);
-            this.lblSaludable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSaludable.Location = new System.Drawing.Point(32, 172);
             this.lblSaludable.Name = "lblSaludable";
-            this.lblSaludable.Size = new System.Drawing.Size(76, 16);
+            this.lblSaludable.Size = new System.Drawing.Size(60, 13);
             this.lblSaludable.TabIndex = 3;
             this.lblSaludable.Text = "Saludable?";
             // 
             // lblIngredientes
             // 
             this.lblIngredientes.AutoSize = true;
-            this.lblIngredientes.Location = new System.Drawing.Point(43, 261);
-            this.lblIngredientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngredientes.Location = new System.Drawing.Point(32, 212);
             this.lblIngredientes.Name = "lblIngredientes";
-            this.lblIngredientes.Size = new System.Drawing.Size(81, 16);
+            this.lblIngredientes.Size = new System.Drawing.Size(65, 13);
             this.lblIngredientes.TabIndex = 4;
             this.lblIngredientes.Text = "Ingredientes";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(216, 108);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(289, 92);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(160, 24);
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 5;
             // 
             // cmbTipoReceta
@@ -108,29 +108,26 @@
             "Almuerzo",
             "Merienda",
             "Cena"});
-            this.cmbTipoReceta.Location = new System.Drawing.Point(216, 156);
-            this.cmbTipoReceta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoReceta.Location = new System.Drawing.Point(289, 127);
             this.cmbTipoReceta.Name = "cmbTipoReceta";
-            this.cmbTipoReceta.Size = new System.Drawing.Size(160, 24);
+            this.cmbTipoReceta.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoReceta.TabIndex = 6;
             // 
             // checkbSaludable
             // 
             this.checkbSaludable.AutoSize = true;
-            this.checkbSaludable.Location = new System.Drawing.Point(216, 212);
-            this.checkbSaludable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbSaludable.Location = new System.Drawing.Point(162, 172);
             this.checkbSaludable.Name = "checkbSaludable";
-            this.checkbSaludable.Size = new System.Drawing.Size(109, 20);
+            this.checkbSaludable.Size = new System.Drawing.Size(87, 17);
             this.checkbSaludable.TabIndex = 7;
             this.checkbSaludable.Text = "Tildar si lo es";
             this.checkbSaludable.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(47, 352);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(35, 351);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -138,20 +135,70 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(289, 348);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Location = new System.Drawing.Point(344, 351);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(88, 32);
+            this.btnAceptar.Size = new System.Drawing.Size(66, 26);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // dgvIngredientesRecetas
+            // 
+            this.dgvIngredientesRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIngredientesRecetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre,
+            this.Seleccion,
+            this.Cantidad});
+            this.dgvIngredientesRecetas.Location = new System.Drawing.Point(162, 212);
+            this.dgvIngredientesRecetas.Name = "dgvIngredientesRecetas";
+            this.dgvIngredientesRecetas.Size = new System.Drawing.Size(291, 124);
+            this.dgvIngredientesRecetas.TabIndex = 10;
+            this.dgvIngredientesRecetas.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientesRecetas_CellValueChanged);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 40;
+            this.Id.Name = "Id";
+            this.Id.Width = 40;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.FillWeight = 50F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 100;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Seleccion
+            // 
+            this.Seleccion.FalseValue = "";
+            this.Seleccion.HeaderText = "";
+            this.Seleccion.MinimumWidth = 30;
+            this.Seleccion.Name = "Seleccion";
+            this.Seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccion.Width = 30;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Seleccion";
+            this.Cantidad.HeaderText = "Cantidad (Kg/Un)";
+            this.Cantidad.MinimumWidth = 120;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 120;
+            // 
             // FormCrearReceta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 410);
+            this.ClientSize = new System.Drawing.Size(465, 405);
+            this.Controls.Add(this.dgvIngredientesRecetas);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.checkbSaludable);
@@ -162,9 +209,10 @@
             this.Controls.Add(this.lblTipoReceta);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblTitulo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCrearReceta";
             this.Text = "Crea tu Receta";
+            this.Load += new System.EventHandler(this.FormCrearReceta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientesRecetas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +230,10 @@
         private System.Windows.Forms.CheckBox checkbSaludable;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.DataGridView dgvIngredientesRecetas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }

@@ -11,15 +11,22 @@ namespace LogicaPrincipal
     public class Despensa : Archivo
     {
         List<Producto> despensa = new List<Producto>();
+        int id = 0;
         public Despensa()
         {
-           despensa = LeerProductos();
+            despensa = LeerProductos();
+            if (despensa.Count != 0)
+            {
+                id = despensa[despensa.Count-1].Id;
+            }
+ 
         }        
         public void GuardarProducto(Producto ingrediente)
         {
-            ingrediente.Id = despensa.Count + 1;
+            ingrediente.Id = id + 1;
             despensa.Add(ingrediente);
             EscribirProducto(despensa);
+            id += 1;
         }
         public Producto Ingrediente(int idBuscado)
         {
@@ -38,6 +45,14 @@ namespace LogicaPrincipal
                 {
                     Bebida bebida = (Bebida)p;
                     if (bebida.CantidadProducto < p.PuntoPedido)
+                    {
+                        listaAComprar.Add(p);
+                    }
+                }
+                if (p is Carne)
+                {
+                    Carne carne = (Carne)p;
+                    if (carne.Kg < p.PuntoPedido)
                     {
                         listaAComprar.Add(p);
                     }

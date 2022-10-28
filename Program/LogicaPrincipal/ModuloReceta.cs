@@ -12,6 +12,7 @@ namespace LogicaPrincipal
     {
         private Despensa logica;
         List<Receta> recetas = new List<Receta>();
+        int id = 0;
         public ModuloReceta()
         {
             logica = new Despensa();
@@ -24,14 +25,20 @@ namespace LogicaPrincipal
                     ingredientes.Add(logica.Ingrediente(idBuscado));
                 }
             }
+            if (recetas.Count != 0)
+            {
+                id = recetas[recetas.Count - 1].Id;
+            }
         }
         
         public void GuardarReceta(Receta receta)
         {
-            receta.Id = recetas.Count + 1;
+            receta.Id = id + 1;
             recetas.Add(receta);
             EscribirReceta(recetas);
+            id += 1;
         }
+
         //Generar metodo que devuelva receta por ID
         //guardad()
     }
