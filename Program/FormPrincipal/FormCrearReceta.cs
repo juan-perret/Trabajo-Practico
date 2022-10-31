@@ -44,6 +44,15 @@ namespace FormPrincipal
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if(validarNombre() == false)
+            {
+                return;
+            }
+            if (validarTipoReceta() == false)
+            {
+                return;
+            }
+            
             Receta receta = new Receta();
             receta.Nombre = txtNombre.Text;
             receta.Saludable = checkbSaludable.Checked;
@@ -66,6 +75,34 @@ namespace FormPrincipal
             List<int> codigos = new List<int>();
             receta.CodigosIngredientes = codigos;
             logica.GuardarReceta(receta);
+        }
+
+        private bool validarTipoReceta()
+        {
+            if (string.IsNullOrEmpty(cmbTipoReceta.Text))
+            {
+                erpError.SetError(cmbTipoReceta, "Debe ingresar un tipo de receta");
+                return false;
+            }
+            else
+            {
+                erpError.SetError(cmbTipoReceta, "");
+                return true;
+            }
+        }
+
+        private bool validarNombre()
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                erpError.SetError(txtNombre, "Debe ingresar un nombre");
+                return false;
+            }
+            else
+            {
+                erpError.SetError(txtNombre, "");
+                return true;
+            }
         }
 
         //Aca busco checkear el checkbox pero al descheckearlo me tira error, debo buscar la solucion. Ademas

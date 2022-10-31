@@ -36,8 +36,11 @@
             this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saludable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.filtrarPorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtro1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtro2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtro3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtro4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComidas)).BeginInit();
             this.MsComidas.SuspendLayout();
             this.SuspendLayout();
@@ -49,12 +52,10 @@
             this.Fecha_hora,
             this.Nombre_Receta,
             this.Tipo_de_comida,
-            this.Saludable,
-            this.Editar,
-            this.Eliminar});
+            this.Saludable});
             this.dgvComidas.Location = new System.Drawing.Point(12, 27);
             this.dgvComidas.Name = "dgvComidas";
-            this.dgvComidas.Size = new System.Drawing.Size(700, 350);
+            this.dgvComidas.Size = new System.Drawing.Size(445, 350);
             this.dgvComidas.TabIndex = 0;
             this.dgvComidas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvComidas_DataBindingComplete);
             // 
@@ -63,10 +64,11 @@
             this.MsComidas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MsComidas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarComidaToolStripMenuItem,
+            this.filtrarPorToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.MsComidas.Location = new System.Drawing.Point(0, 0);
             this.MsComidas.Name = "MsComidas";
-            this.MsComidas.Size = new System.Drawing.Size(725, 25);
+            this.MsComidas.Size = new System.Drawing.Size(467, 25);
             this.MsComidas.TabIndex = 1;
             this.MsComidas.Text = "menuStrip1";
             // 
@@ -104,25 +106,46 @@
             this.Saludable.HeaderText = "Es saludable?";
             this.Saludable.Name = "Saludable";
             // 
-            // Editar
+            // filtrarPorToolStripMenuItem
             // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.filtrarPorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.filtro1ToolStripMenuItem,
+            this.filtro2ToolStripMenuItem,
+            this.filtro3ToolStripMenuItem,
+            this.filtro4ToolStripMenuItem});
+            this.filtrarPorToolStripMenuItem.Name = "filtrarPorToolStripMenuItem";
+            this.filtrarPorToolStripMenuItem.Size = new System.Drawing.Size(82, 21);
+            this.filtrarPorToolStripMenuItem.Text = "Filtrar por";
             // 
-            // Eliminar
+            // filtro1ToolStripMenuItem
             // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.filtro1ToolStripMenuItem.Name = "filtro1ToolStripMenuItem";
+            this.filtro1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filtro1ToolStripMenuItem.Text = "Filtro 1";
+            // 
+            // filtro2ToolStripMenuItem
+            // 
+            this.filtro2ToolStripMenuItem.Name = "filtro2ToolStripMenuItem";
+            this.filtro2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filtro2ToolStripMenuItem.Text = "Filtro 2";
+            // 
+            // filtro3ToolStripMenuItem
+            // 
+            this.filtro3ToolStripMenuItem.Name = "filtro3ToolStripMenuItem";
+            this.filtro3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filtro3ToolStripMenuItem.Text = "Filtro 3";
+            // 
+            // filtro4ToolStripMenuItem
+            // 
+            this.filtro4ToolStripMenuItem.Name = "filtro4ToolStripMenuItem";
+            this.filtro4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filtro4ToolStripMenuItem.Text = "Filtro 4";
             // 
             // FormComidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 391);
+            this.ClientSize = new System.Drawing.Size(467, 391);
             this.Controls.Add(this.dgvComidas);
             this.Controls.Add(this.MsComidas);
             this.MainMenuStrip = this.MsComidas;
@@ -147,7 +170,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_comida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saludable;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.ToolStripMenuItem filtrarPorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtro1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtro2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtro3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtro4ToolStripMenuItem;
     }
 }

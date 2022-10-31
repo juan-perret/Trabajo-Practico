@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblTipoReceta = new System.Windows.Forms.Label();
@@ -39,11 +40,13 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvIngredientesRecetas = new System.Windows.Forms.DataGridView();
+            this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientesRecetas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -94,7 +97,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(289, 92);
+            this.txtNombre.Location = new System.Drawing.Point(162, 95);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
@@ -108,7 +111,7 @@
             "Almuerzo",
             "Merienda",
             "Cena"});
-            this.cmbTipoReceta.Location = new System.Drawing.Point(289, 127);
+            this.cmbTipoReceta.Location = new System.Drawing.Point(162, 130);
             this.cmbTipoReceta.Name = "cmbTipoReceta";
             this.cmbTipoReceta.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoReceta.TabIndex = 6;
@@ -135,7 +138,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(344, 351);
+            this.btnAceptar.Location = new System.Drawing.Point(474, 351);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(66, 26);
             this.btnAceptar.TabIndex = 9;
@@ -149,13 +152,17 @@
             this.dgvIngredientesRecetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nombre,
-            this.Seleccion,
-            this.Cantidad});
+            this.Cantidad,
+            this.Seleccion});
             this.dgvIngredientesRecetas.Location = new System.Drawing.Point(162, 212);
             this.dgvIngredientesRecetas.Name = "dgvIngredientesRecetas";
-            this.dgvIngredientesRecetas.Size = new System.Drawing.Size(291, 124);
+            this.dgvIngredientesRecetas.Size = new System.Drawing.Size(347, 124);
             this.dgvIngredientesRecetas.TabIndex = 10;
             this.dgvIngredientesRecetas.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientesRecetas_CellValueChanged);
+            // 
+            // erpError
+            // 
+            this.erpError.ContainerControl = this;
             // 
             // Id
             // 
@@ -163,6 +170,7 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 40;
             this.Id.Name = "Id";
+            this.Id.Visible = false;
             this.Id.Width = 40;
             // 
             // Nombre
@@ -175,16 +183,6 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // Seleccion
-            // 
-            this.Seleccion.FalseValue = "";
-            this.Seleccion.HeaderText = "";
-            this.Seleccion.MinimumWidth = 30;
-            this.Seleccion.Name = "Seleccion";
-            this.Seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Seleccion.Width = 30;
-            // 
             // Cantidad
             // 
             this.Cantidad.DataPropertyName = "Seleccion";
@@ -193,11 +191,22 @@
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.Width = 120;
             // 
+            // Seleccion
+            // 
+            this.Seleccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Seleccion.FalseValue = "";
+            this.Seleccion.HeaderText = "Agregar?";
+            this.Seleccion.MinimumWidth = 30;
+            this.Seleccion.Name = "Seleccion";
+            this.Seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccion.Width = 75;
+            // 
             // FormCrearReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 405);
+            this.ClientSize = new System.Drawing.Size(552, 405);
             this.Controls.Add(this.dgvIngredientesRecetas);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
@@ -213,6 +222,7 @@
             this.Text = "Crea tu Receta";
             this.Load += new System.EventHandler(this.FormCrearReceta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientesRecetas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,9 +241,10 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.DataGridView dgvIngredientesRecetas;
+        private System.Windows.Forms.ErrorProvider erpError;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccion;
     }
 }

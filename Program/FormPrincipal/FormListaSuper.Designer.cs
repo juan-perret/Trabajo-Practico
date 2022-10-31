@@ -58,7 +58,7 @@
             this.dgvListaSuper.Location = new System.Drawing.Point(12, 36);
             this.dgvListaSuper.Name = "dgvListaSuper";
             this.dgvListaSuper.RowHeadersWidth = 51;
-            this.dgvListaSuper.Size = new System.Drawing.Size(747, 350);
+            this.dgvListaSuper.Size = new System.Drawing.Size(531, 350);
             this.dgvListaSuper.TabIndex = 0;
             // 
             // Nombre
@@ -103,7 +103,7 @@
             this.MsListaSuper.Location = new System.Drawing.Point(0, 0);
             this.MsListaSuper.Name = "MsListaSuper";
             this.MsListaSuper.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.MsListaSuper.Size = new System.Drawing.Size(776, 25);
+            this.MsListaSuper.Size = new System.Drawing.Size(556, 25);
             this.MsListaSuper.TabIndex = 1;
             this.MsListaSuper.Text = "menuStrip1";
             // 
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 428);
+            this.ClientSize = new System.Drawing.Size(556, 428);
             this.Controls.Add(this.lblResultadoTotal);
             this.Controls.Add(this.lblCosto);
             this.Controls.Add(this.dgvListaSuper);

@@ -27,10 +27,28 @@ namespace FormPrincipal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (validarFiltro() == false)
+            {
+                return;
+            }
             Comida comida = new Comida();
             comida.FechaDeRegistro = dtpFechaComida.Value;
             //Faltar agregar lista de recetas que poseen los ingredientes necesarios
             //para su creacion, y agregarlos a comida.RecetaElegida y comida.CodigoReceta
+        }
+
+        private bool validarFiltro()
+        {
+            if (string.IsNullOrEmpty(cmbFiltro.Text))
+            {
+                erpError.SetError(cmbFiltro, "Debe seleccionar un filtro");
+                return false;
+            }
+            else
+            {
+                erpError.SetError(cmbFiltro, "");
+                return true;
+            }
         }
     }
 }
