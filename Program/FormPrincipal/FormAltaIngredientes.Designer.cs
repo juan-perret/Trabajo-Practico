@@ -110,6 +110,7 @@
             // 
             // CmbBoxCategoria
             // 
+            this.CmbBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBoxCategoria.FormattingEnabled = true;
             this.CmbBoxCategoria.Items.AddRange(new object[] {
             "Hortalizas_y_Verduras",
@@ -126,7 +127,6 @@
             this.CmbBoxCategoria.Name = "CmbBoxCategoria";
             this.CmbBoxCategoria.Size = new System.Drawing.Size(121, 21);
             this.CmbBoxCategoria.TabIndex = 7;
-            
             // 
             // txtCantidad
             // 
