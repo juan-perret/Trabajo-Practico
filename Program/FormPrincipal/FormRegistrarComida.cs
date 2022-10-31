@@ -75,7 +75,18 @@ namespace FormPrincipal
         {
             dgvSeleccionReceta.DataSource = null;
             List<Receta> recetasAMostrar = logica.LeerRecetas();
-
+            List<Producto> stockProductos = logica.LeerProductos();
+            foreach (Receta rec in recetasAMostrar)
+            {
+                foreach (Producto p in stockProductos)
+                {
+                    if (p.Cantidad<p.Cantidad/* aca iria cantidad que se necesita para la receta*/)
+                    {
+                        recetasAMostrar.Remove(rec);
+                        break;
+                    }
+                }
+            }
             dgvSeleccionReceta.DataSource = recetasAMostrar;
         }
     }
