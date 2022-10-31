@@ -50,5 +50,33 @@ namespace FormPrincipal
                 return true;
             }
         }
+
+        private void dgvSeleccionReceta_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSeleccionReceta.Columns[e.ColumnIndex].Name == "Seleccion")
+            {
+                DataGridViewRow row = dgvSeleccionReceta.Rows[e.RowIndex];
+                DataGridViewCheckBoxCell cellSeleccion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(cellSeleccion.Value))
+                {
+                    DataGridViewCell celda = row.Cells["Id"] as DataGridViewCell;
+                    int codigo = Convert.ToInt32(celda.Value);
+
+                }
+            }
+        }
+
+        private void FormRegistrarComida_Load(object sender, EventArgs e)
+        {
+            dgvSeleccionReceta.AutoGenerateColumns = false;
+            ActualizarGrilla();
+        }
+        private void ActualizarGrilla()
+        {
+            dgvSeleccionReceta.DataSource = null;
+            List<Receta> recetasAMostrar = logica.LeerRecetas();
+
+            dgvSeleccionReceta.DataSource = recetasAMostrar;
+        }
     }
 }

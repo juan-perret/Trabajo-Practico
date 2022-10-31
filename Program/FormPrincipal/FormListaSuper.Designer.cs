@@ -103,7 +103,7 @@
             this.MsListaSuper.Location = new System.Drawing.Point(0, 0);
             this.MsListaSuper.Name = "MsListaSuper";
             this.MsListaSuper.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.MsListaSuper.Size = new System.Drawing.Size(556, 25);
+            this.MsListaSuper.Size = new System.Drawing.Size(557, 25);
             this.MsListaSuper.TabIndex = 1;
             this.MsListaSuper.Text = "menuStrip1";
             // 
@@ -158,7 +158,7 @@
             // lblCosto
             // 
             this.lblCosto.AutoSize = true;
-            this.lblCosto.Location = new System.Drawing.Point(501, 406);
+            this.lblCosto.Location = new System.Drawing.Point(323, 406);
             this.lblCosto.Name = "lblCosto";
             this.lblCosto.Size = new System.Drawing.Size(128, 13);
             this.lblCosto.TabIndex = 2;
@@ -167,7 +167,7 @@
             // lblResultadoTotal
             // 
             this.lblResultadoTotal.AutoSize = true;
-            this.lblResultadoTotal.Location = new System.Drawing.Point(711, 406);
+            this.lblResultadoTotal.Location = new System.Drawing.Point(494, 406);
             this.lblResultadoTotal.Name = "lblResultadoTotal";
             this.lblResultadoTotal.Size = new System.Drawing.Size(13, 13);
             this.lblResultadoTotal.TabIndex = 3;
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 428);
+            this.ClientSize = new System.Drawing.Size(557, 428);
             this.Controls.Add(this.lblResultadoTotal);
             this.Controls.Add(this.lblCosto);
             this.Controls.Add(this.dgvListaSuper);

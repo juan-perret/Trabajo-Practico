@@ -194,12 +194,13 @@
             // Seleccion
             // 
             this.Seleccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Seleccion.FalseValue = "";
+            this.Seleccion.FalseValue = "false";
             this.Seleccion.HeaderText = "Agregar?";
             this.Seleccion.MinimumWidth = 30;
             this.Seleccion.Name = "Seleccion";
             this.Seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccion.TrueValue = "true";
             this.Seleccion.Width = 75;
             // 
             // FormCrearReceta

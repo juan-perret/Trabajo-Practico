@@ -62,7 +62,7 @@ namespace FormPrincipal
                     carne.Nombre = txtNombre.Text;
                     carne.Precio = decimal.Parse(txtPrecio.Text) ;
                     carne.PuntoPedido = double.Parse(txtStockPedido.Text);
-                    carne.Kg = double.Parse(txtCantidad.Text);                  
+                    carne.Cantidad = double.Parse(txtCantidad.Text);                  
                     logica.GuardarProducto(carne);
                     break;
                 case Ingredientes.Bebidas_Normal:
@@ -70,7 +70,7 @@ namespace FormPrincipal
                     bebidaN.Nombre = txtNombre.Text;
                     bebidaN.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaN.PuntoPedido = int.Parse(txtStockPedido.Text);
-                    bebidaN.CantidadProducto = int.Parse(txtCantidad.Text);
+                    bebidaN.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaN.TipoBebida = bebidaN.TiposBebidas(0);
                     logica.GuardarProducto(bebidaN);
                     break;
@@ -79,7 +79,7 @@ namespace FormPrincipal
                     bebidaAA.Nombre = txtNombre.Text;
                     bebidaAA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaAA.PuntoPedido = int.Parse(txtStockPedido.Text);
-                    bebidaAA.CantidadProducto = int.Parse(txtCantidad.Text);
+                    bebidaAA.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaAA.TipoBebida = bebidaAA.TiposBebidas(1);
                     logica.GuardarProducto(bebidaAA);
                     break;
@@ -88,11 +88,12 @@ namespace FormPrincipal
                     bebidaA.Nombre = txtNombre.Text;
                     bebidaA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaA.PuntoPedido = int.Parse(txtStockPedido.Text);
-                    bebidaA.CantidadProducto = int.Parse(txtCantidad.Text);
+                    bebidaA.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaA.TipoBebida = bebidaA.TiposBebidas(2);
                     logica.GuardarProducto(bebidaA);
                     break;
             }
+            //falta interface, donde owner es FormDespensa para llamara cargargrilla
         }
 
         private bool validarStockMinimo()

@@ -44,7 +44,7 @@ namespace LogicaPrincipal
                 if (p is Bebida)
                 {
                     Bebida bebida = (Bebida)p;
-                    if (bebida.CantidadProducto < p.PuntoPedido)
+                    if (bebida.Cantidad < p.PuntoPedido)
                     {
                         listaAComprar.Add(p);
                     }
@@ -52,7 +52,7 @@ namespace LogicaPrincipal
                 if (p is Carne)
                 {
                     Carne carne = (Carne)p;
-                    if (carne.Kg < p.PuntoPedido)
+                    if (carne.Cantidad < p.PuntoPedido)
                     {
                         listaAComprar.Add(p);
                     }
@@ -60,6 +60,9 @@ namespace LogicaPrincipal
             }
             return listaAComprar;
         }
+        //
+        //Metodos para recetas
+        List<int> listadoIngredientes = new List<int>();
         //guardad()
     }
 }

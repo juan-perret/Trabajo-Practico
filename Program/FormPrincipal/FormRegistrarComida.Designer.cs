@@ -38,11 +38,12 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltroComida = new System.Windows.Forms.Label();
+            this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saludable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionReceta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             this.dgvSeleccionReceta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSeleccionReceta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Nombre_Receta,
             this.Tipo_de_comida,
             this.Saludable,
@@ -60,6 +62,7 @@
             this.dgvSeleccionReceta.RowHeadersWidth = 51;
             this.dgvSeleccionReceta.Size = new System.Drawing.Size(460, 170);
             this.dgvSeleccionReceta.TabIndex = 0;
+            this.dgvSeleccionReceta.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeleccionReceta_CellValueChanged);
             // 
             // lblTitulo
             // 
@@ -138,6 +141,17 @@
             this.lblFiltroComida.TabIndex = 8;
             this.lblFiltroComida.Text = "Filtrar por:";
             // 
+            // erpError
+            // 
+            this.erpError.ContainerControl = this;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // Nombre_Receta
             // 
             this.Nombre_Receta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -166,16 +180,14 @@
             // Seleccion
             // 
             this.Seleccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Seleccion.FalseValue = "false";
             this.Seleccion.HeaderText = "Agegar";
             this.Seleccion.MinimumWidth = 6;
             this.Seleccion.Name = "Seleccion";
             this.Seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccion.TrueValue = "true";
             this.Seleccion.Width = 66;
-            // 
-            // erpError
-            // 
-            this.erpError.ContainerControl = this;
             // 
             // FormRegistrarComida
             // 
@@ -193,6 +205,7 @@
             this.Controls.Add(this.dgvSeleccionReceta);
             this.Name = "FormRegistrarComida";
             this.Text = "Registra tus comidas";
+            this.Load += new System.EventHandler(this.FormRegistrarComida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionReceta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).EndInit();
             this.ResumeLayout(false);
@@ -211,10 +224,11 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Label lblFiltroComida;
+        private System.Windows.Forms.ErrorProvider erpError;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_comida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saludable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccion;
-        private System.Windows.Forms.ErrorProvider erpError;
     }
 }

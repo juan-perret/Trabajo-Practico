@@ -46,13 +46,11 @@
   <ItemGroup>
     <Compile Include="Archivo.cs" />
     <Compile Include="Bebida.cs" />
-    <Compile Include="Cantidad.cs" />
     <Compile Include="Carne.cs" />
     <Compile Include="Comida.cs" />
     <Compile Include="Despensa.cs" />
     <Compile Include="Fruta.cs" />
     <Compile Include="Hortaliza.cs" />
-    <Compile Include="Kilogramo.cs" />
     <Compile Include="Lacteo.cs" />
     <Compile Include="ModuloComida.cs" />
     <Compile Include="ModuloReceta.cs" />

@@ -15,11 +15,11 @@ namespace FormPrincipal
     public partial class FormCrearReceta : Form
     {
         private ModuloReceta logica;
-        List<int> listaIngredientes = new List<int>();
         public FormCrearReceta()
         {
             InitializeComponent();
             logica = new ModuloReceta();
+
         }
         public enum TiposComida { Desayuno, Almuerzo, Merienda, Cena }
 
@@ -37,10 +37,6 @@ namespace FormPrincipal
         {
             dgvIngredientesRecetas.DataSource = null;
             dgvIngredientesRecetas.DataSource = logica.LeerProductos();
-        }
-        public void CargarGrilla()
-        {
-            ActualizarGrilla();
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -72,9 +68,9 @@ namespace FormPrincipal
                     receta.TipoComida = Receta.TiposComida.Cena;
                     break;
             }
-            List<int> codigos = new List<int>();
-            receta.CodigosIngredientes = codigos;
             logica.GuardarReceta(receta);
+            //con la interface, hacer owner a la ventana anterior, es decir, FormRecetas para llamar al metodo
+            //CargarGrilla, asi se actualiza
         }
 
         private bool validarTipoReceta()
@@ -105,28 +101,25 @@ namespace FormPrincipal
             }
         }
 
-        //Aca busco checkear el checkbox pero al descheckearlo me tira error, debo buscar la solucion. Ademas
-        //me falta ver como tomar el valor id o la forma de guardar en una lista los codigos.
-        //Lo mas probable que eso de guardar los codigos o productos se haga en el ModuloReceta,llamando desde de Despensa.
-
         private void dgvIngredientesRecetas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvIngredientesRecetas.Columns[e.ColumnIndex].Name == "Seleccion")
             {
                 DataGridViewRow row = dgvIngredientesRecetas.Rows[e.RowIndex];
-                DataGridViewCheckBoxCell cellSelecion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
-                if (Convert.ToBoolean(cellSelecion.Value))
+                DataGridViewCheckBoxCell cellSeleccion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(cellSeleccion.Value))
                 {
-
+                    DataGridViewCell celda = row.Cells["Id"] as DataGridViewCell;
+                    int codigo = Convert.ToInt32(celda.Value);
+                    logica.AgregarAListaCodigos(codigo);
+                }
+                else
+                {
+                    DataGridViewCell celda = row.Cells["Id"] as DataGridViewCell;
+                    int codigo = Convert.ToInt32(celda.Value);
+                    logica.EliminarAListaCodigos(codigo);
                 }
             }
         }
-
-        //private List<int> CrearListaIngredientes( DataGridViewRow row )
-        //{
-        //    DataGridViewCell cellId = row.Cells["Id"] as DataGridViewCell;
-        //    int asd = cellId.Value;
-        //    return listaIngredientes;
-        //}
     }
 }

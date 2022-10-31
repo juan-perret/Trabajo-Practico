@@ -12,6 +12,7 @@ namespace LogicaPrincipal
         public string Nombre { get; set; }
         public double PuntoPedido { get; set; }
         public decimal Precio { get; set; }
+        public double Cantidad { get; set; }
 
     }
 }

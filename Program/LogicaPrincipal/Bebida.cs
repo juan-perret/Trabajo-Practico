@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    public class Bebida :Cantidad
+    public class Bebida : Producto
     {
         public enum VariedadBebida { alcoholica, altaEnAzucar, normal, }
         public VariedadBebida TipoBebida { get; set; }

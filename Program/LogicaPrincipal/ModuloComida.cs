@@ -27,6 +27,12 @@ namespace LogicaPrincipal
         {
 
         }
+        public List<Receta> DevolverListaRecetasAccesibles()
+        {
+            List<Receta> recetasAMostrar = LeerRecetas();
+
+            return recetasAMostrar;
+        }
 
         //guarda(), al guardar modificar en despensa las cantidades
     }

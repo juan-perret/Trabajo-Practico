@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Panaderia : Kilogramo
+    internal class Panaderia : Producto
     {
     }
 }

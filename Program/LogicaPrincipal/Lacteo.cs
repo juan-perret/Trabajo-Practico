@@ -8,6 +8,5 @@ namespace LogicaPrincipal
 {
     internal class Lacteo : Producto
     {
-        public double Litros { get; set; }
     }
 }

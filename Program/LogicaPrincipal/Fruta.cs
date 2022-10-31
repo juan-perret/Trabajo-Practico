@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Fruta:Cantidad
+    internal class Fruta: Producto
     {
     }
 }
