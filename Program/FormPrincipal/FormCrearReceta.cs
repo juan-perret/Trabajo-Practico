@@ -107,13 +107,18 @@ namespace FormPrincipal
             {
                 DataGridViewRow row = dgvIngredientesRecetas.Rows[e.RowIndex];
                 DataGridViewCheckBoxCell cellSeleccion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
+                DataGridViewCell cellCantidad = row.Cells["Cantidad"] as DataGridViewCell;
                 if (Convert.ToBoolean(cellSeleccion.Value))
                 {
-                    DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
-                    int codigo = Convert.ToInt32(celdaCodigo.Value);
-                    DataGridViewCell celdaCantidad = row.Cells["Cantidad"] as DataGridViewCell;
-                    double cantidad = Convert.ToInt32(celdaCantidad.Value);
-                    logica.AgregarAListaCodigos(codigo,cantidad);
+                    if (cellCantidad.Value != null)
+                    {
+                        DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
+                        int codigo = Convert.ToInt32(celdaCodigo.Value);
+                        DataGridViewCell celdaCantidad = row.Cells["Cantidad"] as DataGridViewCell;
+                        double cantidad = Convert.ToInt32(celdaCantidad.Value);
+                        logica.AgregarAListaCodigos(codigo, cantidad);
+                    }
+
                 }
                 else
                 {
@@ -121,6 +126,30 @@ namespace FormPrincipal
                     int codigo = Convert.ToInt32(celdaCodigo.Value);
                     logica.EliminarAListaCodigos(codigo);
                 }
+            }
+            if (dgvIngredientesRecetas.Columns[e.ColumnIndex].Name == "Cantidad")
+            {
+                DataGridViewRow row = dgvIngredientesRecetas.Rows[e.RowIndex];
+                DataGridViewCell cellCantidad = row.Cells["Cantidad"] as DataGridViewCell;
+                DataGridViewCheckBoxCell cellSeleccion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
+                if(cellCantidad.Value != null)
+                {
+                    if (Convert.ToBoolean(cellSeleccion.Value))
+                    {
+                        DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
+                        int codigo = Convert.ToInt32(celdaCodigo.Value);
+                        DataGridViewCell celdaCantidad = row.Cells["Cantidad"] as DataGridViewCell;
+                        double cantidad = Convert.ToInt32(celdaCantidad.Value);
+                        logica.AgregarAListaCodigos(codigo, cantidad);
+                    }
+                }
+                else
+                {
+                    DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
+                    int codigo = Convert.ToInt32(celdaCodigo.Value);
+                    logica.EliminarAListaCodigos(codigo);
+                }
+                //Modificar al editar valor de cantidad
             }
         }
     }

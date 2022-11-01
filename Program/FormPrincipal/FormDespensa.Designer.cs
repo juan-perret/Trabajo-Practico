@@ -96,6 +96,7 @@
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // nombre_ingrediente
             // 

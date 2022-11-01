@@ -39,6 +39,7 @@ namespace LogicaPrincipal
         {
             receta.Id = id + 1;
             receta.CodigosIngredientes = listaIngredientes;
+            receta.CantidadXIngrediente = cantidadXIngrediente;
             receta.Ingredientes = BuscarProductosReceta(receta.CodigosIngredientes);
             recetas.Add(receta);
             listaIngredientes = new List<int>();
@@ -57,15 +58,24 @@ namespace LogicaPrincipal
         public void EliminarAListaCodigos(int codigo)
         {
             int indice = listaIngredientes.FindIndex(x=>x == codigo);
-            listaIngredientes.Remove(codigo);
-            cantidadXIngrediente.RemoveAt(indice);
+            if (indice != -1)
+            {
+                listaIngredientes.Remove(codigo);
+                cantidadXIngrediente.RemoveAt(indice);
+            }
 
         }
         public void AgregarAListaCodigos(int codigo, double cantidad)
         {
-            listaIngredientes.Add(codigo);
-            cantidadXIngrediente.Add(cantidad);
-            //Falta ver tema cantidad que se haga al mismo tiempo que el check
+            if (listaIngredientes.Exists(x=>x == codigo))
+            {
+                cantidadXIngrediente[listaIngredientes.FindIndex(x=>x == codigo)] = cantidad;
+            }
+            else
+            {
+                listaIngredientes.Add(codigo);
+                cantidadXIngrediente.Add(cantidad);
+            }
         }
         //
         //Para registrar comidas
