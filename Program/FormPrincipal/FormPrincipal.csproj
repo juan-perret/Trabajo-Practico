@@ -46,80 +46,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActualizarGrilla.cs" />
-    <Compile Include="FormAltaIngredientes.cs">
+    <Compile Include="Clases - Form\ActualizarGrilla.cs" />
+    <Compile Include="Forms\FormAltaIngredientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAltaIngredientes.Designer.cs">
+    <Compile Include="Forms\FormAltaIngredientes.Designer.cs">
       <DependentUpon>FormAltaIngredientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormComidas.cs">
+    <Compile Include="Forms\FormComidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormComidas.Designer.cs">
+    <Compile Include="Forms\FormComidas.Designer.cs">
       <DependentUpon>FormComidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCrearReceta.cs">
+    <Compile Include="Forms\FormCrearReceta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCrearReceta.Designer.cs">
+    <Compile Include="Forms\FormCrearReceta.Designer.cs">
       <DependentUpon>FormCrearReceta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDespensa.cs">
+    <Compile Include="Forms\FormDespensa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDespensa.Designer.cs">
+    <Compile Include="Forms\FormDespensa.Designer.cs">
       <DependentUpon>FormDespensa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaSuper.cs">
+    <Compile Include="Forms\FormListaSuper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaSuper.Designer.cs">
+    <Compile Include="Forms\FormListaSuper.Designer.cs">
       <DependentUpon>FormListaSuper.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistrarComida.cs">
+    <Compile Include="Forms\FormRegistrarComida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistrarComida.Designer.cs">
+    <Compile Include="Forms\FormRegistrarComida.Designer.cs">
       <DependentUpon>FormRegistrarComida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagina Principal.cs">
+    <Compile Include="Forms\Pagina Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagina Principal.Designer.cs">
+    <Compile Include="Forms\Pagina Principal.Designer.cs">
       <DependentUpon>Pagina Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Clases - Form\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormRecetas.cs">
+    <Compile Include="Forms\FormRecetas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRecetas.Designer.cs">
+    <Compile Include="Forms\FormRecetas.Designer.cs">
       <DependentUpon>FormRecetas.cs</DependentUpon>
     </Compile>
-    <Compile Include="UtilidadesGrilla.cs" />
-    <EmbeddedResource Include="FormAltaIngredientes.resx">
+    <Compile Include="Clases - Form\UtilidadesGrilla.cs" />
+    <EmbeddedResource Include="Forms\FormAltaIngredientes.resx">
       <DependentUpon>FormAltaIngredientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormComidas.resx">
+    <EmbeddedResource Include="Forms\FormComidas.resx">
       <DependentUpon>FormComidas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCrearReceta.resx">
+    <EmbeddedResource Include="Forms\FormCrearReceta.resx">
       <DependentUpon>FormCrearReceta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDespensa.resx">
+    <EmbeddedResource Include="Forms\FormDespensa.resx">
       <DependentUpon>FormDespensa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaSuper.resx">
+    <EmbeddedResource Include="Forms\FormListaSuper.resx">
       <DependentUpon>FormListaSuper.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRecetas.resx">
+    <EmbeddedResource Include="Forms\FormRecetas.resx">
       <DependentUpon>FormRecetas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistrarComida.resx">
+    <EmbeddedResource Include="Forms\FormRegistrarComida.resx">
       <DependentUpon>FormRegistrarComida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagina Principal.resx">
+    <EmbeddedResource Include="Forms\Pagina Principal.resx">
       <DependentUpon>Pagina Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
