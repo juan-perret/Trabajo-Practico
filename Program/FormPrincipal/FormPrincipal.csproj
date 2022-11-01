@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarGrilla.cs" />
     <Compile Include="FormAltaIngredientes.cs">
       <SubType>Form</SubType>
     </Compile>

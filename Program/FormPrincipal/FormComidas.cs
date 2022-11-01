@@ -23,7 +23,7 @@ namespace FormPrincipal
         private void registrarComidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRegistrarComida registrarComida = new FormRegistrarComida();
-            registrarComida.ShowDialog();
+            registrarComida.ShowDialog(this);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@ namespace FormPrincipal
         private void crearRecetaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCrearReceta crearReceta = new FormCrearReceta();
-            crearReceta.ShowDialog();
+            crearReceta.ShowDialog(this);
         }
 
         private void GridRecetas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

@@ -11,7 +11,7 @@ using LogicaPrincipal;
 
 namespace FormPrincipal
 {
-    public partial class FormDespensa : Form
+    public partial class FormDespensa : Form, ActualizarGrilla
     {
         private Despensa logica;
         public FormDespensa()
@@ -64,7 +64,7 @@ namespace FormPrincipal
                 var idIngrediente = dgvDespensa.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
 
                 FormAltaIngredientes formAltaIngredientes = new FormAltaIngredientes(idIngrediente);
-                formAltaIngredientes.ShowDialog();
+                formAltaIngredientes.ShowDialog(this);
             }
             if(indiceEliminar == e.ColumnIndex)
             {

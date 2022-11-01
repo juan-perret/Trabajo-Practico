@@ -106,7 +106,11 @@ namespace FormPrincipal
                     break;
             }
             //falta interface, donde owner es FormDespensa para llamara cargargrilla
-            //falta metodo en la logica donde dependiendo de si el codigo es nulo o no Guarde o Actualize el registro
+            ActualizarGrilla padre = this.Owner as ActualizarGrilla;
+            if (padre != null)
+            {
+                padre.CargarGrilla();
+            }
             this.Close();
         }
 
@@ -127,8 +131,8 @@ namespace FormPrincipal
 
         private bool validarPrecio()
         {
-            int precio;
-            if (!int.TryParse(txtPrecio.Text, out precio) || txtPrecio.Text == "")
+            double precio;
+            if (!double.TryParse(txtPrecio.Text, out precio) || txtPrecio.Text == "")
             {
                 erpError.SetError(txtPrecio, "Debe ingresar un valor numerico");
                 return false;
@@ -195,5 +199,7 @@ namespace FormPrincipal
                 txtStockPedido.Text = producto.PuntoPedido.ToString();
             }
         }
+
+
     }
 }

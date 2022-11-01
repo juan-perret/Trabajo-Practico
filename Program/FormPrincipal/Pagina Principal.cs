@@ -21,31 +21,31 @@ namespace FormPrincipal
         private void tusIngredientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDespensa despensa = new FormDespensa();
-            despensa.ShowDialog();
+            despensa.ShowDialog(this);
         }
 
         private void tusRecetasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRecetas recetas = new FormRecetas();
-            recetas.ShowDialog();
+            recetas.ShowDialog(this);
         }
 
         private void tusComidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormComidas comidas = new FormComidas();
-            comidas.ShowDialog();
+            comidas.ShowDialog(this);
         }
 
         private void consultaLoQueTenesQueComprarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormListaSuper listaSuper = new FormListaSuper();
-            listaSuper.ShowDialog();
+            listaSuper.ShowDialog(this);
         }
 
         private void cargaUnIngredienteNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAltaIngredientes altaIngredientes = new FormAltaIngredientes();
-            altaIngredientes.ShowDialog();
+            altaIngredientes.ShowDialog(this);
         }
 
         private void btnCerrarProg_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace FormPrincipal
         private void creaUnaRecetaNuevaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCrearReceta crearReceta = new FormCrearReceta();
-            crearReceta.ShowDialog();
+            crearReceta.ShowDialog(this);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace FormPrincipal
         private void cargaUnaComidaNuevaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRegistrarComida registrarComida = new FormRegistrarComida();
-            registrarComida.ShowDialog();
+            registrarComida.ShowDialog(this);
         }
 
     }
