@@ -29,6 +29,8 @@ namespace FormPrincipal
 
         public FormAltaIngredientes(string Id)
         {
+            InitializeComponent();
+            logica = new Despensa();
             this.Id = Id;
         }
 
