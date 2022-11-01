@@ -67,6 +67,7 @@ namespace FormPrincipal
             {   
                 case Ingredientes.Carnes:
                     Carne carne = new Carne();
+                    carne.Id = Convert.ToInt32(this.Id);
                     carne.Nombre = txtNombre.Text;
                     carne.Precio = decimal.Parse(txtPrecio.Text) ;
                     carne.PuntoPedido = double.Parse(txtStockPedido.Text);
@@ -75,6 +76,7 @@ namespace FormPrincipal
                     break;
                 case Ingredientes.Bebidas_Normal:
                     Bebida bebidaN = new Bebida();
+                    bebidaN.Id = Convert.ToInt32(this.Id);
                     bebidaN.Nombre = txtNombre.Text;
                     bebidaN.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaN.PuntoPedido = int.Parse(txtStockPedido.Text);
@@ -84,6 +86,7 @@ namespace FormPrincipal
                     break;
                 case Ingredientes.Bebidas_Alta_en_Azucar:
                     Bebida bebidaAA = new Bebida();
+                    bebidaAA.Id = Convert.ToInt32(this.Id);
                     bebidaAA.Nombre = txtNombre.Text;
                     bebidaAA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaAA.PuntoPedido = int.Parse(txtStockPedido.Text);
@@ -93,6 +96,7 @@ namespace FormPrincipal
                     break;
                 case Ingredientes.Bebidas_Alcoholicas:
                     Bebida bebidaA = new Bebida();
+                    bebidaA.Id = Convert.ToInt32(this.Id);
                     bebidaA.Nombre = txtNombre.Text;
                     bebidaA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaA.PuntoPedido = int.Parse(txtStockPedido.Text);

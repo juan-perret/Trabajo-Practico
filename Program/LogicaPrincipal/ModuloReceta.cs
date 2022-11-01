@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel;
 
 namespace LogicaPrincipal
 {
@@ -14,6 +15,7 @@ namespace LogicaPrincipal
         private Despensa logica;
         List<Receta> recetas = new List<Receta>();
         List<int> listaIngredientes = new List<int>();
+        List<double> cantidadXIngrediente = new List<double>();
         int id = 0;
         public ModuloReceta()
         {
@@ -54,11 +56,16 @@ namespace LogicaPrincipal
         }
         public void EliminarAListaCodigos(int codigo)
         {
+            int indice = listaIngredientes.FindIndex(x=>x == codigo);
             listaIngredientes.Remove(codigo);
+            cantidadXIngrediente.RemoveAt(indice);
+
         }
         public void AgregarAListaCodigos(int codigo, double cantidad)
         {
             listaIngredientes.Add(codigo);
+            cantidadXIngrediente.Add(cantidad);
+            //Falta ver tema cantidad que se haga al mismo tiempo que el check
         }
         //
         //Para registrar comidas

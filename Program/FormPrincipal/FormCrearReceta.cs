@@ -112,7 +112,7 @@ namespace FormPrincipal
                     DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
                     int codigo = Convert.ToInt32(celdaCodigo.Value);
                     DataGridViewCell celdaCantidad = row.Cells["Cantidad"] as DataGridViewCell;
-                    int cantidad = Convert.ToInt32(celdaCantidad.Value);
+                    double cantidad = Convert.ToInt32(celdaCantidad.Value);
                     logica.AgregarAListaCodigos(codigo,cantidad);
                 }
                 else

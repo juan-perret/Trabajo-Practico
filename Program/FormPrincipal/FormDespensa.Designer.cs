@@ -95,6 +95,7 @@
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // nombre_ingrediente
             // 
@@ -102,6 +103,7 @@
             this.nombre_ingrediente.HeaderText = "Nombre";
             this.nombre_ingrediente.MinimumWidth = 6;
             this.nombre_ingrediente.Name = "nombre_ingrediente";
+            this.nombre_ingrediente.ReadOnly = true;
             this.nombre_ingrediente.Width = 125;
             // 
             // Cantidad
@@ -109,6 +111,7 @@
             this.Cantidad.DataPropertyName = "Cantidad";
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // Precio
             // 
@@ -116,6 +119,7 @@
             this.Precio.HeaderText = "Precio";
             this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             this.Precio.Width = 125;
             // 
             // puntoPedido
@@ -124,6 +128,7 @@
             this.puntoPedido.HeaderText = "Punto de Pedido";
             this.puntoPedido.MinimumWidth = 6;
             this.puntoPedido.Name = "puntoPedido";
+            this.puntoPedido.ReadOnly = true;
             this.puntoPedido.Width = 125;
             // 
             // Editar

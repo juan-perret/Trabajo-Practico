@@ -43,6 +43,8 @@ namespace LogicaPrincipal
                         producto.Cantidad = ingrediente.Cantidad;
                         producto.PuntoPedido = ingrediente.PuntoPedido;
                         producto.Precio = ingrediente.Precio;
+                        EscribirProducto(despensa);
+                        break;
                     }
                 }
             }
