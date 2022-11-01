@@ -109,14 +109,16 @@ namespace FormPrincipal
                 DataGridViewCheckBoxCell cellSeleccion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
                 if (Convert.ToBoolean(cellSeleccion.Value))
                 {
-                    DataGridViewCell celda = row.Cells["Id"] as DataGridViewCell;
-                    int codigo = Convert.ToInt32(celda.Value);
-                    logica.AgregarAListaCodigos(codigo);
+                    DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
+                    int codigo = Convert.ToInt32(celdaCodigo.Value);
+                    DataGridViewCell celdaCantidad = row.Cells["Cantidad"] as DataGridViewCell;
+                    int cantidad = Convert.ToInt32(celdaCantidad.Value);
+                    logica.AgregarAListaCodigos(codigo,cantidad);
                 }
                 else
                 {
-                    DataGridViewCell celda = row.Cells["Id"] as DataGridViewCell;
-                    int codigo = Convert.ToInt32(celda.Value);
+                    DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
+                    int codigo = Convert.ToInt32(celdaCodigo.Value);
                     logica.EliminarAListaCodigos(codigo);
                 }
             }

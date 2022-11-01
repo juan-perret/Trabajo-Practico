@@ -40,11 +40,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvIngredientesRecetas = new System.Windows.Forms.DataGridView();
-            this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientesRecetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +105,7 @@
             // 
             // cmbTipoReceta
             // 
+            this.cmbTipoReceta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoReceta.FormattingEnabled = true;
             this.cmbTipoReceta.Items.AddRange(new object[] {
             "Desayuno",
@@ -160,10 +161,6 @@
             this.dgvIngredientesRecetas.TabIndex = 10;
             this.dgvIngredientesRecetas.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientesRecetas_CellValueChanged);
             // 
-            // erpError
-            // 
-            this.erpError.ContainerControl = this;
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -202,6 +199,10 @@
             this.Seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Seleccion.TrueValue = "true";
             this.Seleccion.Width = 75;
+            // 
+            // erpError
+            // 
+            this.erpError.ContainerControl = this;
             // 
             // FormCrearReceta
             // 

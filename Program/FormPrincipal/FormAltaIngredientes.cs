@@ -179,7 +179,7 @@ namespace FormPrincipal
 
         private void FormAltaIngredientes_Load(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(Id))
+            if(!string.IsNullOrEmpty(Id))
             {
                 int id = Convert.ToInt32(Id);
                 Producto producto = logica.Ingrediente(id);

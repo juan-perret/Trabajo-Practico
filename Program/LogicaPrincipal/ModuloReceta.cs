@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LogicaPrincipal
 {
@@ -21,9 +22,9 @@ namespace LogicaPrincipal
             foreach (Receta rec in recetas)
             {
                 List<Producto> ingredientes = new List<Producto>();
-                foreach (int idBuscado in rec.CodigosIngredientes)
+                foreach (int id in rec.CodigosIngredientes)
                 {
-                    ingredientes.Add(logica.Ingrediente(idBuscado));
+                    ingredientes.Add(logica.Ingrediente(id));
                 }
             }
             if (recetas.Count != 0)
@@ -55,7 +56,7 @@ namespace LogicaPrincipal
         {
             listaIngredientes.Remove(codigo);
         }
-        public void AgregarAListaCodigos(int codigo)
+        public void AgregarAListaCodigos(int codigo, double cantidad)
         {
             listaIngredientes.Add(codigo);
         }
