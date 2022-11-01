@@ -110,5 +110,22 @@ namespace LogicaPrincipal
         }
         //Generar metodo que devuelva receta por ID
         //guardad()
+       
+        //Eliminar receta
+        public void EliminarReceta (string idIngrediente)
+        {
+            int id = Convert.ToInt32(idIngrediente);
+            List<Receta> recetas = LeerRecetas();
+            foreach (var rec in recetas)
+            {
+                if (rec.Id == id)
+                {
+                    recetas.Remove(rec);
+                    EscribirReceta(recetas);
+                    break;
+                }
+            }
+
+        }
     }
 }

@@ -72,7 +72,12 @@ namespace FormPrincipal
                 DialogResult resultado = MessageBox.Show("¿Esta seguro de que desea eliminar el registro?", "Eliminar registro", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {
+                    ModuloReceta receta = new ModuloReceta();
+                    var indiceId = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Id");
+                    var idIngrediente = dgvRecetas.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
+
                     //eliminar registro
+                    receta.EliminarReceta(idIngrediente);
                     ActualizarGrilla();
                 }
             }

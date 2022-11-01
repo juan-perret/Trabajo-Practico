@@ -18,5 +18,6 @@ namespace LogicaPrincipal
         public List<double> CantidadXIngrediente { get; set; }
         [JsonIgnore]
         public List<Producto> Ingredientes { get; set; }
+
     }
 }
