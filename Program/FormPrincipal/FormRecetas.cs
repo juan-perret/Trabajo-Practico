@@ -11,7 +11,7 @@ using LogicaPrincipal;
 
 namespace FormPrincipal
 {
-    public partial class FormRecetas : Form
+    public partial class FormRecetas : Form, ActualizarGrilla
     {
         private ModuloReceta logica;
         public FormRecetas()
@@ -47,7 +47,7 @@ namespace FormPrincipal
             dgvRecetas.DataSource = logica.LeerRecetas();
         }
 
-        private void CargarGrilla()
+        public void CargarGrilla()
         {
             ActualizarGrilla();
         }

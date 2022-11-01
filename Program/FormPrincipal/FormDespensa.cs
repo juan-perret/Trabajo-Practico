@@ -77,9 +77,6 @@ namespace FormPrincipal
             }
         }
 
-        private void ValidarEditar(DataGridViewCellEventArgs e)
-        {
-            
-        }
+       
     }
 }

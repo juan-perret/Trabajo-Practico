@@ -69,8 +69,13 @@ namespace FormPrincipal
                     break;
             }
             logica.GuardarReceta(receta);
-            //con la interface, hacer owner a la ventana anterior, es decir, FormRecetas para llamar al metodo
-            //CargarGrilla, asi se actualiza
+            ActualizarGrilla padre = this.Owner as ActualizarGrilla;
+            if (padre != null)
+            {
+                padre.CargarGrilla();
+            }
+            this.Close();
+          
         }
 
         private bool validarTipoReceta()
