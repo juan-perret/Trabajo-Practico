@@ -21,12 +21,32 @@ namespace LogicaPrincipal
             }
  
         }        
-        public void GuardarProducto(Producto ingrediente)
+        //El metodo deberia ser GuardarActualizarProducto en el cual dependiendo si el Id es vacio debe agregar el producto
+        // y generarle un id y si no es vacio debe modificar el registro
+        public void GuardarActualizarProducto(Producto ingrediente)
         {
-            ingrediente.Id = id + 1;
-            despensa.Add(ingrediente);
-            EscribirProducto(despensa);
-            id += 1;
+            if(ingrediente.Id == 0)
+            {
+                ingrediente.Id = id + 1;
+                despensa.Add(ingrediente);
+                EscribirProducto(despensa);
+                id += 1;
+            }
+            else
+            {
+                foreach (Producto producto in despensa)
+                {
+                    if(producto.Id == ingrediente.Id)
+                    {
+                        producto.Id = ingrediente.Id;
+                        producto.Nombre = ingrediente.Nombre;
+                        producto.Cantidad = ingrediente.Cantidad;
+                        producto.PuntoPedido = ingrediente.PuntoPedido;
+                        producto.Precio = ingrediente.Precio;
+                    }
+                }
+            }
+            
         }
         public Producto Ingrediente(int idBuscado)
         {

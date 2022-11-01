@@ -24,7 +24,7 @@ namespace Prueba
         {
             Bebida bebida = new Bebida();
             bebida.Nombre = textBox1.Text;
-            despensa.GuardarProducto(bebida);
+            despensa.GuardarActualizarProducto(bebida);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace Prueba
             //genero instancia de carga de valores
             Carne carne = new Carne();
             carne.Nombre = textBox1.Text;
-            despensa.GuardarProducto(carne);
+            despensa.GuardarActualizarProducto(carne);
         }
     }
 }

@@ -71,7 +71,7 @@ namespace FormPrincipal
                     carne.Precio = decimal.Parse(txtPrecio.Text) ;
                     carne.PuntoPedido = double.Parse(txtStockPedido.Text);
                     carne.Cantidad = double.Parse(txtCantidad.Text);                  
-                    logica.GuardarProducto(carne);
+                    logica.GuardarActualizarProducto(carne);
                     break;
                 case Ingredientes.Bebidas_Normal:
                     Bebida bebidaN = new Bebida();
@@ -80,7 +80,7 @@ namespace FormPrincipal
                     bebidaN.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaN.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaN.TipoBebida = bebidaN.TiposBebidas(0);
-                    logica.GuardarProducto(bebidaN);
+                    logica.GuardarActualizarProducto(bebidaN);
                     break;
                 case Ingredientes.Bebidas_Alta_en_Azucar:
                     Bebida bebidaAA = new Bebida();
@@ -89,7 +89,7 @@ namespace FormPrincipal
                     bebidaAA.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaAA.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaAA.TipoBebida = bebidaAA.TiposBebidas(1);
-                    logica.GuardarProducto(bebidaAA);
+                    logica.GuardarActualizarProducto(bebidaAA);
                     break;
                 case Ingredientes.Bebidas_Alcoholicas:
                     Bebida bebidaA = new Bebida();
@@ -98,10 +98,12 @@ namespace FormPrincipal
                     bebidaA.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaA.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaA.TipoBebida = bebidaA.TiposBebidas(2);
-                    logica.GuardarProducto(bebidaA);
+                    logica.GuardarActualizarProducto(bebidaA);
                     break;
             }
             //falta interface, donde owner es FormDespensa para llamara cargargrilla
+            //falta metodo en la logica donde dependiendo de si el codigo es nulo o no Guarde o Actualize el registro
+            this.Close();
         }
 
         private bool validarStockMinimo()

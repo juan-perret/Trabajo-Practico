@@ -23,7 +23,7 @@ namespace FormPrincipal
         private void cargarUnIngredienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAltaIngredientes altaIngredientes = new FormAltaIngredientes();
-            altaIngredientes.ShowDialog();
+            altaIngredientes.ShowDialog(this);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
