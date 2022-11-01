@@ -37,14 +37,31 @@ namespace LogicaPrincipal
         
         public void GuardarReceta(Receta receta)
         {
-            receta.Id = id + 1;
-            receta.CodigosIngredientes = listaIngredientes;
-            receta.CantidadXIngrediente = cantidadXIngrediente;
-            receta.Ingredientes = BuscarProductosReceta(receta.CodigosIngredientes);
-            recetas.Add(receta);
-            listaIngredientes = new List<int>();
-            EscribirReceta(recetas);
-            id += 1;
+            if (receta.Id == 0)
+            {
+                receta.Id = id + 1;
+                receta.CodigosIngredientes = listaIngredientes;
+                receta.CantidadXIngrediente = cantidadXIngrediente;
+                receta.Ingredientes = BuscarProductosReceta(receta.CodigosIngredientes);
+                recetas.Add(receta);
+                listaIngredientes = new List<int>();
+                EscribirReceta(recetas);
+                id += 1;
+            }
+            else
+            {
+                foreach (Receta recetaBuscada in recetas)
+                {
+                    if (recetaBuscada.Id == receta.Id)
+                    {
+                        recetaBuscada.Id = receta.Id;
+                        recetaBuscada.Nombre = receta.Nombre;
+                        recetaBuscada.Saludable = receta.Saludable;
+                        //falta igualar ingredientes
+                        EscribirReceta(recetas);
+                    }
+                }
+            }
         }
         public List<Producto> BuscarProductosReceta(List<int> lista)
         {

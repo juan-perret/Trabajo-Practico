@@ -32,9 +32,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.crearRecetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_de_receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saludable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -46,6 +47,7 @@
             // 
             this.dgvRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Nombre,
             this.Tipo_de_receta,
             this.Saludable,
@@ -57,6 +59,7 @@
             this.dgvRecetas.RowHeadersWidth = 51;
             this.dgvRecetas.Size = new System.Drawing.Size(803, 350);
             this.dgvRecetas.TabIndex = 0;
+            this.dgvRecetas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecetas_CellClick);
             this.dgvRecetas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.GridRecetas_DataBindingComplete);
             // 
             // menuStrip1
@@ -76,16 +79,24 @@
             // crearRecetaToolStripMenuItem
             // 
             this.crearRecetaToolStripMenuItem.Name = "crearRecetaToolStripMenuItem";
-            this.crearRecetaToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.crearRecetaToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
             this.crearRecetaToolStripMenuItem.Text = "Crear Receta";
             this.crearRecetaToolStripMenuItem.Click += new System.EventHandler(this.crearRecetaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // Nombre
             // 
@@ -93,6 +104,7 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             this.Nombre.Width = 125;
             // 
             // Tipo_de_receta
@@ -101,6 +113,7 @@
             this.Tipo_de_receta.HeaderText = "Tipo de Receta";
             this.Tipo_de_receta.MinimumWidth = 6;
             this.Tipo_de_receta.Name = "Tipo_de_receta";
+            this.Tipo_de_receta.ReadOnly = true;
             this.Tipo_de_receta.Width = 125;
             // 
             // Saludable
@@ -109,6 +122,9 @@
             this.Saludable.HeaderText = "Es Saludable?";
             this.Saludable.MinimumWidth = 6;
             this.Saludable.Name = "Saludable";
+            this.Saludable.ReadOnly = true;
+            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Saludable.Width = 125;
             // 
             // Detalles
@@ -116,6 +132,7 @@
             this.Detalles.HeaderText = "Detalles";
             this.Detalles.MinimumWidth = 6;
             this.Detalles.Name = "Detalles";
+            this.Detalles.ReadOnly = true;
             this.Detalles.Width = 125;
             // 
             // Editar
@@ -161,9 +178,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem crearRecetaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_receta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Saludable;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Saludable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalles;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;

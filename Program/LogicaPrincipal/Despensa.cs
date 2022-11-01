@@ -44,7 +44,6 @@ namespace LogicaPrincipal
                         producto.PuntoPedido = ingrediente.PuntoPedido;
                         producto.Precio = ingrediente.Precio;
                         EscribirProducto(despensa);
-                        break;
                     }
                 }
             }
@@ -85,6 +84,20 @@ namespace LogicaPrincipal
         //
         //Metodos para recetas
         List<int> listadoIngredientes = new List<int>();
+
+        public void EliminarProducto(string idIngrediente)
+        {
+            List<Producto> productos = LeerProductos();
+            foreach (Producto p in productos)
+            {
+                if(p.Id == id)
+                {
+                    productos.Remove(p);
+                    EscribirProducto(productos);
+                    break;
+                }
+            }
+        }
         //guardad()
     }
 }

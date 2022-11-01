@@ -72,6 +72,10 @@ namespace FormPrincipal
                 if(resultado == DialogResult.OK)
                 {
                     //eliminar registro
+                    Despensa despensa = new Despensa();
+                    var indiceId = UtilidadesGrilla.ObtenerIndice(dgvDespensa, "Id");
+                    var idIngrediente = dgvDespensa.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
+                    despensa.EliminarProducto(idIngrediente);
                     ActualizarGrilla();
                 }
             }

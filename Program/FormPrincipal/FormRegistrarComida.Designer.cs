@@ -42,7 +42,7 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saludable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionReceta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
@@ -111,7 +111,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(463, 310);
+            this.btnAceptar.Location = new System.Drawing.Point(554, 309);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -150,6 +150,7 @@
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
             // Nombre_Receta
@@ -159,6 +160,7 @@
             this.Nombre_Receta.HeaderText = "Nombre de la Receta";
             this.Nombre_Receta.MinimumWidth = 6;
             this.Nombre_Receta.Name = "Nombre_Receta";
+            this.Nombre_Receta.ReadOnly = true;
             this.Nombre_Receta.Width = 90;
             // 
             // Tipo_de_comida
@@ -167,6 +169,7 @@
             this.Tipo_de_comida.HeaderText = "Tipo de Comida";
             this.Tipo_de_comida.MinimumWidth = 6;
             this.Tipo_de_comida.Name = "Tipo_de_comida";
+            this.Tipo_de_comida.ReadOnly = true;
             this.Tipo_de_comida.Width = 125;
             // 
             // Saludable
@@ -175,6 +178,9 @@
             this.Saludable.HeaderText = "Es saludable?";
             this.Saludable.MinimumWidth = 6;
             this.Saludable.Name = "Saludable";
+            this.Saludable.ReadOnly = true;
+            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Saludable.Width = 125;
             // 
             // Seleccion
@@ -228,7 +234,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_comida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Saludable;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Saludable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccion;
     }
 }

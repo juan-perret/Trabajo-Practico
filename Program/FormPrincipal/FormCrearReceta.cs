@@ -15,11 +15,20 @@ namespace FormPrincipal
     public partial class FormCrearReceta : Form
     {
         private ModuloReceta logica;
+        private string id { get; set; }
+
         public FormCrearReceta()
         {
             InitializeComponent();
             logica = new ModuloReceta();
 
+        }
+
+        public FormCrearReceta(string id)
+        {
+            InitializeComponent();
+            logica = new ModuloReceta();
+            this.id = id;
         }
         public enum TiposComida { Desayuno, Almuerzo, Merienda, Cena }
 
@@ -32,6 +41,16 @@ namespace FormPrincipal
         {
             dgvIngredientesRecetas.AutoGenerateColumns = false;
             ActualizarGrilla();
+            if (!string.IsNullOrEmpty(id))
+            {
+                int Id = Convert.ToInt32(id);
+                Receta receta = logica.DevolverReceta(Id);
+                txtNombre.Text = receta.Nombre;
+                cmbTipoReceta.Text = receta.TipoComida.ToString();
+                checkbSaludable.Checked = receta.Saludable;
+                //falta igualar las listas de ingredientes
+
+            }
         }
         private void ActualizarGrilla()
         {
@@ -50,6 +69,7 @@ namespace FormPrincipal
             }
             
             Receta receta = new Receta();
+            receta.Id = Convert.ToInt32(id);
             receta.Nombre = txtNombre.Text;
             receta.Saludable = checkbSaludable.Checked;
             Enum.TryParse(cmbTipoReceta.Text, out TiposComida tipo);

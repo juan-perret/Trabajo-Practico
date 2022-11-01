@@ -51,5 +51,31 @@ namespace FormPrincipal
         {
             ActualizarGrilla();
         }
+
+        private void dgvRecetas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int indiceEditar = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Editar");
+            int indiceEliminar = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Eliminar");
+
+            if (indiceEditar == e.ColumnIndex)
+            {
+                //hizo clic en editar
+                var indiceId = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Id");
+                var idIngrediente = dgvRecetas.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
+
+                FormCrearReceta formCrearReceta = new FormCrearReceta(idIngrediente);
+                formCrearReceta.ShowDialog(this);
+            }
+            if (indiceEliminar == e.ColumnIndex)
+            {
+                DialogResult resultado = MessageBox.Show("¿Esta seguro de que desea eliminar el registro?", "Eliminar registro", MessageBoxButtons.OKCancel);
+                if (resultado == DialogResult.OK)
+                {
+                    //eliminar registro
+                    ActualizarGrilla();
+                }
+            }
+        }
     }
 }

@@ -105,7 +105,6 @@ namespace FormPrincipal
                     logica.GuardarActualizarProducto(bebidaA);
                     break;
             }
-            //falta interface, donde owner es FormDespensa para llamara cargargrilla
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)
             {
@@ -194,6 +193,7 @@ namespace FormPrincipal
                 int id = Convert.ToInt32(Id);
                 Producto producto = logica.Ingrediente(id);
                 txtNombre.Text = producto.Nombre;
+                //CmbBoxCategoria.Text = producto.
                 txtCantidad.Text = producto.Cantidad.ToString();
                 txtPrecio.Text = producto.Precio.ToString();
                 txtStockPedido.Text = producto.PuntoPedido.ToString();
