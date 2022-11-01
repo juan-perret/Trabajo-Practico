@@ -193,6 +193,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "FormAltaIngredientes";
             this.Text = "Dar de alta un Ingrediente";
+            this.Load += new System.EventHandler(this.FormAltaIngredientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

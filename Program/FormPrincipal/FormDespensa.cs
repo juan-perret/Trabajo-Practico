@@ -31,7 +31,7 @@ namespace FormPrincipal
             this.Close();
         }
 
-        
+
         private void dgvDespensa_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             UtilidadesGrilla.CargarCamposAcciones(dgvDespensa);
@@ -50,6 +50,36 @@ namespace FormPrincipal
         public void CargarGrilla()
         {
             ActualizarGrilla();
+        }
+
+        private void dgvDespensa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indiceEditar = UtilidadesGrilla.ObtenerIndice(dgvDespensa, "Editar");
+            int indiceEliminar = UtilidadesGrilla.ObtenerIndice(dgvDespensa, "Eliminar");
+
+            if (indiceEditar == e.ColumnIndex)
+            {
+                //hizo clic en editar
+                var indiceId = UtilidadesGrilla.ObtenerIndice(dgvDespensa, "Id");
+                var idIngrediente = dgvDespensa.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
+
+                FormAltaIngredientes formAltaIngredientes = new FormAltaIngredientes(idIngrediente);
+                formAltaIngredientes.ShowDialog();
+            }
+            if(indiceEliminar == e.ColumnIndex)
+            {
+                DialogResult resultado = MessageBox.Show("¿Esta seguro de que desea eliminar el registro?","Eliminar registro",MessageBoxButtons.OKCancel);
+                if(resultado == DialogResult.OK)
+                {
+                    //eliminar registro
+                    ActualizarGrilla();
+                }
+            }
+        }
+
+        private void ValidarEditar(DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

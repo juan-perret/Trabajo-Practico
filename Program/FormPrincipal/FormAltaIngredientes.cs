@@ -14,6 +14,7 @@ namespace FormPrincipal
     public partial class FormAltaIngredientes : Form
     {
         private Despensa logica;
+        private string Id { get; set; }
         public enum Ingredientes
         {
             Hortalizas_y_Verduras, Frutas, Quesos, Lacteos, Carnes, Pescados,
@@ -24,6 +25,11 @@ namespace FormPrincipal
         {
             InitializeComponent();
             logica = new Despensa();
+        }
+
+        public FormAltaIngredientes(string Id)
+        {
+            this.Id = Id;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -168,6 +174,18 @@ namespace FormPrincipal
                 return true;
             }
         }
-        
+
+        private void FormAltaIngredientes_Load(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(Id))
+            {
+                int id = Convert.ToInt32(Id);
+                Producto producto = logica.Ingrediente(id);
+                txtNombre.Text = producto.Nombre;
+                txtCantidad.Text = producto.Cantidad.ToString();
+                txtPrecio.Text = producto.Precio.ToString();
+                txtStockPedido.Text = producto.PuntoPedido.ToString();
+            }
+        }
     }
 }
