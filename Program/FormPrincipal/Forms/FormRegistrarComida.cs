@@ -74,17 +74,27 @@ namespace FormPrincipal
         private void ActualizarGrilla()
         {
             dgvSeleccionReceta.DataSource = null;
-            List<Receta> recetasAMostrar = logica.LeerRecetas();
+            List<Receta> recetas = logica.LeerRecetas();
             List<Producto> stockProductos = logica.LeerProductos();
-            foreach (Receta rec in recetasAMostrar)
+            List<Receta> recetasAMostrar = new List<Receta>();
+            foreach (Receta rec in recetas)
             {
+                bool noCantidad = false;
                 foreach (Producto p in stockProductos)
                 {
-                    if (p.Cantidad<p.Cantidad/* aca iria cantidad que se necesita para la receta*/)
+                    int indice = rec.CodigosIngredientes.FindIndex(x=>x == p.Id);
+                    if (indice != -1 )
                     {
-                        recetasAMostrar.Remove(rec);
-                        break;
-                    }
+                        if (p.Cantidad < (rec.CantidadXIngrediente)[indice])
+                        {
+                            noCantidad = true;
+                            break;
+                        }
+                    }                   
+                }
+                if (!noCantidad)
+                {
+                    recetasAMostrar.Add(rec);
                 }
             }
             dgvSeleccionReceta.DataSource = recetasAMostrar;

@@ -26,7 +26,7 @@ namespace FormPrincipal
             InitializeComponent();
             logica = new Despensa();
         }
-
+        //Maskedtextbox
         public FormAltaIngredientes(string Id)
         {
             InitializeComponent();
@@ -67,7 +67,7 @@ namespace FormPrincipal
             {   
                 case Ingredientes.Carnes:
                     Carne carne = new Carne();
-                    carne.Id = Convert.ToInt32(this.Id);
+                    carne.Id = Convert.ToInt32(this.Id); ;
                     carne.Nombre = txtNombre.Text;
                     carne.Precio = decimal.Parse(txtPrecio.Text) ;
                     carne.PuntoPedido = double.Parse(txtStockPedido.Text);

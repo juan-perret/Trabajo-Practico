@@ -13,11 +13,11 @@ namespace FormPrincipal
 {
     public partial class FormComidas : Form
     {
-        private Comida logica;
+        private ModuloComida logica;
         public FormComidas()
         {
             InitializeComponent();
-            logica = new Comida();
+            logica = new ModuloComida();
         }
 
         private void registrarComidaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace FormPrincipal
         private void ActualizarGrilla()
         {
             dgvComidas.DataSource = null;
-            //dgvComidas.DataSource = logica.LeerProductos();
+            dgvComidas.DataSource = logica.LeerComidas();
         }
         public void CargarGrilla()
         {
