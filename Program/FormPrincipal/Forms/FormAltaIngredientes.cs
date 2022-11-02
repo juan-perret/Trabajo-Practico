@@ -104,6 +104,60 @@ namespace FormPrincipal
                     bebidaA.TipoBebida = bebidaA.TiposBebidas(2);
                     logica.GuardarActualizarProducto(bebidaA);
                     break;
+                case Ingredientes.Frutas:
+                    Fruta fruta = new Fruta();
+                    fruta.Id = Convert.ToInt32(this.Id); ;
+                    fruta.Nombre = txtNombre.Text;
+                    fruta.Precio = decimal.Parse(txtPrecio.Text);
+                    fruta.PuntoPedido = double.Parse(txtStockPedido.Text);
+                    fruta.Cantidad = double.Parse(txtCantidad.Text);
+                    logica.GuardarActualizarProducto(fruta);
+                    break;
+                case Ingredientes.Hortalizas_y_Verduras:
+                    Hortaliza hortaliza = new Hortaliza();
+                    hortaliza.Id = Convert.ToInt32(this.Id); ;
+                    hortaliza.Nombre = txtNombre.Text;
+                    hortaliza.Precio = decimal.Parse(txtPrecio.Text);
+                    hortaliza.PuntoPedido = double.Parse(txtStockPedido.Text);
+                    hortaliza.Cantidad = double.Parse(txtCantidad.Text);
+                    logica.GuardarActualizarProducto(hortaliza);
+                    break;
+                case Ingredientes.Lacteos:
+                    Lacteo lacteo = new Lacteo();
+                    lacteo.Id = Convert.ToInt32(this.Id); ;
+                    lacteo.Nombre = txtNombre.Text;
+                    lacteo.Precio = decimal.Parse(txtPrecio.Text);
+                    lacteo.PuntoPedido = double.Parse(txtStockPedido.Text);
+                    lacteo.Cantidad = double.Parse(txtCantidad.Text);
+                    logica.GuardarActualizarProducto(lacteo);
+                    break;
+                case Ingredientes.Panaderia:
+                    Panaderia panaderia = new Panaderia();
+                    panaderia.Id = Convert.ToInt32(this.Id); ;
+                    panaderia.Nombre = txtNombre.Text;
+                    panaderia.Precio = decimal.Parse(txtPrecio.Text);
+                    panaderia.PuntoPedido = double.Parse(txtStockPedido.Text);
+                    panaderia.Cantidad = double.Parse(txtCantidad.Text);
+                    logica.GuardarActualizarProducto(panaderia);
+                    break;
+                case Ingredientes.Pescados:
+                    Pescado pescado = new Pescado();
+                    pescado.Id = Convert.ToInt32(this.Id); ;
+                    pescado.Nombre = txtNombre.Text;
+                    pescado.Precio = decimal.Parse(txtPrecio.Text);
+                    pescado.PuntoPedido = double.Parse(txtStockPedido.Text);
+                    pescado.Cantidad = double.Parse(txtCantidad.Text);
+                    logica.GuardarActualizarProducto(pescado);
+                    break;
+                case Ingredientes.Quesos:
+                    Queso queso = new Queso();
+                    queso.Id = Convert.ToInt32(this.Id); ;
+                    queso.Nombre = txtNombre.Text;
+                    queso.Precio = decimal.Parse(txtPrecio.Text);
+                    queso.PuntoPedido = double.Parse(txtStockPedido.Text);
+                    queso.Cantidad = double.Parse(txtCantidad.Text);
+                    logica.GuardarActualizarProducto(queso);
+                    break;
             }
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)

@@ -48,8 +48,20 @@ namespace FormPrincipal
                 txtNombre.Text = receta.Nombre;
                 cmbTipoReceta.Text = receta.TipoComida.ToString();
                 checkbSaludable.Checked = receta.Saludable;
+                foreach (int id in receta.CodigosIngredientes)
+                {
+                    for (int fila = 0; fila < dgvIngredientesRecetas.Rows.Count; fila++)
+                    {
+                        if (Convert.ToInt32(dgvIngredientesRecetas.Rows[fila].Cells["Id"].Value) == id)
+                        {
+                            dgvIngredientesRecetas.Rows[fila].Cells["Cantidad"].Value = receta.CantidadXIngrediente[receta.CodigosIngredientes.FindIndex(x=>x == id)];
+                            dgvIngredientesRecetas.Rows[fila].Cells["Seleccion"].Value = true;
+                            break;
+                        }
+                    }
+                        
+                }
                 //falta igualar las listas de ingredientes
-
             }
         }
         private void ActualizarGrilla()
@@ -143,7 +155,6 @@ namespace FormPrincipal
                         double cantidad = Convert.ToInt32(celdaCantidad.Value);
                         logica.AgregarAListaCodigos(codigo, cantidad);
                     }
-
                 }
                 else
                 {
@@ -174,7 +185,6 @@ namespace FormPrincipal
                     int codigo = Convert.ToInt32(celdaCodigo.Value);
                     logica.EliminarAListaCodigos(codigo);
                 }
-                //Modificar al editar valor de cantidad
             }
         }
     }

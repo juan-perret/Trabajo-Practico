@@ -17,7 +17,7 @@ namespace LogicaPrincipal
             despensa = LeerProductos();
             if (despensa.Count != 0)
             {
-                id = despensa[despensa.Count-1].Id;
+                id = despensa.Max(x=>x.Id);
             }
  
         }        

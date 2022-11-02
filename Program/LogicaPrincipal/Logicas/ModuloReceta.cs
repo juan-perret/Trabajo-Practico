@@ -31,7 +31,7 @@ namespace LogicaPrincipal
             }
             if (recetas.Count != 0)
             {
-                id = recetas[recetas.Count - 1].Id;
+                id = recetas.Max(x=>x.Id);
             }
         }
         
@@ -57,7 +57,9 @@ namespace LogicaPrincipal
                         recetaBuscada.Id = receta.Id;
                         recetaBuscada.Nombre = receta.Nombre;
                         recetaBuscada.Saludable = receta.Saludable;
-                        //falta igualar ingredientes
+                        recetaBuscada.CodigosIngredientes = listaIngredientes;
+                        recetaBuscada.CantidadXIngrediente = cantidadXIngrediente;
+                        recetaBuscada.Ingredientes = BuscarProductosReceta(recetaBuscada.CodigosIngredientes);
                         EscribirReceta(recetas);
                     }
                 }

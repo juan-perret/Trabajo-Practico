@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaPrincipal
 {
-    internal class Lacteo : Producto
+    public class Lacteo : Producto
     {
     }
 }
