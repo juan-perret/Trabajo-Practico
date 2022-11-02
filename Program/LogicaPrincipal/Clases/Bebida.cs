@@ -8,7 +8,6 @@ namespace LogicaPrincipal
 {
     public class Bebida : Producto
     {
-        public enum VariedadBebida { alcoholica, altaEnAzucar, normal, }
         public VariedadBebida TipoBebida { get; set; }
         public VariedadBebida TiposBebidas(int codigo)
         {

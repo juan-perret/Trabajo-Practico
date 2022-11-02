@@ -15,12 +15,6 @@ namespace FormPrincipal
     {
         private Despensa logica;
         private string Id { get; set; }
-        public enum Ingredientes
-        {
-            Hortalizas_y_Verduras, Frutas, Quesos, Lacteos, Carnes, Pescados,
-            Panaderia, Bebidas_Alta_en_Azucar, Bebidas_Normal,
-            Bebidas_Alcoholicas
-        }
         public FormAltaIngredientes()
         {
             InitializeComponent();
@@ -33,7 +27,7 @@ namespace FormPrincipal
             logica = new Despensa();
             this.Id = Id;
         }
-
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,98 +55,107 @@ namespace FormPrincipal
             {
                 return;
             }
-            
-            Enum.TryParse(CmbBoxCategoria.Text, out Ingredientes tipo);
+            Enum.TryParse(CmbBoxCategoria.Text, out TiposProducto tipo);
             switch (tipo)
             {   
-                case Ingredientes.Carnes:
+                case TiposProducto.Carnes:
                     Carne carne = new Carne();
                     carne.Id = Convert.ToInt32(this.Id); ;
                     carne.Nombre = txtNombre.Text;
+                    carne.TipoProducto = tipo;
                     carne.Precio = decimal.Parse(txtPrecio.Text) ;
                     carne.PuntoPedido = double.Parse(txtStockPedido.Text);
                     carne.Cantidad = double.Parse(txtCantidad.Text);                  
                     logica.GuardarActualizarProducto(carne);
                     break;
-                case Ingredientes.Bebidas_Normal:
+                case TiposProducto.Bebidas_Normal:
                     Bebida bebidaN = new Bebida();
                     bebidaN.Id = Convert.ToInt32(this.Id);
                     bebidaN.Nombre = txtNombre.Text;
+                    bebidaN.TipoProducto = tipo;
                     bebidaN.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaN.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaN.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaN.TipoBebida = bebidaN.TiposBebidas(0);
                     logica.GuardarActualizarProducto(bebidaN);
                     break;
-                case Ingredientes.Bebidas_Alta_en_Azucar:
+                case TiposProducto.Bebidas_Alta_en_Azucar:
                     Bebida bebidaAA = new Bebida();
                     bebidaAA.Id = Convert.ToInt32(this.Id);
                     bebidaAA.Nombre = txtNombre.Text;
+                    bebidaAA.TipoProducto = tipo;
                     bebidaAA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaAA.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaAA.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaAA.TipoBebida = bebidaAA.TiposBebidas(1);
                     logica.GuardarActualizarProducto(bebidaAA);
                     break;
-                case Ingredientes.Bebidas_Alcoholicas:
+                case TiposProducto.Bebidas_Alcoholicas:
                     Bebida bebidaA = new Bebida();
                     bebidaA.Id = Convert.ToInt32(this.Id);
                     bebidaA.Nombre = txtNombre.Text;
+                    bebidaA.TipoProducto = tipo;
                     bebidaA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaA.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaA.Cantidad = int.Parse(txtCantidad.Text);
                     bebidaA.TipoBebida = bebidaA.TiposBebidas(2);
                     logica.GuardarActualizarProducto(bebidaA);
                     break;
-                case Ingredientes.Frutas:
+                case TiposProducto.Frutas:
                     Fruta fruta = new Fruta();
                     fruta.Id = Convert.ToInt32(this.Id); ;
                     fruta.Nombre = txtNombre.Text;
+                    fruta.TipoProducto = tipo;
                     fruta.Precio = decimal.Parse(txtPrecio.Text);
                     fruta.PuntoPedido = double.Parse(txtStockPedido.Text);
                     fruta.Cantidad = double.Parse(txtCantidad.Text);
                     logica.GuardarActualizarProducto(fruta);
                     break;
-                case Ingredientes.Hortalizas_y_Verduras:
+                case TiposProducto.Hortalizas_y_Verduras:
                     Hortaliza hortaliza = new Hortaliza();
                     hortaliza.Id = Convert.ToInt32(this.Id); ;
                     hortaliza.Nombre = txtNombre.Text;
+                    hortaliza.TipoProducto = tipo;
                     hortaliza.Precio = decimal.Parse(txtPrecio.Text);
                     hortaliza.PuntoPedido = double.Parse(txtStockPedido.Text);
                     hortaliza.Cantidad = double.Parse(txtCantidad.Text);
                     logica.GuardarActualizarProducto(hortaliza);
                     break;
-                case Ingredientes.Lacteos:
+                case TiposProducto.Lacteos:
                     Lacteo lacteo = new Lacteo();
                     lacteo.Id = Convert.ToInt32(this.Id); ;
                     lacteo.Nombre = txtNombre.Text;
+                    lacteo.TipoProducto = tipo;
                     lacteo.Precio = decimal.Parse(txtPrecio.Text);
                     lacteo.PuntoPedido = double.Parse(txtStockPedido.Text);
                     lacteo.Cantidad = double.Parse(txtCantidad.Text);
                     logica.GuardarActualizarProducto(lacteo);
                     break;
-                case Ingredientes.Panaderia:
+                case TiposProducto.Panaderia:
                     Panaderia panaderia = new Panaderia();
                     panaderia.Id = Convert.ToInt32(this.Id); ;
                     panaderia.Nombre = txtNombre.Text;
+                    panaderia.TipoProducto = tipo;
                     panaderia.Precio = decimal.Parse(txtPrecio.Text);
                     panaderia.PuntoPedido = double.Parse(txtStockPedido.Text);
                     panaderia.Cantidad = double.Parse(txtCantidad.Text);
                     logica.GuardarActualizarProducto(panaderia);
                     break;
-                case Ingredientes.Pescados:
+                case TiposProducto.Pescados:
                     Pescado pescado = new Pescado();
                     pescado.Id = Convert.ToInt32(this.Id); ;
                     pescado.Nombre = txtNombre.Text;
+                    pescado.TipoProducto = tipo;
                     pescado.Precio = decimal.Parse(txtPrecio.Text);
                     pescado.PuntoPedido = double.Parse(txtStockPedido.Text);
                     pescado.Cantidad = double.Parse(txtCantidad.Text);
                     logica.GuardarActualizarProducto(pescado);
                     break;
-                case Ingredientes.Quesos:
+                case TiposProducto.Quesos:
                     Queso queso = new Queso();
                     queso.Id = Convert.ToInt32(this.Id); ;
                     queso.Nombre = txtNombre.Text;
+                    queso.TipoProducto = tipo;
                     queso.Precio = decimal.Parse(txtPrecio.Text);
                     queso.PuntoPedido = double.Parse(txtStockPedido.Text);
                     queso.Cantidad = double.Parse(txtCantidad.Text);
@@ -180,6 +183,7 @@ namespace FormPrincipal
                 erpError.SetError(txtStockPedido, "");
                 return true;
             }
+            
         }
 
         private bool validarPrecio()
@@ -242,18 +246,20 @@ namespace FormPrincipal
 
         private void FormAltaIngredientes_Load(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(Id))
+           
+            CmbBoxCategoria.DataSource = Enum.GetValues(typeof(TiposProducto));
+            if (!string.IsNullOrEmpty(Id))
             {
                 int id = Convert.ToInt32(Id);
                 Producto producto = logica.Ingrediente(id);
                 txtNombre.Text = producto.Nombre;
-                //CmbBoxCategoria.Text = producto.
+                CmbBoxCategoria.Text = producto.TipoProducto.ToString();
                 txtCantidad.Text = producto.Cantidad.ToString();
                 txtPrecio.Text = producto.Precio.ToString();
                 txtStockPedido.Text = producto.PuntoPedido.ToString();
             }
         }
 
-
+        
     }
 }

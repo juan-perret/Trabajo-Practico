@@ -112,17 +112,6 @@
             // 
             this.CmbBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBoxCategoria.FormattingEnabled = true;
-            this.CmbBoxCategoria.Items.AddRange(new object[] {
-            "Hortalizas_y_Verduras",
-            "Frutas",
-            "Quesos",
-            "Lacteos",
-            "Carnes",
-            "Pescados",
-            "Panaderia",
-            "Bebidas_Alta_en_Azucar",
-            "Bebidas_Normal",
-            "Bebidas_Alcoholicas"});
             this.CmbBoxCategoria.Location = new System.Drawing.Point(161, 135);
             this.CmbBoxCategoria.Name = "CmbBoxCategoria";
             this.CmbBoxCategoria.Size = new System.Drawing.Size(121, 21);

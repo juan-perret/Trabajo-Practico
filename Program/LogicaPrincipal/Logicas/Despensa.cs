@@ -19,8 +19,7 @@ namespace LogicaPrincipal
             {
                 id = despensa.Max(x=>x.Id);
             }
- 
-        }        
+        }
         //El metodo deberia ser GuardarActualizarProducto en el cual dependiendo si el Id es vacio debe agregar el producto
         // y generarle un id y si no es vacio debe modificar el registro
         public void GuardarActualizarProducto(Producto ingrediente)
