@@ -16,16 +16,20 @@ namespace LogicaPrincipal
         {
             logica = new ModuloReceta();
             comidas = LeerComidas();
+            foreach (Comida comida in comidas)
+            {
+                comida.RecetaElegida = logica.DevolverReceta(comida.CodigoReceta);
+            }
             //foreach buscando la receta por ID.
         }
         public void GuardarComida(Comida comida)
         {
+            comida.RecetaElegida= logica.DevolverReceta(comida.CodigoReceta);
             comidas.Add(comida);
             EscribirComidas(comidas);
         }
         public void LeerComida()
         {
-
         }
         public List<Receta> DevolverListaRecetasAccesibles()
         {

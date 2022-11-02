@@ -36,16 +36,23 @@ namespace FormPrincipal
             dgvComidas.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
-
-        //private void dgvComidas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        //{
-        //    UtilidadesGrilla.CargarCamposAcciones(dgvComidas);
-        //}
-
         private void ActualizarGrilla()
         {
             dgvComidas.DataSource = null;
-            dgvComidas.DataSource = logica.LeerComidas();
+            List<Comida> comidas = logica.LeerComidas();
+            dgvComidas.DataSource = comidas;
+            foreach (Comida comida in comidas)
+            {
+                foreach(DataGridViewRow row in dgvComidas.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[0].Value) == comida.CodigoReceta)
+                    {
+                        row.Cells[2].Value = comida.RecetaElegida.Nombre;
+                        row.Cells[3].Value = comida.RecetaElegida.TipoComida;
+                        row.Cells[4].Value = comida.RecetaElegida.Saludable;
+                    }
+                }               
+            }
         }
         public void CargarGrilla()
         {

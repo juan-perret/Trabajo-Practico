@@ -33,8 +33,8 @@ namespace FormPrincipal
             }
             Comida comida = new Comida();
             comida.FechaDeRegistro = dtpFechaComida.Value;
-            //Faltar agregar lista de recetas que poseen los ingredientes necesarios
-            //para su creacion, y agregarlos a comida.RecetaElegida y comida.CodigoReceta
+            comida.CodigoReceta = Convert.ToInt32(dgvSeleccionReceta.SelectedRows[0].Cells[0].Value);
+            logica.GuardarComida(comida);
         }
 
         private bool validarFiltro()
@@ -50,22 +50,6 @@ namespace FormPrincipal
                 return true;
             }
         }
-
-        private void dgvSeleccionReceta_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvSeleccionReceta.Columns[e.ColumnIndex].Name == "Seleccion")
-            {
-                DataGridViewRow row = dgvSeleccionReceta.Rows[e.RowIndex];
-                DataGridViewCheckBoxCell cellSeleccion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
-                if (Convert.ToBoolean(cellSeleccion.Value))
-                {
-                    DataGridViewCell celda = row.Cells["Id"] as DataGridViewCell;
-                    int codigo = Convert.ToInt32(celda.Value);
-
-                }
-            }
-        }
-
         private void FormRegistrarComida_Load(object sender, EventArgs e)
         {
             dgvSeleccionReceta.AutoGenerateColumns = false;

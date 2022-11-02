@@ -43,7 +43,6 @@
             this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionReceta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
@@ -55,61 +54,56 @@
             this.Id,
             this.Nombre_Receta,
             this.Tipo_de_comida,
-            this.Saludable,
-            this.Seleccion});
-            this.dgvSeleccionReceta.Location = new System.Drawing.Point(203, 135);
-            this.dgvSeleccionReceta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Saludable});
+            this.dgvSeleccionReceta.Location = new System.Drawing.Point(152, 110);
             this.dgvSeleccionReceta.Name = "dgvSeleccionReceta";
             this.dgvSeleccionReceta.RowHeadersWidth = 51;
-            this.dgvSeleccionReceta.Size = new System.Drawing.Size(613, 209);
+            this.dgvSeleccionReceta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSeleccionReceta.Size = new System.Drawing.Size(460, 170);
             this.dgvSeleccionReceta.TabIndex = 0;
-            this.dgvSeleccionReceta.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeleccionReceta_CellValueChanged);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(29, 22);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(22, 18);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(279, 35);
+            this.lblTitulo.Size = new System.Drawing.Size(221, 28);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "REGISTRA TUS COMIDAS";
             // 
             // dtpFechaComida
             // 
-            this.dtpFechaComida.Location = new System.Drawing.Point(203, 78);
-            this.dtpFechaComida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaComida.Location = new System.Drawing.Point(152, 63);
+            this.dtpFechaComida.MaxDate = new System.DateTime(2022, 11, 2, 10, 14, 40, 0);
             this.dtpFechaComida.Name = "dtpFechaComida";
-            this.dtpFechaComida.Size = new System.Drawing.Size(245, 22);
+            this.dtpFechaComida.Size = new System.Drawing.Size(185, 20);
             this.dtpFechaComida.TabIndex = 2;
+            this.dtpFechaComida.Value = new System.DateTime(2022, 11, 2, 0, 0, 0, 0);
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(32, 85);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFecha.Location = new System.Drawing.Point(24, 69);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(127, 16);
+            this.lblFecha.Size = new System.Drawing.Size(105, 13);
             this.lblFecha.TabIndex = 3;
             this.lblFecha.Text = "Selecciona tu fecha:";
             // 
             // lblSeleccionaReceta
             // 
             this.lblSeleccionaReceta.AutoSize = true;
-            this.lblSeleccionaReceta.Location = new System.Drawing.Point(32, 135);
-            this.lblSeleccionaReceta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeleccionaReceta.Location = new System.Drawing.Point(24, 110);
             this.lblSeleccionaReceta.Name = "lblSeleccionaReceta";
-            this.lblSeleccionaReceta.Size = new System.Drawing.Size(136, 16);
+            this.lblSeleccionaReceta.Size = new System.Drawing.Size(110, 13);
             this.lblSeleccionaReceta.TabIndex = 4;
             this.lblSeleccionaReceta.Text = "Selecciona la receta: ";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(16, 382);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 310);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(105, 27);
+            this.btnCancelar.Size = new System.Drawing.Size(79, 22);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -117,11 +111,9 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(554, 309);
-            this.btnAceptar.Location = new System.Drawing.Point(617, 382);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Location = new System.Drawing.Point(463, 310);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -136,19 +128,17 @@
             "Almuerzo",
             "Merienda",
             "Cena"});
-            this.cmbFiltro.Location = new System.Drawing.Point(36, 209);
-            this.cmbFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFiltro.Location = new System.Drawing.Point(27, 170);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(135, 24);
+            this.cmbFiltro.Size = new System.Drawing.Size(102, 21);
             this.cmbFiltro.TabIndex = 7;
             // 
             // lblFiltroComida
             // 
             this.lblFiltroComida.AutoSize = true;
-            this.lblFiltroComida.Location = new System.Drawing.Point(36, 178);
-            this.lblFiltroComida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFiltroComida.Location = new System.Drawing.Point(27, 145);
             this.lblFiltroComida.Name = "lblFiltroComida";
-            this.lblFiltroComida.Size = new System.Drawing.Size(66, 16);
+            this.lblFiltroComida.Size = new System.Drawing.Size(53, 13);
             this.lblFiltroComida.TabIndex = 8;
             this.lblFiltroComida.Text = "Filtrar por:";
             // 
@@ -175,8 +165,6 @@
             this.Nombre_Receta.Name = "Nombre_Receta";
             this.Nombre_Receta.ReadOnly = true;
             this.Nombre_Receta.Width = 90;
-            this.Nombre_Receta.Width = 111;
-
             // 
             // Tipo_de_comida
             // 
@@ -198,23 +186,11 @@
             this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Saludable.Width = 125;
             // 
-            // Seleccion
-            // 
-            this.Seleccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Seleccion.FalseValue = "false";
-            this.Seleccion.HeaderText = "Agegar";
-            this.Seleccion.MinimumWidth = 6;
-            this.Seleccion.Name = "Seleccion";
-            this.Seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Seleccion.TrueValue = "true";
-            this.Seleccion.Width = 81;
-            // 
             // FormRegistrarComida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 425);
+            this.ClientSize = new System.Drawing.Size(658, 345);
             this.Controls.Add(this.lblFiltroComida);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.btnAceptar);
@@ -224,7 +200,6 @@
             this.Controls.Add(this.dtpFechaComida);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvSeleccionReceta);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormRegistrarComida";
             this.Text = "Registra tus comidas";
             this.Load += new System.EventHandler(this.FormRegistrarComida_Load);
@@ -251,6 +226,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_comida;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Saludable;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccion;
     }
 }

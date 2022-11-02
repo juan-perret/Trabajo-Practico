@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,9 @@ namespace LogicaPrincipal
 {
     public class Comida
     {
-        public Receta RecetaElegida { get; set; }
         public int CodigoReceta { get; set; }
         public DateTime FechaDeRegistro { get; set; }
+        //[JsonIgnore]
+        public Receta RecetaElegida { get; set; }
     }
 }
