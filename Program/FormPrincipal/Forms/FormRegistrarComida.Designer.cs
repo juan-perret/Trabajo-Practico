@@ -117,12 +117,9 @@
             // 
             // btnAceptar
             // 
-<<<<<<< Updated upstream:Program/FormPrincipal/Forms/FormRegistrarComida.Designer.cs
             this.btnAceptar.Location = new System.Drawing.Point(554, 309);
-=======
             this.btnAceptar.Location = new System.Drawing.Point(617, 382);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> Stashed changes:Program/FormPrincipal/FormRegistrarComida.Designer.cs
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 6;
@@ -177,11 +174,9 @@
             this.Nombre_Receta.MinimumWidth = 6;
             this.Nombre_Receta.Name = "Nombre_Receta";
             this.Nombre_Receta.ReadOnly = true;
-<<<<<<< Updated upstream:Program/FormPrincipal/Forms/FormRegistrarComida.Designer.cs
             this.Nombre_Receta.Width = 90;
-=======
             this.Nombre_Receta.Width = 111;
->>>>>>> Stashed changes:Program/FormPrincipal/FormRegistrarComida.Designer.cs
+
             // 
             // Tipo_de_comida
             // 
@@ -199,11 +194,8 @@
             this.Saludable.MinimumWidth = 6;
             this.Saludable.Name = "Saludable";
             this.Saludable.ReadOnly = true;
-<<<<<<< Updated upstream:Program/FormPrincipal/Forms/FormRegistrarComida.Designer.cs
             this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-=======
->>>>>>> Stashed changes:Program/FormPrincipal/FormRegistrarComida.Designer.cs
             this.Saludable.Width = 125;
             // 
             // Seleccion
