@@ -57,7 +57,7 @@
             this.dgvComidas.Name = "dgvComidas";
             this.dgvComidas.Size = new System.Drawing.Size(445, 350);
             this.dgvComidas.TabIndex = 0;
-            this.dgvComidas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvComidas_DataBindingComplete);
+            //this.dgvComidas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvComidas_DataBindingComplete);
             // 
             // MsComidas
             // 

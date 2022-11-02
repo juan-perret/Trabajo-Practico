@@ -37,10 +37,10 @@ namespace FormPrincipal
             ActualizarGrilla();
         }
 
-        private void dgvComidas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            UtilidadesGrilla.CargarCamposAcciones(dgvComidas);
-        }
+        //private void dgvComidas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    UtilidadesGrilla.CargarCamposAcciones(dgvComidas);
+        //}
 
         private void ActualizarGrilla()
         {

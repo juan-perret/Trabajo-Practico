@@ -83,14 +83,13 @@ namespace LogicaPrincipal
         }
         //
         //Metodos para recetas
-        List<int> listadoIngredientes = new List<int>();
 
         public void EliminarProducto(string idIngrediente)
         {
             List<Producto> productos = LeerProductos();
             foreach (Producto p in productos)
             {
-                if(p.Id == id)
+                if(p.Id == Convert.ToInt32(idIngrediente))
                 {
                     productos.Remove(p);
                     EscribirProducto(productos);
