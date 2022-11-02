@@ -81,6 +81,18 @@ namespace FormPrincipal
             }
         }
 
+<<<<<<< Updated upstream:Program/FormPrincipal/Forms/FormDespensa.cs
        
+=======
+        private void ValidarEditar(DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+>>>>>>> Stashed changes:Program/FormPrincipal/FormDespensa.cs
     }
 }
