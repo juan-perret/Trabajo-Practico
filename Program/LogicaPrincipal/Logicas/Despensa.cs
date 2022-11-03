@@ -61,28 +61,21 @@ namespace LogicaPrincipal
             List<Producto> listaAComprar = new List<Producto>();
             foreach (Producto p in despensa)
             {
-                if (p is Bebida)
+                if (p.Cantidad <= p.PuntoPedido)
                 {
-                    Bebida bebida = (Bebida)p;
-                    if (bebida.Cantidad < p.PuntoPedido)
-                    {
-                        listaAComprar.Add(p);
-                    }
-                }
-                if (p is Carne)
-                {
-                    Carne carne = (Carne)p;
-                    if (carne.Cantidad < p.PuntoPedido)
-                    {
-                        listaAComprar.Add(p);
-                    }
+                    listaAComprar.Add(p);
                 }
             }
             return listaAComprar;
         }
         //
         //Metodos para recetas
-
+        public void EliminarCantidadProducto(int idProducto, double cantidad)
+        {
+            Producto producto = Ingrediente(idProducto);
+            producto.Cantidad -= cantidad;
+            GuardarActualizarProducto(producto);
+        }
         public void EliminarProducto(string idIngrediente)
         {
             List<Producto> productos = LeerProductos();
@@ -95,6 +88,15 @@ namespace LogicaPrincipal
                     break;
                 }
             }
+        }
+        //
+        //Para el super
+        //
+        public void AgregarIngredientesXSuper(int idIngrediente)
+        {
+            Producto producto = Ingrediente(idIngrediente);
+            producto.Cantidad += producto.PuntoPedido;
+            GuardarActualizarProducto(producto);
         }
         //guardad()
     }

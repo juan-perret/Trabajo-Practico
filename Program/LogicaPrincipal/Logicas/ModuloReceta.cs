@@ -96,6 +96,12 @@ namespace LogicaPrincipal
                 cantidadXIngrediente.Add(cantidad);
             }
         }
+        public List<Producto> DevolverIngredientesDeReceta(string id)
+        {
+            int codigo = Convert.ToInt32(id);
+            List<Producto> ingredientes = BuscarProductosReceta(DevolverReceta(codigo).CodigosIngredientes);
+            return ingredientes;
+        }
         //
         //Para registrar comidas
         //Buscar receta
@@ -127,7 +133,18 @@ namespace LogicaPrincipal
                     break;
                 }
             }
-
+        }
+        //
+        //Para descontar ingredientes
+        //
+        public void DescontarIngredientes(int idReceta)
+        {
+            Receta receta = recetas.Find(rec => rec.Id == idReceta);
+            foreach (int idIngrediente in receta.CodigosIngredientes)
+            {
+                double cantidad = receta.CantidadXIngrediente[receta.CodigosIngredientes.FindIndex(x => x == idIngrediente)];
+                logica.EliminarCantidadProducto(idIngrediente, cantidad);
+            }
         }
     }
 }

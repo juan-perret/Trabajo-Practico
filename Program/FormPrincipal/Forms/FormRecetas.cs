@@ -85,7 +85,7 @@ namespace FormPrincipal
             }
             if (indiceVerIngredientes == e.ColumnIndex)
             {
-                var indiceDetalles = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Detalles");
+                var indiceDetalles = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Id");
                 var idReceta = dgvRecetas.Rows[e.RowIndex].Cells[indiceDetalles].Value.ToString();
 
                 FormIngredienteRecetas formIngredienteRecetas = new FormIngredienteRecetas(idReceta);

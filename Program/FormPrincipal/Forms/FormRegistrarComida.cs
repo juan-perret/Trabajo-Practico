@@ -41,7 +41,6 @@ namespace FormPrincipal
                 padre.CargarGrilla();
             }
             this.Close();
-            this.Close();
         }
 
         private bool validarFiltro()

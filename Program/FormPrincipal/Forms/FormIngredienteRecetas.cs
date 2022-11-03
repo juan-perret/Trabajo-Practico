@@ -15,11 +15,11 @@ namespace FormPrincipal
     {
         private ModuloReceta logica;
         private string id { get; set; }
-        public FormIngredienteRecetas(string id)
+        public FormIngredienteRecetas(string Id)
         {
             InitializeComponent();
             logica = new ModuloReceta();
-            this.id = id;
+            this.id = Id;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,8 +36,7 @@ namespace FormPrincipal
         private void ActualizarGrilla()
         {
             dgvIngredientesRecetas.DataSource = null;
-            //Crear metodo que lea los ingredientes del id de la receta pasado como parametro
-            //dgvIngredientesRecetas.DataSource = logica.LeerIngredienteReceta(id)
+            dgvIngredientesRecetas.DataSource = logica.DevolverIngredientesDeReceta(id);
         }
     }
 }

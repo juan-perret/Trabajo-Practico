@@ -26,6 +26,7 @@ namespace FormPrincipal
 
         private void FormListaSuper_Load(object sender, EventArgs e)
         {
+            tscmbTipoProducto.ComboBox.DataSource = Enum.GetValues(typeof(TiposProducto));
             dgvListaSuper.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
@@ -47,6 +48,19 @@ namespace FormPrincipal
             ActualizarGrilla();
         }
 
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvListaSuper.Rows)
+            {
+                logica.AgregarStock(Convert.ToInt32(row.Cells["Id"].Value));
+            }
+            ActualizarGrilla();
+            //obtener todos los datos que hay en el dgv y agregarles a sus cantidades con el metodo ya creado
+        }
 
+        private void filtro1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

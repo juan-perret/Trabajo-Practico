@@ -25,6 +25,7 @@ namespace LogicaPrincipal
         public void GuardarComida(Comida comida)
         {
             comida.RecetaElegida= logica.DevolverReceta(comida.CodigoReceta);
+            logica.DescontarIngredientes(comida.CodigoReceta);
             comidas.Add(comida);
             EscribirComidas(comidas);
         }

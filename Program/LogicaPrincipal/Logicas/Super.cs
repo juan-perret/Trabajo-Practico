@@ -16,13 +16,16 @@ namespace LogicaPrincipal
         {
             logica = new Despensa();
             ingredientesFaltantes = logica.ProductosAComprar();
-        }
-                                               // aca va metodo de los productos
+        }                                              // aca va metodo de los productos
         public List<Producto> DevolverLista()
         {
             return ingredientesFaltantes;
         }
         //Pedir de despensa, que devuelva una lista con los productos que tienen cant menor
         //a la minima
+        public void AgregarStock(int idIngrediente)
+        {
+            logica.AgregarIngredientesXSuper(idIngrediente);
+        }
     }
 }
