@@ -54,9 +54,37 @@ namespace FormPrincipal
                 }               
             }
         }
+        private void ActualizarGrilla(bool saludable)
+        {
+            dgvComidas.DataSource = null;
+            List<Comida> comidas = logica.ObtenerComidasSaludables(saludable);
+            dgvComidas.DataSource = comidas;
+            foreach (Comida comida in comidas)
+            {
+                foreach (DataGridViewRow row in dgvComidas.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[0].Value) == comida.CodigoReceta)
+                    {
+                        row.Cells[2].Value = comida.RecetaElegida.Nombre;
+                        row.Cells[3].Value = comida.RecetaElegida.TipoComida;
+                        row.Cells[4].Value = comida.RecetaElegida.Saludable;
+                    }
+                }
+            }
+        }
         public void CargarGrilla()
         {
             ActualizarGrilla();
+        }
+
+        private void tsmiSiSaludable_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(true);
+        }
+
+        private void tsmiNoSaludable_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(false);
         }
     }
 }
