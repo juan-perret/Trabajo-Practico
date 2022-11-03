@@ -33,11 +33,58 @@ namespace LogicaPrincipal
         }
         public List<Receta> DevolverListaRecetasAccesibles()
         {
-            List<Receta> recetasAMostrar = LeerRecetas();
-
+            List<Receta> recetas = logica.LeerRecetas();
+            List<Producto> stockProductos = logica.LeerProductos();
+            List<Receta> recetasAMostrar = new List<Receta>();
+            foreach (Receta rec in recetas)
+            {
+                bool noCantidad = false;
+                foreach (Producto p in stockProductos)
+                {
+                    int indice = rec.CodigosIngredientes.FindIndex(x => x == p.Id);
+                    if (indice != -1)
+                    {
+                        if (p.Cantidad < (rec.CantidadXIngrediente)[indice])
+                        {
+                            noCantidad = true;
+                            break;
+                        }
+                    }
+                }
+                if (!noCantidad)
+                {
+                    recetasAMostrar.Add(rec);
+                }
+            }
             return recetasAMostrar;
         }
-
+        public List<Receta> DevolverListaRecetasAccesiblesXFiltro(TiposComida tipoComida)
+        {
+            List<Receta> recetas = logica.LeerRecetas();
+            List<Producto> stockProductos = logica.LeerProductos();
+            List<Receta> recetasAMostrar = new List<Receta>();
+            foreach (Receta rec in recetas)
+            {
+                bool noCantidad = false;
+                foreach (Producto p in stockProductos)
+                {
+                    int indice = rec.CodigosIngredientes.FindIndex(x => x == p.Id);
+                    if (indice != -1)
+                    {
+                        if (p.Cantidad < (rec.CantidadXIngrediente)[indice])
+                        {
+                            noCantidad = true;
+                            break;
+                        }
+                    }
+                }
+                if (!noCantidad && rec.TipoComida == tipoComida)
+                {
+                    recetasAMostrar.Add(rec);
+                }
+            }
+            return recetasAMostrar;
+        }
         //guarda(), al guardar modificar en despensa las cantidades
     }
 }

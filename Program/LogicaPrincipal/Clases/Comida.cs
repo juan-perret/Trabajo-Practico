@@ -11,7 +11,6 @@ namespace LogicaPrincipal
     {
         public int CodigoReceta { get; set; }
         public DateTime FechaDeRegistro { get; set; }
-        //[JsonIgnore]
         public Receta RecetaElegida { get; set; }
     }
 }

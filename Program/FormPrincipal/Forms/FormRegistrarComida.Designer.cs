@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvSeleccionReceta = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dtpFechaComida = new System.Windows.Forms.DateTimePicker();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -39,10 +43,7 @@
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltroComida = new System.Windows.Forms.Label();
             this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_QuitarFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionReceta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +62,46 @@
             this.dgvSeleccionReceta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSeleccionReceta.Size = new System.Drawing.Size(460, 170);
             this.dgvSeleccionReceta.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // Nombre_Receta
+            // 
+            this.Nombre_Receta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Nombre_Receta.DataPropertyName = "Nombre";
+            this.Nombre_Receta.HeaderText = "Nombre de la Receta";
+            this.Nombre_Receta.MinimumWidth = 6;
+            this.Nombre_Receta.Name = "Nombre_Receta";
+            this.Nombre_Receta.ReadOnly = true;
+            this.Nombre_Receta.Width = 90;
+            // 
+            // Tipo_de_comida
+            // 
+            this.Tipo_de_comida.DataPropertyName = "TipoComida";
+            this.Tipo_de_comida.HeaderText = "Tipo de Comida";
+            this.Tipo_de_comida.MinimumWidth = 6;
+            this.Tipo_de_comida.Name = "Tipo_de_comida";
+            this.Tipo_de_comida.ReadOnly = true;
+            this.Tipo_de_comida.Width = 125;
+            // 
+            // Saludable
+            // 
+            this.Saludable.DataPropertyName = "Saludable";
+            this.Saludable.HeaderText = "Es saludable?";
+            this.Saludable.MinimumWidth = 6;
+            this.Saludable.Name = "Saludable";
+            this.Saludable.ReadOnly = true;
+            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Saludable.Width = 125;
             // 
             // lblTitulo
             // 
@@ -123,15 +164,11 @@
             // 
             this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Items.AddRange(new object[] {
-            "Desayuno",
-            "Almuerzo",
-            "Merienda",
-            "Cena"});
             this.cmbFiltro.Location = new System.Drawing.Point(27, 170);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(102, 21);
             this.cmbFiltro.TabIndex = 7;
+            this.cmbFiltro.SelectionChangeCommitted += new System.EventHandler(this.cmbFiltro_SelectionChangeCommitted);
             // 
             // lblFiltroComida
             // 
@@ -146,51 +183,22 @@
             // 
             this.erpError.ContainerControl = this;
             // 
-            // Id
+            // btn_QuitarFiltro
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Nombre_Receta
-            // 
-            this.Nombre_Receta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Nombre_Receta.DataPropertyName = "Nombre";
-            this.Nombre_Receta.HeaderText = "Nombre de la Receta";
-            this.Nombre_Receta.MinimumWidth = 6;
-            this.Nombre_Receta.Name = "Nombre_Receta";
-            this.Nombre_Receta.ReadOnly = true;
-            this.Nombre_Receta.Width = 90;
-            // 
-            // Tipo_de_comida
-            // 
-            this.Tipo_de_comida.DataPropertyName = "TipoComida";
-            this.Tipo_de_comida.HeaderText = "Tipo de Comida";
-            this.Tipo_de_comida.MinimumWidth = 6;
-            this.Tipo_de_comida.Name = "Tipo_de_comida";
-            this.Tipo_de_comida.ReadOnly = true;
-            this.Tipo_de_comida.Width = 125;
-            // 
-            // Saludable
-            // 
-            this.Saludable.DataPropertyName = "Saludable";
-            this.Saludable.HeaderText = "Es saludable?";
-            this.Saludable.MinimumWidth = 6;
-            this.Saludable.Name = "Saludable";
-            this.Saludable.ReadOnly = true;
-            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Saludable.Width = 125;
+            this.btn_QuitarFiltro.Location = new System.Drawing.Point(27, 207);
+            this.btn_QuitarFiltro.Name = "btn_QuitarFiltro";
+            this.btn_QuitarFiltro.Size = new System.Drawing.Size(102, 22);
+            this.btn_QuitarFiltro.TabIndex = 9;
+            this.btn_QuitarFiltro.Text = "Quitar filtro";
+            this.btn_QuitarFiltro.UseVisualStyleBackColor = true;
+            this.btn_QuitarFiltro.Click += new System.EventHandler(this.btn_QuitarFiltro_Click);
             // 
             // FormRegistrarComida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 345);
+            this.Controls.Add(this.btn_QuitarFiltro);
             this.Controls.Add(this.lblFiltroComida);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.btnAceptar);
@@ -226,5 +234,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_comida;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Saludable;
+        private System.Windows.Forms.Button btn_QuitarFiltro;
     }
 }

@@ -52,36 +52,29 @@ namespace FormPrincipal
         }
         private void FormRegistrarComida_Load(object sender, EventArgs e)
         {
+            cmbFiltro.DataSource = Enum.GetValues(typeof(TiposComida));
             dgvSeleccionReceta.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
         private void ActualizarGrilla()
         {
             dgvSeleccionReceta.DataSource = null;
-            List<Receta> recetas = logica.LeerRecetas();
-            List<Producto> stockProductos = logica.LeerProductos();
-            List<Receta> recetasAMostrar = new List<Receta>();
-            foreach (Receta rec in recetas)
-            {
-                bool noCantidad = false;
-                foreach (Producto p in stockProductos)
-                {
-                    int indice = rec.CodigosIngredientes.FindIndex(x=>x == p.Id);
-                    if (indice != -1 )
-                    {
-                        if (p.Cantidad < (rec.CantidadXIngrediente)[indice])
-                        {
-                            noCantidad = true;
-                            break;
-                        }
-                    }                   
-                }
-                if (!noCantidad)
-                {
-                    recetasAMostrar.Add(rec);
-                }
-            }
-            dgvSeleccionReceta.DataSource = recetasAMostrar;
+            dgvSeleccionReceta.DataSource = logica.DevolverListaRecetasAccesibles();
+        }
+        private void ActualizarGrilla(TiposComida tipoComida)
+        {
+            dgvSeleccionReceta.DataSource = null;
+            dgvSeleccionReceta.DataSource = logica.DevolverListaRecetasAccesiblesXFiltro(tipoComida);
+        }
+        private void cmbFiltro_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Enum.TryParse(cmbFiltro.Text, out TiposComida tipo);
+            ActualizarGrilla(tipo);
+        }
+
+        private void btn_QuitarFiltro_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla();
         }
     }
 }

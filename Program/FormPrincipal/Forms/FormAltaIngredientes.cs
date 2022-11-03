@@ -76,7 +76,7 @@ namespace FormPrincipal
                     bebidaN.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaN.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaN.Cantidad = int.Parse(txtCantidad.Text);
-                    bebidaN.TipoBebida = bebidaN.TiposBebidas(0);
+                    bebidaN.TipoBebida = VariedadBebida.normal;
                     logica.GuardarActualizarProducto(bebidaN);
                     break;
                 case TiposProducto.Bebidas_Alta_en_Azucar:
@@ -87,7 +87,7 @@ namespace FormPrincipal
                     bebidaAA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaAA.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaAA.Cantidad = int.Parse(txtCantidad.Text);
-                    bebidaAA.TipoBebida = bebidaAA.TiposBebidas(1);
+                    bebidaAA.TipoBebida = VariedadBebida.altaEnAzucar;
                     logica.GuardarActualizarProducto(bebidaAA);
                     break;
                 case TiposProducto.Bebidas_Alcoholicas:
@@ -98,7 +98,7 @@ namespace FormPrincipal
                     bebidaA.Precio = decimal.Parse(txtPrecio.Text);
                     bebidaA.PuntoPedido = int.Parse(txtStockPedido.Text);
                     bebidaA.Cantidad = int.Parse(txtCantidad.Text);
-                    bebidaA.TipoBebida = bebidaA.TiposBebidas(2);
+                    bebidaA.TipoBebida = VariedadBebida.alcoholica;
                     logica.GuardarActualizarProducto(bebidaA);
                     break;
                 case TiposProducto.Frutas:

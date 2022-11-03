@@ -15,32 +15,5 @@ namespace LogicaPrincipal
         public double PuntoPedido { get; set; }
         public decimal Precio { get; set; }
         public double Cantidad { get; set; }
-
-        public TiposProducto TiposDeProducto(int codigo)
-        {
-            switch (codigo)
-            {
-                case 0:
-                    return TiposProducto.Hortalizas_y_Verduras;
-                case 1:
-                    return TiposProducto.Frutas;
-                case 2:
-                    return TiposProducto.Quesos;
-                case 3:
-                    return TiposProducto.Lacteos;
-                case 4:
-                    return TiposProducto.Carnes;
-                case 5:
-                    return TiposProducto.Pescados;
-                case 6:
-                    return TiposProducto.Panaderia;
-                case 7:
-                    return TiposProducto.Bebidas_Alta_en_Azucar;
-                case 8:
-                    return TiposProducto.Bebidas_Normal;
-                default:
-                    return TiposProducto.Bebidas_Alcoholicas;
-            }
-        }
     }
 }

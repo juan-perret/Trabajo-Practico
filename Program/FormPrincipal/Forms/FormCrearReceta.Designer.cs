@@ -107,11 +107,6 @@
             // 
             this.cmbTipoReceta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoReceta.FormattingEnabled = true;
-            this.cmbTipoReceta.Items.AddRange(new object[] {
-            "Desayuno",
-            "Almuerzo",
-            "Merienda",
-            "Cena"});
             this.cmbTipoReceta.Location = new System.Drawing.Point(162, 130);
             this.cmbTipoReceta.Name = "cmbTipoReceta";
             this.cmbTipoReceta.Size = new System.Drawing.Size(121, 21);

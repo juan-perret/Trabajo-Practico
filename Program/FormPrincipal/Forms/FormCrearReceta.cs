@@ -30,7 +30,6 @@ namespace FormPrincipal
             logica = new ModuloReceta();
             this.id = id;
         }
-        public enum TiposComida { Desayuno, Almuerzo, Merienda, Cena }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -39,6 +38,7 @@ namespace FormPrincipal
 
         private void FormCrearReceta_Load(object sender, EventArgs e)
         {
+            cmbTipoReceta.DataSource = Enum.GetValues(typeof(TiposComida));
             dgvIngredientesRecetas.AutoGenerateColumns = false;
             ActualizarGrilla();
             if (!string.IsNullOrEmpty(id))
@@ -58,8 +58,7 @@ namespace FormPrincipal
                             dgvIngredientesRecetas.Rows[fila].Cells["Seleccion"].Value = true;
                             break;
                         }
-                    }
-                        
+                    }                      
                 }
                 //falta igualar las listas de ingredientes
             }
@@ -78,8 +77,7 @@ namespace FormPrincipal
             if (validarTipoReceta() == false)
             {
                 return;
-            }
-            
+            }          
             Receta receta = new Receta();
             receta.Id = Convert.ToInt32(id);
             receta.Nombre = txtNombre.Text;
@@ -88,16 +86,16 @@ namespace FormPrincipal
             switch (tipo)
             {
                 case TiposComida.Desayuno:
-                    receta.TipoComida = Receta.TiposComida.Desayuno;
+                    receta.TipoComida = tipo;
                     break;
                 case TiposComida.Almuerzo:
-                    receta.TipoComida = Receta.TiposComida.Almuerzo;
+                    receta.TipoComida = tipo;
                     break;
                 case TiposComida.Merienda:
-                    receta.TipoComida = Receta.TiposComida.Merienda;
+                    receta.TipoComida = tipo;
                     break;
                 case TiposComida.Cena:
-                    receta.TipoComida = Receta.TiposComida.Cena;
+                    receta.TipoComida = tipo;
                     break;
             }
             logica.GuardarReceta(receta);
