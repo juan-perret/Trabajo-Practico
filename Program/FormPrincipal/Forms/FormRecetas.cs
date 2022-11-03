@@ -34,6 +34,7 @@ namespace FormPrincipal
         private void GridRecetas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             UtilidadesGrilla.CargarCamposAcciones(dgvRecetas);
+            UtilidadesGrilla.CargarCampoVerIngredientes(dgvRecetas);
         }
 
         private void FormRecetas_Load(object sender, EventArgs e)
@@ -57,14 +58,15 @@ namespace FormPrincipal
 
             int indiceEditar = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Editar");
             int indiceEliminar = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Eliminar");
+            int indiceVerIngredientes = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Detalles");
 
             if (indiceEditar == e.ColumnIndex)
             {
                 //hizo clic en editar
                 var indiceId = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Id");
-                var idIngrediente = dgvRecetas.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
+                var idReceta = dgvRecetas.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
 
-                FormCrearReceta formCrearReceta = new FormCrearReceta(idIngrediente);
+                FormCrearReceta formCrearReceta = new FormCrearReceta(idReceta);
                 formCrearReceta.ShowDialog(this);
             }
             if (indiceEliminar == e.ColumnIndex)
@@ -74,12 +76,20 @@ namespace FormPrincipal
                 {
                     ModuloReceta receta = new ModuloReceta();
                     var indiceId = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Id");
-                    var idIngrediente = dgvRecetas.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
+                    var idReceta = dgvRecetas.Rows[e.RowIndex].Cells[indiceId].Value.ToString();
 
                     //eliminar registro
-                    receta.EliminarReceta(idIngrediente);
+                    receta.EliminarReceta(idReceta);
                     ActualizarGrilla();
                 }
+            }
+            if (indiceVerIngredientes == e.ColumnIndex)
+            {
+                var indiceDetalles = UtilidadesGrilla.ObtenerIndice(dgvRecetas, "Detalles");
+                var idReceta = dgvRecetas.Rows[e.RowIndex].Cells[indiceDetalles].Value.ToString();
+
+                FormIngredienteRecetas formIngredienteRecetas = new FormIngredienteRecetas(idReceta);
+                formIngredienteRecetas.ShowDialog(this);
             }
         }
     }

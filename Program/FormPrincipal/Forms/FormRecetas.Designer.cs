@@ -36,7 +36,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_de_receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalles = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).BeginInit();
@@ -133,6 +133,8 @@
             this.Detalles.MinimumWidth = 6;
             this.Detalles.Name = "Detalles";
             this.Detalles.ReadOnly = true;
+            this.Detalles.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Detalles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Detalles.Width = 125;
             // 
             // Editar
@@ -182,7 +184,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_receta;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Saludable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Detalles;
+        private System.Windows.Forms.DataGridViewLinkColumn Detalles;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }

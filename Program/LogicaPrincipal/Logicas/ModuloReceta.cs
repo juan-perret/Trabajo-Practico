@@ -114,9 +114,9 @@ namespace LogicaPrincipal
         //guardad()
        
         //Eliminar receta
-        public void EliminarReceta (string idIngrediente)
+        public void EliminarReceta (string idReceta)
         {
-            int id = Convert.ToInt32(idIngrediente);
+            int id = Convert.ToInt32(idReceta);
             List<Receta> recetas = LeerRecetas();
             foreach (var rec in recetas)
             {

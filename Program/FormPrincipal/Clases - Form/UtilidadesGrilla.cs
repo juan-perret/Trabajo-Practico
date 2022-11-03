@@ -13,12 +13,21 @@ namespace FormPrincipal
         {
             int indiceColumnaEditar = UtilidadesGrilla.ObtenerIndice(grilla, "Editar");
             int indiceColumnaEliminar = UtilidadesGrilla.ObtenerIndice(grilla, "Eliminar");
-
+            
             foreach (DataGridViewRow row in grilla.Rows)
             {
                 row.Cells[indiceColumnaEliminar].Value = "Eliminar";
                 row.Cells[indiceColumnaEditar].Value = "Editar";
             }
+        }
+        public static void CargarCampoVerIngredientes(DataGridView grilla)
+        {
+            int indiceVerIngredientes = UtilidadesGrilla.ObtenerIndice(grilla, "Detalles");
+            foreach (DataGridViewRow row in grilla.Rows)
+            {
+                row.Cells[indiceVerIngredientes].Value = "Ver Ingredientes";
+            }
+            
         }
 
         internal static int ObtenerIndice(DataGridView grilla, string nombreColumna)

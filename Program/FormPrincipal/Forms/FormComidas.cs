@@ -11,7 +11,7 @@ using LogicaPrincipal;
 
 namespace FormPrincipal
 {
-    public partial class FormComidas : Form
+    public partial class FormComidas : Form, ActualizarGrilla
     {
         private ModuloComida logica;
         public FormComidas()

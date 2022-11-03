@@ -35,6 +35,13 @@ namespace FormPrincipal
             comida.FechaDeRegistro = dtpFechaComida.Value;
             comida.CodigoReceta = Convert.ToInt32(dgvSeleccionReceta.SelectedRows[0].Cells[0].Value);
             logica.GuardarComida(comida);
+            ActualizarGrilla padre = this.Owner as ActualizarGrilla;
+            if (padre != null)
+            {
+                padre.CargarGrilla();
+            }
+            this.Close();
+            this.Close();
         }
 
         private bool validarFiltro()
