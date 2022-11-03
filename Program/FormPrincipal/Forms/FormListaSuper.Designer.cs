@@ -52,11 +52,11 @@
             this.filtro2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtro3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtro4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCosto = new System.Windows.Forms.Label();
             this.lblResultadoTotal = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSuper)).BeginInit();
             this.MsListaSuper.SuspendLayout();
             this.SuspendLayout();
@@ -169,7 +169,7 @@
             this.tsmiBebidaNormal,
             this.tsmiBebidaAlcoholica});
             this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(183, 22);
+            this.t.Size = new System.Drawing.Size(194, 22);
             this.t.Text = "Tipo de producto";
             this.t.Click += new System.EventHandler(this.filtro1ToolStripMenuItem_Click);
             // 
@@ -248,20 +248,27 @@
             // filtro2ToolStripMenuItem
             // 
             this.filtro2ToolStripMenuItem.Name = "filtro2ToolStripMenuItem";
-            this.filtro2ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.filtro2ToolStripMenuItem.Text = "Filtro 2";
+            this.filtro2ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.filtro2ToolStripMenuItem.Text = "Costo max/min";
             // 
             // filtro3ToolStripMenuItem
             // 
             this.filtro3ToolStripMenuItem.Name = "filtro3ToolStripMenuItem";
-            this.filtro3ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.filtro3ToolStripMenuItem.Text = "Filtro 3";
+            this.filtro3ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.filtro3ToolStripMenuItem.Text = "Por unidad medida";
             // 
             // filtro4ToolStripMenuItem
             // 
             this.filtro4ToolStripMenuItem.Name = "filtro4ToolStripMenuItem";
-            this.filtro4ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.filtro4ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.filtro4ToolStripMenuItem.Text = "Filtro 4";
+            // 
+            // tsmiQuitarFiltro
+            // 
+            this.tsmiQuitarFiltro.Name = "tsmiQuitarFiltro";
+            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(194, 22);
+            this.tsmiQuitarFiltro.Text = "Quitar Filtro";
+            this.tsmiQuitarFiltro.Click += new System.EventHandler(this.tsmiQuitarFiltro_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -297,13 +304,6 @@
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
-            // 
-            // tsmiQuitarFiltro
-            // 
-            this.tsmiQuitarFiltro.Name = "tsmiQuitarFiltro";
-            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(183, 22);
-            this.tsmiQuitarFiltro.Text = "Quitar Filtro";
-            this.tsmiQuitarFiltro.Click += new System.EventHandler(this.tsmiQuitarFiltro_Click);
             // 
             // FormListaSuper
             // 
