@@ -46,15 +46,13 @@ namespace LogicaPrincipal
                         EscribirProducto(despensa);
                     }
                 }
-            }
-            
+            }           
         }
         public Producto Ingrediente(int idBuscado)
         {
             Producto producto = despensa.Find(x => x.Id == idBuscado);
             return producto;
         }
-
         //Metodo que devuelva lista<productos> que esten bajo de su
         //punto de pedido 
         public List<Producto> ProductosAComprar()
@@ -62,7 +60,7 @@ namespace LogicaPrincipal
             List<Producto> listaAComprar = new List<Producto>();
             foreach (Producto p in despensa)
             {
-                if (p.Cantidad <= p.PuntoPedido)
+                if (p.Cantidad < p.PuntoPedido)
                 {
                     listaAComprar.Add(p);
                 }

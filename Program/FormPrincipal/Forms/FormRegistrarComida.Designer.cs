@@ -116,7 +116,6 @@
             // dtpFechaComida
             // 
             this.dtpFechaComida.Location = new System.Drawing.Point(152, 63);
-            this.dtpFechaComida.MaxDate = new System.DateTime(2022, 11, 2, 10, 14, 40, 0);
             this.dtpFechaComida.Name = "dtpFechaComida";
             this.dtpFechaComida.Size = new System.Drawing.Size(185, 20);
             this.dtpFechaComida.TabIndex = 2;

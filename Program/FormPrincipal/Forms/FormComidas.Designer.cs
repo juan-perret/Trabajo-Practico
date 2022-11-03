@@ -45,10 +45,12 @@
             this.tsmiAlmuerzo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMerienda = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCena = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtro3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtro4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReceta = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUnica = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEntreDos = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComidas)).BeginInit();
             this.MsComidas.SuspendLayout();
             this.SuspendLayout();
@@ -128,8 +130,8 @@
             this.filtrarPorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFiltroSaludable,
             this.tsmiTipoComida,
-            this.filtro3ToolStripMenuItem,
-            this.filtro4ToolStripMenuItem,
+            this.tsmiReceta,
+            this.tsmiFecha,
             this.tsmiQuitarFiltro});
             this.filtrarPorToolStripMenuItem.Name = "filtrarPorToolStripMenuItem";
             this.filtrarPorToolStripMenuItem.Size = new System.Drawing.Size(82, 21);
@@ -172,42 +174,53 @@
             // tsmiDesayuno
             // 
             this.tsmiDesayuno.Name = "tsmiDesayuno";
-            this.tsmiDesayuno.Size = new System.Drawing.Size(180, 22);
+            this.tsmiDesayuno.Size = new System.Drawing.Size(137, 22);
             this.tsmiDesayuno.Text = "Desayuno";
             this.tsmiDesayuno.Click += new System.EventHandler(this.tsmiDesayuno_Click);
             // 
             // tsmiAlmuerzo
             // 
             this.tsmiAlmuerzo.Name = "tsmiAlmuerzo";
-            this.tsmiAlmuerzo.Size = new System.Drawing.Size(180, 22);
+            this.tsmiAlmuerzo.Size = new System.Drawing.Size(137, 22);
             this.tsmiAlmuerzo.Text = "Almuerzo";
             this.tsmiAlmuerzo.Click += new System.EventHandler(this.tsmiAlmuerzo_Click);
             // 
             // tsmiMerienda
             // 
             this.tsmiMerienda.Name = "tsmiMerienda";
-            this.tsmiMerienda.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMerienda.Size = new System.Drawing.Size(137, 22);
             this.tsmiMerienda.Text = "Merienda";
             this.tsmiMerienda.Click += new System.EventHandler(this.tsmiMerienda_Click);
             // 
             // tsmiCena
             // 
             this.tsmiCena.Name = "tsmiCena";
-            this.tsmiCena.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCena.Size = new System.Drawing.Size(137, 22);
             this.tsmiCena.Text = "Cena";
             this.tsmiCena.Click += new System.EventHandler(this.tsmiCena_Click);
             // 
-            // filtro3ToolStripMenuItem
+            // tsmiReceta
             // 
-            this.filtro3ToolStripMenuItem.Name = "filtro3ToolStripMenuItem";
-            this.filtro3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.filtro3ToolStripMenuItem.Text = "Filtro 3";
+            this.tsmiReceta.Name = "tsmiReceta";
+            this.tsmiReceta.Size = new System.Drawing.Size(180, 22);
+            this.tsmiReceta.Text = "Receta";
+            this.tsmiReceta.Click += new System.EventHandler(this.tsmiReceta_Click);
             // 
-            // filtro4ToolStripMenuItem
+            // tsmiFecha
             // 
-            this.filtro4ToolStripMenuItem.Name = "filtro4ToolStripMenuItem";
-            this.filtro4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.filtro4ToolStripMenuItem.Text = "Filtro 4";
+            this.tsmiFecha.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiUnica,
+            this.tsmiEntreDos});
+            this.tsmiFecha.Name = "tsmiFecha";
+            this.tsmiFecha.Size = new System.Drawing.Size(180, 22);
+            this.tsmiFecha.Text = "Fecha";
+            // 
+            // tsmiQuitarFiltro
+            // 
+            this.tsmiQuitarFiltro.Name = "tsmiQuitarFiltro";
+            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(180, 22);
+            this.tsmiQuitarFiltro.Text = "Quitar filtro";
+            this.tsmiQuitarFiltro.Click += new System.EventHandler(this.tsmiQuitarFiltro_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -216,12 +229,19 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // tsmiQuitarFiltro
+            // tsmiUnica
             // 
-            this.tsmiQuitarFiltro.Name = "tsmiQuitarFiltro";
-            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(180, 22);
-            this.tsmiQuitarFiltro.Text = "Quitar filtro";
-            this.tsmiQuitarFiltro.Click += new System.EventHandler(this.tsmiQuitarFiltro_Click);
+            this.tsmiUnica.Name = "tsmiUnica";
+            this.tsmiUnica.Size = new System.Drawing.Size(180, 22);
+            this.tsmiUnica.Text = "Unica";
+            this.tsmiUnica.Click += new System.EventHandler(this.tsmiUnica_Click);
+            // 
+            // tsmiEntreDos
+            // 
+            this.tsmiEntreDos.Name = "tsmiEntreDos";
+            this.tsmiEntreDos.Size = new System.Drawing.Size(180, 22);
+            this.tsmiEntreDos.Text = "Entre dos";
+            this.tsmiEntreDos.Click += new System.EventHandler(this.tsmiEntreDos_Click);
             // 
             // FormComidas
             // 
@@ -251,8 +271,8 @@
         private System.Windows.Forms.ToolStripMenuItem filtrarPorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiFiltroSaludable;
         private System.Windows.Forms.ToolStripMenuItem tsmiTipoComida;
-        private System.Windows.Forms.ToolStripMenuItem filtro3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filtro4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReceta;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoReceta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
@@ -265,5 +285,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiMerienda;
         private System.Windows.Forms.ToolStripMenuItem tsmiCena;
         private System.Windows.Forms.ToolStripMenuItem tsmiQuitarFiltro;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUnica;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEntreDos;
     }
 }

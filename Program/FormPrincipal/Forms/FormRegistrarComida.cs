@@ -58,6 +58,7 @@ namespace FormPrincipal
         }
         private void FormRegistrarComida_Load(object sender, EventArgs e)
         {
+            dtpFechaComida.MaxDate = DateTime.Now;
             cmbFiltro.DataSource = Enum.GetValues(typeof(TiposComida));
             dgvSeleccionReceta.AutoGenerateColumns = false;
             ActualizarGrilla();

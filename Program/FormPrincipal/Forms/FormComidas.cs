@@ -122,5 +122,22 @@ namespace FormPrincipal
         {
             ActualizarGrilla();
         }
+
+        private void tsmiReceta_Click(object sender, EventArgs e)
+        {
+            //Abrir winform con dgv de recetas
+        }
+
+        private void tsmiUnica_Click(object sender, EventArgs e)
+        {
+            //Abrir winform para ingresar una fecha unica menor a la actual,para ver 
+            //las comidas de un dia
+        }
+
+        private void tsmiEntreDos_Click(object sender, EventArgs e)
+        {
+            //Abrir winform para ingresar entre dos fechas, siempre menor a la actual
+            //para ver comidas entre en un tiempo
+        }
     }
 }

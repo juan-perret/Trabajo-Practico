@@ -51,10 +51,12 @@ namespace FormPrincipal
         {
             foreach (DataGridViewRow row in dgvListaSuper.Rows)
             {
-                logica.AgregarStock(Convert.ToInt32(row.Cells["Id"].Value));
+                logica.AgregarStock(Convert.ToInt32(row.Cells[UtilidadesGrilla.ObtenerIndice(dgvListaSuper, "Id")].Value));
             }
             ActualizarGrilla();
             //obtener todos los datos que hay en el dgv y agregarles a sus cantidades con el metodo ya creado
+            //falta ver que compra por partes
+
         }
 
         private void filtro1ToolStripMenuItem_Click(object sender, EventArgs e)
