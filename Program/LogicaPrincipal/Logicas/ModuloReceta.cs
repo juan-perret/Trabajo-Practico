@@ -99,7 +99,12 @@ namespace LogicaPrincipal
         public List<Producto> DevolverIngredientesDeReceta(string id)
         {
             int codigo = Convert.ToInt32(id);
-            List<Producto> ingredientes = BuscarProductosReceta(DevolverReceta(codigo).CodigosIngredientes);
+            Receta receta = DevolverReceta(codigo);
+            List<Producto> ingredientes = BuscarProductosReceta(receta.CodigosIngredientes);
+            foreach (Producto ingrediente in ingredientes)
+            {
+                ingrediente.Cantidad = (receta.CantidadXIngrediente)[receta.CodigosIngredientes.FindIndex(x=>x == ingrediente.Id)];
+            }
             return ingredientes;
         }
         //

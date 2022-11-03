@@ -29,10 +29,26 @@
         private void InitializeComponent()
         {
             this.dgvListaSuper = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Punto_de_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoComida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MsListaSuper = new System.Windows.Forms.MenuStrip();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtro1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.t = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiHortalizasYVerduras = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFruta = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiQueso = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLacteo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCarnes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPescado = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPanaderia = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBebidaAltaAzucar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBebidaNormal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBebidaAlcoholica = new System.Windows.Forms.ToolStripMenuItem();
             this.filtro2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtro3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtro4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,13 +56,7 @@
             this.lblCosto = new System.Windows.Forms.Label();
             this.lblResultadoTotal = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.tscmbTipoProducto = new System.Windows.Forms.ToolStripComboBox();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Punto_de_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoComida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSuper)).BeginInit();
             this.MsListaSuper.SuspendLayout();
             this.SuspendLayout();
@@ -66,106 +76,6 @@
             this.dgvListaSuper.RowHeadersWidth = 51;
             this.dgvListaSuper.Size = new System.Drawing.Size(531, 350);
             this.dgvListaSuper.TabIndex = 0;
-            // 
-            // MsListaSuper
-            // 
-            this.MsListaSuper.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MsListaSuper.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MsListaSuper.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarToolStripMenuItem,
-            this.filtrosToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.MsListaSuper.Location = new System.Drawing.Point(0, 0);
-            this.MsListaSuper.Name = "MsListaSuper";
-            this.MsListaSuper.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.MsListaSuper.Size = new System.Drawing.Size(557, 25);
-            this.MsListaSuper.TabIndex = 1;
-            this.MsListaSuper.Text = "menuStrip1";
-            // 
-            // consultarToolStripMenuItem
-            // 
-            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
-            this.consultarToolStripMenuItem.Text = "Consultar";
-            // 
-            // filtrosToolStripMenuItem
-            // 
-            this.filtrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filtro1ToolStripMenuItem,
-            this.filtro2ToolStripMenuItem,
-            this.filtro3ToolStripMenuItem,
-            this.filtro4ToolStripMenuItem});
-            this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
-            this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(82, 21);
-            this.filtrosToolStripMenuItem.Text = "Filtrar por";
-            // 
-            // filtro1ToolStripMenuItem
-            // 
-            this.filtro1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tscmbTipoProducto});
-            this.filtro1ToolStripMenuItem.Name = "filtro1ToolStripMenuItem";
-            this.filtro1ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.filtro1ToolStripMenuItem.Text = "Tipo de producto";
-            this.filtro1ToolStripMenuItem.Click += new System.EventHandler(this.filtro1ToolStripMenuItem_Click);
-            // 
-            // filtro2ToolStripMenuItem
-            // 
-            this.filtro2ToolStripMenuItem.Name = "filtro2ToolStripMenuItem";
-            this.filtro2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.filtro2ToolStripMenuItem.Text = "Filtro 2";
-            // 
-            // filtro3ToolStripMenuItem
-            // 
-            this.filtro3ToolStripMenuItem.Name = "filtro3ToolStripMenuItem";
-            this.filtro3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.filtro3ToolStripMenuItem.Text = "Filtro 3";
-            // 
-            // filtro4ToolStripMenuItem
-            // 
-            this.filtro4ToolStripMenuItem.Name = "filtro4ToolStripMenuItem";
-            this.filtro4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.filtro4ToolStripMenuItem.Text = "Filtro 4";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // lblCosto
-            // 
-            this.lblCosto.AutoSize = true;
-            this.lblCosto.Location = new System.Drawing.Point(323, 406);
-            this.lblCosto.Name = "lblCosto";
-            this.lblCosto.Size = new System.Drawing.Size(128, 13);
-            this.lblCosto.TabIndex = 2;
-            this.lblCosto.Text = "Costo total de la Compra: ";
-            // 
-            // lblResultadoTotal
-            // 
-            this.lblResultadoTotal.AutoSize = true;
-            this.lblResultadoTotal.Location = new System.Drawing.Point(494, 406);
-            this.lblResultadoTotal.Name = "lblResultadoTotal";
-            this.lblResultadoTotal.Size = new System.Drawing.Size(13, 13);
-            this.lblResultadoTotal.TabIndex = 3;
-            this.lblResultadoTotal.Text = "0";
-            // 
-            // btnComprar
-            // 
-            this.btnComprar.Location = new System.Drawing.Point(12, 401);
-            this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(103, 23);
-            this.btnComprar.TabIndex = 4;
-            this.btnComprar.Text = "Comprar";
-            this.btnComprar.UseVisualStyleBackColor = true;
-            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
-            // 
-            // tscmbTipoProducto
-            // 
-            this.tscmbTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tscmbTipoProducto.Name = "tscmbTipoProducto";
-            this.tscmbTipoProducto.Size = new System.Drawing.Size(121, 23);
             // 
             // Nombre
             // 
@@ -212,6 +122,189 @@
             this.Id.Name = "Id";
             this.Id.Visible = false;
             // 
+            // MsListaSuper
+            // 
+            this.MsListaSuper.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MsListaSuper.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MsListaSuper.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarToolStripMenuItem,
+            this.filtrosToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.MsListaSuper.Location = new System.Drawing.Point(0, 0);
+            this.MsListaSuper.Name = "MsListaSuper";
+            this.MsListaSuper.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MsListaSuper.Size = new System.Drawing.Size(557, 25);
+            this.MsListaSuper.TabIndex = 1;
+            this.MsListaSuper.Text = "menuStrip1";
+            // 
+            // consultarToolStripMenuItem
+            // 
+            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
+            this.consultarToolStripMenuItem.Text = "Consultar";
+            // 
+            // filtrosToolStripMenuItem
+            // 
+            this.filtrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.t,
+            this.filtro2ToolStripMenuItem,
+            this.filtro3ToolStripMenuItem,
+            this.filtro4ToolStripMenuItem,
+            this.tsmiQuitarFiltro});
+            this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
+            this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(82, 21);
+            this.filtrosToolStripMenuItem.Text = "Filtrar por";
+            // 
+            // t
+            // 
+            this.t.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiHortalizasYVerduras,
+            this.tsmiFruta,
+            this.tsmiQueso,
+            this.tsmiLacteo,
+            this.tsmiCarnes,
+            this.tsmiPescado,
+            this.tsmiPanaderia,
+            this.tsmiBebidaAltaAzucar,
+            this.tsmiBebidaNormal,
+            this.tsmiBebidaAlcoholica});
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(183, 22);
+            this.t.Text = "Tipo de producto";
+            this.t.Click += new System.EventHandler(this.filtro1ToolStripMenuItem_Click);
+            // 
+            // tsmiHortalizasYVerduras
+            // 
+            this.tsmiHortalizasYVerduras.Name = "tsmiHortalizasYVerduras";
+            this.tsmiHortalizasYVerduras.Size = new System.Drawing.Size(219, 22);
+            this.tsmiHortalizasYVerduras.Text = "Hortalizas y verduras";
+            this.tsmiHortalizasYVerduras.Click += new System.EventHandler(this.tsmiHortalizasYVerduras_Click);
+            // 
+            // tsmiFruta
+            // 
+            this.tsmiFruta.AccessibleName = "";
+            this.tsmiFruta.Name = "tsmiFruta";
+            this.tsmiFruta.Size = new System.Drawing.Size(219, 22);
+            this.tsmiFruta.Text = "Frutas";
+            this.tsmiFruta.Click += new System.EventHandler(this.tsmiFruta_Click);
+            // 
+            // tsmiQueso
+            // 
+            this.tsmiQueso.AccessibleName = "Frutas";
+            this.tsmiQueso.Name = "tsmiQueso";
+            this.tsmiQueso.Size = new System.Drawing.Size(219, 22);
+            this.tsmiQueso.Text = "Quesos";
+            this.tsmiQueso.Click += new System.EventHandler(this.tsmiQueso_Click);
+            // 
+            // tsmiLacteo
+            // 
+            this.tsmiLacteo.Name = "tsmiLacteo";
+            this.tsmiLacteo.Size = new System.Drawing.Size(219, 22);
+            this.tsmiLacteo.Text = "Lacteos";
+            this.tsmiLacteo.Click += new System.EventHandler(this.tsmiLacteo_Click);
+            // 
+            // tsmiCarnes
+            // 
+            this.tsmiCarnes.Name = "tsmiCarnes";
+            this.tsmiCarnes.Size = new System.Drawing.Size(219, 22);
+            this.tsmiCarnes.Text = "Carnes";
+            this.tsmiCarnes.Click += new System.EventHandler(this.tsmiCarnes_Click);
+            // 
+            // tsmiPescado
+            // 
+            this.tsmiPescado.Name = "tsmiPescado";
+            this.tsmiPescado.Size = new System.Drawing.Size(219, 22);
+            this.tsmiPescado.Text = "Pescados";
+            this.tsmiPescado.Click += new System.EventHandler(this.tsmiPescado_Click);
+            // 
+            // tsmiPanaderia
+            // 
+            this.tsmiPanaderia.Name = "tsmiPanaderia";
+            this.tsmiPanaderia.Size = new System.Drawing.Size(219, 22);
+            this.tsmiPanaderia.Text = "Panaderia";
+            this.tsmiPanaderia.Click += new System.EventHandler(this.tsmiPanaderia_Click);
+            // 
+            // tsmiBebidaAltaAzucar
+            // 
+            this.tsmiBebidaAltaAzucar.Name = "tsmiBebidaAltaAzucar";
+            this.tsmiBebidaAltaAzucar.Size = new System.Drawing.Size(219, 22);
+            this.tsmiBebidaAltaAzucar.Text = "Bebidas altas en azucar";
+            this.tsmiBebidaAltaAzucar.Click += new System.EventHandler(this.tsmiBebidaAltaAzucar_Click);
+            // 
+            // tsmiBebidaNormal
+            // 
+            this.tsmiBebidaNormal.Name = "tsmiBebidaNormal";
+            this.tsmiBebidaNormal.Size = new System.Drawing.Size(219, 22);
+            this.tsmiBebidaNormal.Text = "Bebidas normales";
+            this.tsmiBebidaNormal.Click += new System.EventHandler(this.tsmiBebidaNormal_Click);
+            // 
+            // tsmiBebidaAlcoholica
+            // 
+            this.tsmiBebidaAlcoholica.Name = "tsmiBebidaAlcoholica";
+            this.tsmiBebidaAlcoholica.Size = new System.Drawing.Size(219, 22);
+            this.tsmiBebidaAlcoholica.Text = "Bebidas alcoholicas";
+            this.tsmiBebidaAlcoholica.Click += new System.EventHandler(this.tsmiBebidaAlcoholica_Click);
+            // 
+            // filtro2ToolStripMenuItem
+            // 
+            this.filtro2ToolStripMenuItem.Name = "filtro2ToolStripMenuItem";
+            this.filtro2ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.filtro2ToolStripMenuItem.Text = "Filtro 2";
+            // 
+            // filtro3ToolStripMenuItem
+            // 
+            this.filtro3ToolStripMenuItem.Name = "filtro3ToolStripMenuItem";
+            this.filtro3ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.filtro3ToolStripMenuItem.Text = "Filtro 3";
+            // 
+            // filtro4ToolStripMenuItem
+            // 
+            this.filtro4ToolStripMenuItem.Name = "filtro4ToolStripMenuItem";
+            this.filtro4ToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.filtro4ToolStripMenuItem.Text = "Filtro 4";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // lblCosto
+            // 
+            this.lblCosto.AutoSize = true;
+            this.lblCosto.Location = new System.Drawing.Point(323, 406);
+            this.lblCosto.Name = "lblCosto";
+            this.lblCosto.Size = new System.Drawing.Size(128, 13);
+            this.lblCosto.TabIndex = 2;
+            this.lblCosto.Text = "Costo total de la Compra: ";
+            // 
+            // lblResultadoTotal
+            // 
+            this.lblResultadoTotal.AutoSize = true;
+            this.lblResultadoTotal.Location = new System.Drawing.Point(494, 406);
+            this.lblResultadoTotal.Name = "lblResultadoTotal";
+            this.lblResultadoTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblResultadoTotal.TabIndex = 3;
+            this.lblResultadoTotal.Text = "0";
+            // 
+            // btnComprar
+            // 
+            this.btnComprar.Location = new System.Drawing.Point(12, 401);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(103, 23);
+            this.btnComprar.TabIndex = 4;
+            this.btnComprar.Text = "Comprar";
+            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
+            // 
+            // tsmiQuitarFiltro
+            // 
+            this.tsmiQuitarFiltro.Name = "tsmiQuitarFiltro";
+            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(183, 22);
+            this.tsmiQuitarFiltro.Text = "Quitar Filtro";
+            this.tsmiQuitarFiltro.Click += new System.EventHandler(this.tsmiQuitarFiltro_Click);
+            // 
             // FormListaSuper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +333,7 @@
         private System.Windows.Forms.MenuStrip MsListaSuper;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filtro1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem t;
         private System.Windows.Forms.ToolStripMenuItem filtro2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtro3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtro4ToolStripMenuItem;
@@ -248,12 +341,22 @@
         private System.Windows.Forms.Label lblCosto;
         private System.Windows.Forms.Label lblResultadoTotal;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.ToolStripComboBox tscmbTipoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Punto_de_Pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoComida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.ToolStripMenuItem tsmiHortalizasYVerduras;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFruta;
+        private System.Windows.Forms.ToolStripMenuItem tsmiQueso;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLacteo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCarnes;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPescado;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPanaderia;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBebidaAltaAzucar;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBebidaNormal;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBebidaAlcoholica;
+        private System.Windows.Forms.ToolStripMenuItem tsmiQuitarFiltro;
     }
 }

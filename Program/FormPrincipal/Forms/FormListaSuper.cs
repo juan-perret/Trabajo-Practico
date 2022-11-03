@@ -26,7 +26,6 @@ namespace FormPrincipal
 
         private void FormListaSuper_Load(object sender, EventArgs e)
         {
-            tscmbTipoProducto.ComboBox.DataSource = Enum.GetValues(typeof(TiposProducto));
             dgvListaSuper.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
@@ -61,6 +60,73 @@ namespace FormPrincipal
         private void filtro1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+        private void ActualizarGrilla(TiposProducto tipoProducto)
+        {
+            decimal total = 0;
+            dgvListaSuper.DataSource = null;
+            dgvListaSuper.DataSource = logica.DevolverLista(tipoProducto);
+            foreach (DataGridViewRow row in dgvListaSuper.Rows)
+            {
+                row.Cells["Total"].Value = Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+                total += Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+            }
+            lblResultadoTotal.Text = Convert.ToString(total);
+        }
+
+        private void tsmiHortalizasYVerduras_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Hortalizas_y_Verduras);
+        }
+
+        private void tsmiFruta_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Frutas);
+        }
+
+        private void tsmiQueso_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Quesos);
+        }
+
+        private void tsmiLacteo_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Lacteos);
+        }
+
+        private void tsmiCarnes_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Carnes);
+        }
+
+        private void tsmiPescado_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Pescados);
+        }
+
+        private void tsmiPanaderia_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Panaderia);
+        }
+
+        private void tsmiBebidaAltaAzucar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Bebidas_Alta_en_Azucar);
+        }
+
+        private void tsmiBebidaNormal_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Bebidas_Normal);
+        }
+
+        private void tsmiBebidaAlcoholica_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(TiposProducto.Bebidas_Alcoholicas);
+        }
+
+        private void tsmiQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla();
         }
     }
 }

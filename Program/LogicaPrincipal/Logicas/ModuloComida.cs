@@ -102,5 +102,17 @@ namespace LogicaPrincipal
             }
             return comidasSaludables;
         }
+        public List<Comida> ObtenerComidasXTipo (TiposComida tipoComida)
+        {
+            List<Comida> comidasXTipo = new List<Comida>();
+            foreach(Comida comida in comidas)
+            {
+                if(comida.RecetaElegida.TipoComida == tipoComida)
+                {
+                    comidasXTipo.Add(comida);
+                }
+            }
+            return comidasXTipo;
+        }
     }
 }

@@ -39,6 +39,7 @@ namespace LogicaPrincipal
                     {
                         producto.Id = ingrediente.Id;
                         producto.Nombre = ingrediente.Nombre;
+                        producto.TipoProducto = ingrediente.TipoProducto;
                         producto.Cantidad = ingrediente.Cantidad;
                         producto.PuntoPedido = ingrediente.PuntoPedido;
                         producto.Precio = ingrediente.Precio;
@@ -67,6 +68,18 @@ namespace LogicaPrincipal
                 }
             }
             return listaAComprar;
+        }
+        public List<Producto> ProductosAComprarPorTipo(TiposProducto tipoProducto)
+        {
+            List<Producto> listaAComprar = new List<Producto>();
+            foreach (Producto p in despensa)
+            {
+                if (p.Cantidad <= p.PuntoPedido && p.TipoProducto == tipoProducto)
+                {
+                    listaAComprar.Add(p);
+                }
+            }
+            return listaAComprar;   
         }
         //
         //Metodos para recetas
