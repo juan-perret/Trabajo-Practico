@@ -90,6 +90,42 @@ namespace FormPrincipal
                 }
             }
         }
+        private void ActualizarGrilla(int idReceta)
+        {
+            dgvComidas.DataSource = null;
+            List<Comida> comidas = logica.ObtenerComidasXReceta(idReceta);
+            dgvComidas.DataSource = comidas;
+            foreach (Comida comida in comidas)
+            {
+                foreach (DataGridViewRow row in dgvComidas.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "CodigoReceta")].Value) == comida.CodigoReceta)
+                    {
+                        row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "Nombre_Receta")].Value = comida.RecetaElegida.Nombre;
+                        row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "Tipo_de_comida")].Value = comida.RecetaElegida.TipoComida;
+                        row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "Saludable")].Value = comida.RecetaElegida.Saludable;
+                    }
+                }
+            }
+        }
+        private void ActualizarGrilla(DateTime fecha1, DateTime fecha2)
+        {
+            dgvComidas.DataSource = null;
+            List<Comida> comidas = logica.ObtenerComidasXFecha(fecha1, fecha2);
+            dgvComidas.DataSource = comidas;
+            foreach (Comida comida in comidas)
+            {
+                foreach (DataGridViewRow row in dgvComidas.Rows)
+                {
+                    if (Convert.ToInt32(row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "CodigoReceta")].Value) == comida.CodigoReceta)
+                    {
+                        row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "Nombre_Receta")].Value = comida.RecetaElegida.Nombre;
+                        row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "Tipo_de_comida")].Value = comida.RecetaElegida.TipoComida;
+                        row.Cells[UtilidadesGrilla.ObtenerIndice(dgvComidas, "Saludable")].Value = comida.RecetaElegida.Saludable;
+                    }
+                }
+            }
+        }
         public void CargarGrilla()
         {
             ActualizarGrilla();
@@ -127,24 +163,14 @@ namespace FormPrincipal
         {
             FormComidaFiltroReceta formComidaFiltroReceta = new FormComidaFiltroReceta();
             formComidaFiltroReceta.ShowDialog(this);
-        }
-
-        private void tsmiUnica_Click(object sender, EventArgs e)
-        {
-            //Abrir winform para ingresar una fecha unica menor a la actual,para ver 
-            //las comidas de un dia
-        }
-
-        private void tsmiEntreDos_Click(object sender, EventArgs e)
-        {
-            //Abrir winform para ingresar entre dos fechas, siempre menor a la actual
-            //para ver comidas entre en un tiempo
+            //ActualizarGrilla(idReceta);
         }
 
         private void tsmiFecha_Click(object sender, EventArgs e)
         {
             FormFiltroComidaFecha formFiltroComidaFecha = new FormFiltroComidaFecha();
             formFiltroComidaFecha.ShowDialog(this);
+            //ActualizarGrilla(fecha1, fecha2)
         }
     }
 }

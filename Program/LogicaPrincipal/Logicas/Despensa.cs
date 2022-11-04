@@ -9,7 +9,7 @@ using System.IO;
 namespace LogicaPrincipal
 {
     public class Despensa : Archivo
-    {
+    {       
         List<Producto> despensa = new List<Producto>();
         int id = 0;
         public Despensa()
@@ -95,6 +95,8 @@ namespace LogicaPrincipal
                 if(p.Id == Convert.ToInt32(idIngrediente))
                 {
                     productos.Remove(p);
+                    ModuloReceta moduloReceta = new ModuloReceta();
+                    moduloReceta.EliminarRecetaXIngredienteFaltante(Convert.ToInt32(idIngrediente));
                     EscribirProducto(productos);
                     break;
                 }

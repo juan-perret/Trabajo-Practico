@@ -42,6 +42,7 @@
             this.dtpFecha1.Name = "dtpFecha1";
             this.dtpFecha1.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha1.TabIndex = 0;
+            this.dtpFecha1.ValueChanged += new System.EventHandler(this.dtpFecha1_ValueChanged);
             // 
             // dtpFecha2
             // 
@@ -67,6 +68,7 @@
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -100,6 +102,7 @@
             this.Controls.Add(this.dtpFecha1);
             this.Name = "FormFiltroComidaFecha";
             this.Text = "Filtrar comida por fecha";
+            this.Load += new System.EventHandler(this.FormFiltroComidaFecha_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

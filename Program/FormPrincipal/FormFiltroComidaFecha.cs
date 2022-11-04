@@ -21,5 +21,21 @@ namespace FormPrincipal
         {
             this.Close();
         }
+
+        private void FormFiltroComidaFecha_Load(object sender, EventArgs e)
+        {
+            dtpFecha1.MaxDate = DateTime.Now;
+            dtpFecha2.MaxDate = DateTime.Now;
+        }
+
+        private void dtpFecha1_ValueChanged(object sender, EventArgs e)
+        {
+            dtpFecha2.MinDate = dtpFecha1.Value;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            //ActualizarGrilla(dtpFecha1.Value, dtpFecha2.Value); 
+        }
     }
 }

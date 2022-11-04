@@ -128,7 +128,6 @@ namespace LogicaPrincipal
         public void EliminarReceta (string idReceta)
         {
             int id = Convert.ToInt32(idReceta);
-            List<Receta> recetas = LeerRecetas();
             foreach (var rec in recetas)
             {
                 if (rec.Id == id)
@@ -136,6 +135,20 @@ namespace LogicaPrincipal
                     recetas.Remove(rec);
                     EscribirReceta(recetas);
                     break;
+                }
+            }
+        }
+        public void EliminarRecetaXIngredienteFaltante(int idIngredienteAQuitar)
+        {
+            List<Receta> recetas = LeerRecetas();
+            foreach (Receta rec in recetas)
+            {
+                foreach (int idIngrediente in rec.CodigosIngredientes)
+                {
+                    if (idIngrediente == idIngredienteAQuitar)
+                    {
+                        EliminarReceta(rec.Id.ToString());
+                    }    
                 }
             }
         }

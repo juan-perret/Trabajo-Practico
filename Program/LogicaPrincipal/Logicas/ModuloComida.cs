@@ -16,10 +16,10 @@ namespace LogicaPrincipal
         {
             logica = new ModuloReceta();
             comidas = LeerComidas();
-            foreach (Comida comida in comidas)
-            {
-                comida.RecetaElegida = logica.DevolverReceta(comida.CodigoReceta);
-            }
+            //foreach (Comida comida in comidas)
+            //{
+            //    comida.RecetaElegida = logica.DevolverReceta(comida.CodigoReceta);
+            //}
             //foreach buscando la receta por ID.
         }
         public void GuardarComida(Comida comida)
@@ -113,6 +113,30 @@ namespace LogicaPrincipal
                 }
             }
             return comidasXTipo;
+        }
+        public List<Comida> ObtenerComidasXReceta (int idReceta)
+        {
+            List<Comida> comidasXReceta = new List<Comida>();
+            foreach (Comida comida in comidas)
+            {
+                if (comida.RecetaElegida == logica.DevolverReceta(idReceta))
+                {
+                    comidasXReceta.Add(comida);
+                }
+            }
+            return comidasXReceta;
+        }
+        public List<Comida> ObtenerComidasXFecha (DateTime fecha1, DateTime fecha2)
+        {
+            List<Comida> comidasXFecha = new List<Comida>();
+            foreach (Comida comida in comidas)
+            {
+                if (comida.FechaDeRegistro>=fecha1 && comida.FechaDeRegistro<=fecha2)
+                {
+                    comidasXFecha.Add(comida);
+                }
+            }
+            return comidasXFecha;
         }
     }
 }
