@@ -35,26 +35,6 @@ namespace FormPrincipal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (validarNombre() == false)
-            {
-                return;
-            }
-            if (validarCategoria() == false)
-            {
-                return;
-            }
-            if (validarCandtidad() == false)
-            {
-                return;
-            }
-            if (validarPrecio() == false)
-            {
-                return;
-            }
-            if (validarStockMinimo() == false)
-            {
-                return;
-            }
             Enum.TryParse(CmbBoxCategoria.Text, out TiposProducto tipo);
             switch (tipo)
             {   
@@ -65,8 +45,7 @@ namespace FormPrincipal
                     carne.TipoProducto = tipo;
                     carne.Precio = decimal.Parse(txtPrecio.Text) ;
                     carne.PuntoPedido = double.Parse(txtStockPedido.Text);
-                    carne.Cantidad = double.Parse(txtCantidad.Text);                  
-                    logica.GuardarActualizarProducto(carne);
+                    carne.Cantidad = double.Parse(txtCantidad.Text); 
                     break;
                 case TiposProducto.Bebidas_Normal:
                     Bebida bebidaN = new Bebida();
@@ -170,79 +149,6 @@ namespace FormPrincipal
             this.Close();
         }
 
-        private bool validarStockMinimo()
-        {
-            int stockMinimo;
-            if (!int.TryParse(txtStockPedido.Text, out stockMinimo) || txtStockPedido.Text == "")
-            {
-                erpError.SetError(txtStockPedido, "Debe ingresar un valor numerico");
-                return false;
-            }
-            else
-            {
-                erpError.SetError(txtStockPedido, "");
-                return true;
-            }
-            
-        }
-
-        private bool validarPrecio()
-        {
-            double precio;
-            if (!double.TryParse(txtPrecio.Text, out precio) || txtPrecio.Text == "")
-            {
-                erpError.SetError(txtPrecio, "Debe ingresar un valor numerico");
-                return false;
-            }
-            else
-            {
-                erpError.SetError(txtPrecio, "");
-                return true;
-            }
-        }
-
-        private bool validarCandtidad()
-        {
-            int cantidad;
-            if (!int.TryParse(txtCantidad.Text, out cantidad) || txtCantidad.Text == "")
-            {
-                erpError.SetError(txtCantidad, "Debe ingresar un valor numerico");
-                return false;
-            }
-            else
-            {
-                erpError.SetError(txtCantidad, "");
-                return true;
-            }
-        }
-
-        private bool validarCategoria()
-        {
-            if (string.IsNullOrEmpty(CmbBoxCategoria.Text))
-            {
-                erpError.SetError(CmbBoxCategoria, "Debe seleccionar una categoria");
-                return false;
-            }
-            else
-            {
-                erpError.SetError(CmbBoxCategoria, "");
-                return true;
-            }
-        }
-
-        private bool validarNombre()
-        {
-            if (string.IsNullOrEmpty(txtNombre.Text))
-            {
-                erpError.SetError(txtNombre, "Debe ingresar un nombre");
-                return false;
-            }
-            else
-            {
-                erpError.SetError(txtNombre, "");
-                return true;
-            }
-        }
 
         private void FormAltaIngredientes_Load(object sender, EventArgs e)
         {

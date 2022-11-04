@@ -1,7 +1,8 @@
 ﻿namespace LogicaPrincipal
 {
     public enum TiposComida 
-    {   Desayuno, 
+    {   
+        Desayuno, 
         Almuerzo, 
         Merienda, 
         Cena 

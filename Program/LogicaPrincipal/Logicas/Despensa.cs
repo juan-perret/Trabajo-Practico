@@ -24,30 +24,46 @@ namespace LogicaPrincipal
         // y generarle un id y si no es vacio debe modificar el registro
         public void GuardarActualizarProducto(Producto ingrediente)
         {
-            if(ingrediente.Id == 0)
-            {
-                ingrediente.Id = id + 1;
-                despensa.Add(ingrediente);
-                EscribirProducto(despensa);
-                id += 1;
-            }
-            else
-            {
-                foreach (Producto producto in despensa)
+            
+                if (ingrediente.Id == 0)
                 {
-                    if(producto.Id == ingrediente.Id)
-                    {
-                        producto.Id = ingrediente.Id;
-                        producto.Nombre = ingrediente.Nombre;
-                        producto.TipoProducto = ingrediente.TipoProducto;
-                        producto.Cantidad = ingrediente.Cantidad;
-                        producto.PuntoPedido = ingrediente.PuntoPedido;
-                        producto.Precio = ingrediente.Precio;
-                        EscribirProducto(despensa);
-                    }
+                    ingrediente.Id = id + 1;
+                    despensa.Add(ingrediente);
+                    EscribirProducto(despensa);
+                    id += 1;
                 }
-            }           
+                else
+                {
+                    foreach (Producto producto in despensa)
+                    {
+                        if (producto.Id == ingrediente.Id)
+                        {
+                            producto.Id = ingrediente.Id;
+                            producto.Nombre = ingrediente.Nombre;
+                            producto.TipoProducto = ingrediente.TipoProducto;
+                            producto.Cantidad = ingrediente.Cantidad;
+                            producto.PuntoPedido = ingrediente.PuntoPedido;
+                            producto.Precio = ingrediente.Precio;
+                            EscribirProducto(despensa);
+                        }
+                    }
+                } 
         }
+
+        private bool ValidarDatos(Producto ingrediente)
+        {
+            //validar nombre
+            if(string.IsNullOrEmpty(ingrediente.Nombre))
+            {
+
+            }
+            //validar categoria
+            //validar cantidad
+            //precio
+            //validar punto de pedido
+            return false;
+        }
+
         public Producto Ingrediente(int idBuscado)
         {
             Producto producto = despensa.Find(x => x.Id == idBuscado);
