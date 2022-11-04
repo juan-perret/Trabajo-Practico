@@ -45,15 +45,10 @@ namespace FormPrincipal
             }
             if (resultadoValidacion == "El ingrediente se cargo correctamente")
                 this.Close();
-            
-                
-            
         }
-
 
         private void FormAltaIngredientes_Load(object sender, EventArgs e)
         {
-           
             CmbBoxCategoria.DataSource = Enum.GetValues(typeof(TiposProducto));
             if (!string.IsNullOrEmpty(Id))
             {

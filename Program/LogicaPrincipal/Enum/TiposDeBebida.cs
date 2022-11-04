@@ -1,7 +1,8 @@
 ﻿namespace LogicaPrincipal
 {
     public enum VariedadBebida 
-    {   alcoholica, 
+    {   
+        alcoholica, 
         altaEnAzucar, 
         normal
     }

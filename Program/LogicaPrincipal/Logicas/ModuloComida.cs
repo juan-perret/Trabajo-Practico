@@ -87,9 +87,8 @@ namespace LogicaPrincipal
             return recetasAMostrar;
         }
         //guarda(), al guardar modificar en despensa las cantidades
-        //
         //Comidas filtros
-        //
+
         public List<Comida> ObtenerComidasSaludables(bool saludable)
         {
             List<Comida> comidasSaludables = new List<Comida>();

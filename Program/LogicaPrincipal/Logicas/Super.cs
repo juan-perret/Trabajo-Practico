@@ -15,8 +15,7 @@ namespace LogicaPrincipal
         public Super()
         {
             logica = new Despensa();
-            //ingredientesFaltantes = logica.ProductosAComprar();
-        }                                              // aca va metodo de los productos
+        }                                             
         public List<Producto> DevolverLista()
         {
             ingredientesFaltantes = logica.ProductosAComprar();

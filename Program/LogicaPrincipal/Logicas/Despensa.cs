@@ -50,7 +50,7 @@ namespace LogicaPrincipal
         }
         public void CrearIngrediente(string id, string nombre, TiposProducto tipo, string Precio, string PuntoPedido, string Cantidad)
         {
-            
+            int Id = Convert.ToInt32(id);
             decimal precio = Convert.ToDecimal(Precio);
             int puntoPedido = Convert.ToInt32(PuntoPedido);
             double cantidad = Convert.ToDouble(Cantidad);
@@ -58,7 +58,7 @@ namespace LogicaPrincipal
             {
                 case TiposProducto.Carnes:
                     Carne carne = new Carne();
-                    carne.Id = Convert.ToInt32(id); ;
+                    carne.Id = Id;
                     carne.Nombre = nombre;
                     carne.TipoProducto = tipo;
                     carne.Precio = precio;
@@ -68,7 +68,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Bebidas_Normal:
                     Bebida bebidaN = new Bebida();
-                    bebidaN.Id = Convert.ToInt32(id);
+                    bebidaN.Id = Id;
                     bebidaN.Nombre = nombre;
                     bebidaN.TipoProducto = tipo;
                     bebidaN.Precio = precio;
@@ -79,7 +79,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Bebidas_Alta_en_Azucar:
                     Bebida bebidaAA = new Bebida();
-                    bebidaAA.Id = Convert.ToInt32(id);
+                    bebidaAA.Id = Id;
                     bebidaAA.Nombre = nombre;
                     bebidaAA.TipoProducto = tipo;
                     bebidaAA.Precio = precio;
@@ -90,7 +90,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Bebidas_Alcoholicas:
                     Bebida bebidaA = new Bebida();
-                    bebidaA.Id = Convert.ToInt32(id);
+                    bebidaA.Id = Id;
                     bebidaA.Nombre = nombre;
                     bebidaA.TipoProducto = tipo;
                     bebidaA.Precio = precio;
@@ -101,7 +101,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Frutas:
                     Fruta fruta = new Fruta();
-                    fruta.Id = Convert.ToInt32(id); ;
+                    fruta.Id = Id;
                     fruta.Nombre = nombre;
                     fruta.TipoProducto = tipo;
                     fruta.Precio = precio;
@@ -111,7 +111,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Hortalizas_y_Verduras:
                     Hortaliza hortaliza = new Hortaliza();
-                    hortaliza.Id = Convert.ToInt32(id); ;
+                    hortaliza.Id = Id;
                     hortaliza.Nombre = nombre;
                     hortaliza.TipoProducto = tipo;
                     hortaliza.Precio = precio;
@@ -121,7 +121,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Lacteos:
                     Lacteo lacteo = new Lacteo();
-                    lacteo.Id = Convert.ToInt32(id); ;
+                    lacteo.Id = Id;
                     lacteo.Nombre = nombre;
                     lacteo.TipoProducto = tipo;
                     lacteo.Precio = precio;
@@ -131,7 +131,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Panaderia:
                     Panaderia panaderia = new Panaderia();
-                    panaderia.Id = Convert.ToInt32(id); ;
+                    panaderia.Id = Id;
                     panaderia.Nombre = nombre;
                     panaderia.TipoProducto = tipo;
                     panaderia.Precio = precio;
@@ -141,7 +141,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Pescados:
                     Pescado pescado = new Pescado();
-                    pescado.Id = Convert.ToInt32(id); ;
+                    pescado.Id = Id;
                     pescado.Nombre = nombre;
                     pescado.TipoProducto = tipo;
                     pescado.Precio = precio;
@@ -151,7 +151,7 @@ namespace LogicaPrincipal
                     break;
                 case TiposProducto.Quesos:
                     Queso queso = new Queso();
-                    queso.Id = Convert.ToInt32(id); ;
+                    queso.Id = Id;
                     queso.Nombre = nombre;
                     queso.TipoProducto = tipo;
                     queso.Precio = precio;
@@ -201,7 +201,7 @@ namespace LogicaPrincipal
                     return "El ingrediente se cargo correctamente";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "Completar todos los campos";
             }
@@ -238,7 +238,7 @@ namespace LogicaPrincipal
             }
             return listaAComprar;   
         }
-        //
+
         //Metodos para recetas
         public void EliminarCantidadProducto(int idProducto, double cantidad)
         {
@@ -261,15 +261,13 @@ namespace LogicaPrincipal
                 }
             }
         }
-        //
+       
         //Para el super
-        //
         public void AgregarIngredientesXSuper(int idIngrediente)
         {
             Producto producto = Ingrediente(idIngrediente);
             producto.Cantidad += producto.PuntoPedido;
             GuardarActualizarProducto(producto);
         }
-        //guardad()
     }
 }

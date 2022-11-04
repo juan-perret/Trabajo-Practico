@@ -61,9 +61,9 @@
     <Compile Include="Clases\Queso.cs" />
     <Compile Include="Clases\Receta.cs" />
     <Compile Include="Logicas\Super.cs" />
-    <Compile Include="TiposComida.cs" />
-    <Compile Include="TiposDeBebida.cs" />
-    <Compile Include="TiposDeProducto.cs" />
+    <Compile Include="Enum\TiposComida.cs" />
+    <Compile Include="Enum\TiposDeBebida.cs" />
+    <Compile Include="Enum\TiposDeProducto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
