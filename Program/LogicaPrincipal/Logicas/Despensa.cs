@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 
+
 namespace LogicaPrincipal
 {
     public class Despensa : Archivo
@@ -20,8 +21,7 @@ namespace LogicaPrincipal
                 id = despensa.Max(x=>x.Id);
             }
         }
-        //El metodo deberia ser GuardarActualizarProducto en el cual dependiendo si el Id es vacio debe agregar el producto
-        // y generarle un id y si no es vacio debe modificar el registro
+        
         public void GuardarActualizarProducto(Producto ingrediente)
         {
                 if (ingrediente.Id == 0)
@@ -48,8 +48,12 @@ namespace LogicaPrincipal
                     }
                 } 
         }
-        public void CrearIngrediente(string id, string nombre, TiposProducto tipo, decimal precio, int puntoPedido, double cantidad)
+        public void CrearIngrediente(string id, string nombre, TiposProducto tipo, string Precio, string PuntoPedido, string Cantidad)
         {
+            
+            decimal precio = Convert.ToDecimal(Precio);
+            int puntoPedido = Convert.ToInt32(PuntoPedido);
+            double cantidad = Convert.ToDouble(Cantidad);
             switch (tipo)
             {
                 case TiposProducto.Carnes:
@@ -157,19 +161,50 @@ namespace LogicaPrincipal
                     break;
             }
         }
-        public bool ValidarDatos(string id, string nombre, TiposProducto tipo, decimal precio, int puntoPedido, double cantidad)
+        public string ValidarDatos(string id, string nombre, TiposProducto tipo, string precio, string puntoPedido, string cantidad)
         {
-            //validar nombre
-            if(string.IsNullOrEmpty(nombre))
+            
+            try
             {
-
+                double numero;
+                decimal numero1;
+                int numero2;
+                //validar nombre
+                if (string.IsNullOrEmpty(nombre) || int.TryParse(nombre, out numero2) == true)
+                {
+                    return "Verificar que el nombre este correctamente ingresado";
+                }
+                //validar categoria
+                else if(string.IsNullOrEmpty(tipo.ToString()))
+                {
+                    return "Verificar que la categoria este correctamente ingresado";
+                }
+                //validar cantidad
+                else if (double.TryParse(cantidad.ToString(), out numero) == false)
+                {
+                    return "Verificar que la cantidad este correctamente ingresado";
+                }
+                //precio
+                else if (decimal.TryParse(precio, out numero1) == false)
+                {
+                    return "Verificar que el precio este correctamente ingresado";
+                }
+                //validar punto de pedido
+                else if (int.TryParse(puntoPedido, out numero2) == false)
+                {
+                    return "Verificar que el punto de pedido este correctamente ingresado";
+                }
+                //CrearIngrediente(id, nombre, tipo, precio, puntoPedido, cantidad);
+                else
+                {
+                    CrearIngrediente( id,  nombre,  tipo,  precio,  puntoPedido,  cantidad);
+                    return "El ingrediente se cargo correctamente";
+                }
             }
-            //validar categoria
-            //validar cantidad
-            //precio
-            //validar punto de pedido
-            CrearIngrediente(id,nombre,tipo,precio,puntoPedido,cantidad);
-            return false;
+            catch (Exception ex)
+            {
+                return "Completar todos los campos";
+            }
         }
 
         public Producto Ingrediente(int idBuscado)

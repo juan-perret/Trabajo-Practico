@@ -20,6 +20,7 @@ namespace FormPrincipal
             logica = new ModuloComida();
         }
 
+      
         private void registrarComidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRegistrarComida registrarComida = new FormRegistrarComida();

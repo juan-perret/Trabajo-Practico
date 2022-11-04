@@ -36,13 +36,18 @@ namespace FormPrincipal
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Enum.TryParse(CmbBoxCategoria.Text, out TiposProducto tipo);
-            logica.ValidarDatos(this.Id, txtNombre.Text, tipo, decimal.Parse(txtPrecio.Text), int.Parse(txtStockPedido.Text), double.Parse(txtCantidad.Text));
+            string resultadoValidacion = logica.ValidarDatos(this.Id, txtNombre.Text, tipo, txtPrecio.Text, txtStockPedido.Text, txtCantidad.Text);
+            MessageBox.Show(logica.ValidarDatos(this.Id, txtNombre.Text, tipo, txtPrecio.Text, txtStockPedido.Text, txtCantidad.Text));
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)
             {
                 padre.CargarGrilla();
             }
-            this.Close();
+            if (resultadoValidacion == "El ingrediente se cargo correctamente")
+                this.Close();
+            
+                
+            
         }
 
 

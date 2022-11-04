@@ -20,9 +20,11 @@ namespace FormPrincipal
             InitializeComponent();
         }
 
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+           
         }
 
         private void FormComidaFiltroReceta_Load(object sender, EventArgs e)
@@ -33,7 +35,8 @@ namespace FormPrincipal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int idReceta = Convert.ToInt32(dgvComidaFiltroReceta.SelectedRows[0].Cells[UtilidadesGrilla.ObtenerIndice(dgvComidaFiltroReceta,"Id")].Value);
+            int idReceta = Convert.ToInt32(dgvComidaFiltroReceta.SelectedRows[0].Cells[UtilidadesGrilla.ObtenerIndice(dgvComidaFiltroReceta, "Id")].Value);
+            this.Close();
             //ActualizarGrilla(idReceta);
         }
     }
