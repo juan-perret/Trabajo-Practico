@@ -47,6 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases - Form\ActualizarGrilla.cs" />
+    <Compile Include="FormComidaFiltroReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComidaFiltroReceta.Designer.cs">
+      <DependentUpon>FormComidaFiltroReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFiltroComidaFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFiltroComidaFecha.Designer.cs">
+      <DependentUpon>FormFiltroComidaFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormIngredienteRecetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +116,12 @@
       <DependentUpon>FormRecetas.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases - Form\UtilidadesGrilla.cs" />
+    <EmbeddedResource Include="FormComidaFiltroReceta.resx">
+      <DependentUpon>FormComidaFiltroReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFiltroComidaFecha.resx">
+      <DependentUpon>FormFiltroComidaFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAltaIngredientes.resx">
       <DependentUpon>FormAltaIngredientes.cs</DependentUpon>
     </EmbeddedResource>

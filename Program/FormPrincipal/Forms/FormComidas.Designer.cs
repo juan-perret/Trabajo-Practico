@@ -49,8 +49,6 @@
             this.tsmiFecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiUnica = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEntreDos = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComidas)).BeginInit();
             this.MsComidas.SuspendLayout();
             this.SuspendLayout();
@@ -208,12 +206,10 @@
             // 
             // tsmiFecha
             // 
-            this.tsmiFecha.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiUnica,
-            this.tsmiEntreDos});
             this.tsmiFecha.Name = "tsmiFecha";
             this.tsmiFecha.Size = new System.Drawing.Size(180, 22);
             this.tsmiFecha.Text = "Fecha";
+            this.tsmiFecha.Click += new System.EventHandler(this.tsmiFecha_Click);
             // 
             // tsmiQuitarFiltro
             // 
@@ -228,20 +224,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // tsmiUnica
-            // 
-            this.tsmiUnica.Name = "tsmiUnica";
-            this.tsmiUnica.Size = new System.Drawing.Size(180, 22);
-            this.tsmiUnica.Text = "Unica";
-            this.tsmiUnica.Click += new System.EventHandler(this.tsmiUnica_Click);
-            // 
-            // tsmiEntreDos
-            // 
-            this.tsmiEntreDos.Name = "tsmiEntreDos";
-            this.tsmiEntreDos.Size = new System.Drawing.Size(180, 22);
-            this.tsmiEntreDos.Text = "Entre dos";
-            this.tsmiEntreDos.Click += new System.EventHandler(this.tsmiEntreDos_Click);
             // 
             // FormComidas
             // 
@@ -285,7 +267,5 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiMerienda;
         private System.Windows.Forms.ToolStripMenuItem tsmiCena;
         private System.Windows.Forms.ToolStripMenuItem tsmiQuitarFiltro;
-        private System.Windows.Forms.ToolStripMenuItem tsmiUnica;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEntreDos;
     }
 }

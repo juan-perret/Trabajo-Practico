@@ -125,7 +125,8 @@ namespace FormPrincipal
 
         private void tsmiReceta_Click(object sender, EventArgs e)
         {
-            //Abrir winform con dgv de recetas
+            FormComidaFiltroReceta formComidaFiltroReceta = new FormComidaFiltroReceta();
+            formComidaFiltroReceta.ShowDialog(this);
         }
 
         private void tsmiUnica_Click(object sender, EventArgs e)
@@ -138,6 +139,12 @@ namespace FormPrincipal
         {
             //Abrir winform para ingresar entre dos fechas, siempre menor a la actual
             //para ver comidas entre en un tiempo
+        }
+
+        private void tsmiFecha_Click(object sender, EventArgs e)
+        {
+            FormFiltroComidaFecha formFiltroComidaFecha = new FormFiltroComidaFecha();
+            formFiltroComidaFecha.ShowDialog(this);
         }
     }
 }
