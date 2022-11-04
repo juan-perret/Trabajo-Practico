@@ -24,7 +24,6 @@ namespace LogicaPrincipal
         // y generarle un id y si no es vacio debe modificar el registro
         public void GuardarActualizarProducto(Producto ingrediente)
         {
-            
                 if (ingrediente.Id == 0)
                 {
                     ingrediente.Id = id + 1;
@@ -49,11 +48,119 @@ namespace LogicaPrincipal
                     }
                 } 
         }
-
-        private bool ValidarDatos(Producto ingrediente)
+        public void CrearIngrediente(string id, string nombre, TiposProducto tipo, decimal precio, int puntoPedido, double cantidad)
+        {
+            switch (tipo)
+            {
+                case TiposProducto.Carnes:
+                    Carne carne = new Carne();
+                    carne.Id = Convert.ToInt32(id); ;
+                    carne.Nombre = nombre;
+                    carne.TipoProducto = tipo;
+                    carne.Precio = precio;
+                    carne.PuntoPedido = puntoPedido;
+                    carne.Cantidad = cantidad;
+                    GuardarActualizarProducto(carne);
+                    break;
+                case TiposProducto.Bebidas_Normal:
+                    Bebida bebidaN = new Bebida();
+                    bebidaN.Id = Convert.ToInt32(id);
+                    bebidaN.Nombre = nombre;
+                    bebidaN.TipoProducto = tipo;
+                    bebidaN.Precio = precio;
+                    bebidaN.PuntoPedido = puntoPedido;
+                    bebidaN.Cantidad = cantidad;
+                    bebidaN.TipoBebida = VariedadBebida.normal;
+                    GuardarActualizarProducto(bebidaN);
+                    break;
+                case TiposProducto.Bebidas_Alta_en_Azucar:
+                    Bebida bebidaAA = new Bebida();
+                    bebidaAA.Id = Convert.ToInt32(id);
+                    bebidaAA.Nombre = nombre;
+                    bebidaAA.TipoProducto = tipo;
+                    bebidaAA.Precio = precio;
+                    bebidaAA.PuntoPedido = puntoPedido;
+                    bebidaAA.Cantidad = cantidad;
+                    bebidaAA.TipoBebida = VariedadBebida.altaEnAzucar;
+                    GuardarActualizarProducto(bebidaAA);
+                    break;
+                case TiposProducto.Bebidas_Alcoholicas:
+                    Bebida bebidaA = new Bebida();
+                    bebidaA.Id = Convert.ToInt32(id);
+                    bebidaA.Nombre = nombre;
+                    bebidaA.TipoProducto = tipo;
+                    bebidaA.Precio = precio;
+                    bebidaA.PuntoPedido = puntoPedido;
+                    bebidaA.Cantidad = cantidad;
+                    bebidaA.TipoBebida = VariedadBebida.alcoholica;
+                    GuardarActualizarProducto(bebidaA);
+                    break;
+                case TiposProducto.Frutas:
+                    Fruta fruta = new Fruta();
+                    fruta.Id = Convert.ToInt32(id); ;
+                    fruta.Nombre = nombre;
+                    fruta.TipoProducto = tipo;
+                    fruta.Precio = precio;
+                    fruta.PuntoPedido = puntoPedido;
+                    fruta.Cantidad = cantidad;
+                    GuardarActualizarProducto(fruta);
+                    break;
+                case TiposProducto.Hortalizas_y_Verduras:
+                    Hortaliza hortaliza = new Hortaliza();
+                    hortaliza.Id = Convert.ToInt32(id); ;
+                    hortaliza.Nombre = nombre;
+                    hortaliza.TipoProducto = tipo;
+                    hortaliza.Precio = precio;
+                    hortaliza.PuntoPedido = puntoPedido;
+                    hortaliza.Cantidad = cantidad;
+                    GuardarActualizarProducto(hortaliza);
+                    break;
+                case TiposProducto.Lacteos:
+                    Lacteo lacteo = new Lacteo();
+                    lacteo.Id = Convert.ToInt32(id); ;
+                    lacteo.Nombre = nombre;
+                    lacteo.TipoProducto = tipo;
+                    lacteo.Precio = precio;
+                    lacteo.PuntoPedido = puntoPedido;
+                    lacteo.Cantidad = cantidad;
+                    GuardarActualizarProducto(lacteo);
+                    break;
+                case TiposProducto.Panaderia:
+                    Panaderia panaderia = new Panaderia();
+                    panaderia.Id = Convert.ToInt32(id); ;
+                    panaderia.Nombre = nombre;
+                    panaderia.TipoProducto = tipo;
+                    panaderia.Precio = precio;
+                    panaderia.PuntoPedido = puntoPedido;
+                    panaderia.Cantidad = cantidad;
+                    GuardarActualizarProducto(panaderia);
+                    break;
+                case TiposProducto.Pescados:
+                    Pescado pescado = new Pescado();
+                    pescado.Id = Convert.ToInt32(id); ;
+                    pescado.Nombre = nombre;
+                    pescado.TipoProducto = tipo;
+                    pescado.Precio = precio;
+                    pescado.PuntoPedido = puntoPedido;
+                    pescado.Cantidad = cantidad;
+                    GuardarActualizarProducto(pescado);
+                    break;
+                case TiposProducto.Quesos:
+                    Queso queso = new Queso();
+                    queso.Id = Convert.ToInt32(id); ;
+                    queso.Nombre = nombre;
+                    queso.TipoProducto = tipo;
+                    queso.Precio = precio;
+                    queso.PuntoPedido = puntoPedido;
+                    queso.Cantidad = cantidad;
+                    GuardarActualizarProducto(queso);
+                    break;
+            }
+        }
+        public bool ValidarDatos(string id, string nombre, TiposProducto tipo, decimal precio, int puntoPedido, double cantidad)
         {
             //validar nombre
-            if(string.IsNullOrEmpty(ingrediente.Nombre))
+            if(string.IsNullOrEmpty(nombre))
             {
 
             }
@@ -61,6 +168,7 @@ namespace LogicaPrincipal
             //validar cantidad
             //precio
             //validar punto de pedido
+            CrearIngrediente(id,nombre,tipo,precio,puntoPedido,cantidad);
             return false;
         }
 
