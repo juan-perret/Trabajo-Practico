@@ -70,14 +70,7 @@ namespace FormPrincipal
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(validarNombre() == false)
-            {
-                return;
-            }
-            if (validarTipoReceta() == false)
-            {
-                return;
-            }          
+                  
             Receta receta = new Receta();
             receta.Id = Convert.ToInt32(id);
             receta.Nombre = txtNombre.Text;
@@ -108,33 +101,7 @@ namespace FormPrincipal
           
         }
 
-        private bool validarTipoReceta()
-        {
-            if (string.IsNullOrEmpty(cmbTipoReceta.Text))
-            {
-                erpError.SetError(cmbTipoReceta, "Debe ingresar un tipo de receta");
-                return false;
-            }
-            else
-            {
-                erpError.SetError(cmbTipoReceta, "");
-                return true;
-            }
-        }
-
-        private bool validarNombre()
-        {
-            if (string.IsNullOrEmpty(txtNombre.Text))
-            {
-                erpError.SetError(txtNombre, "Debe ingresar un nombre");
-                return false;
-            }
-            else
-            {
-                erpError.SetError(txtNombre, "");
-                return true;
-            }
-        }
+       
 
         private void dgvIngredientesRecetas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {

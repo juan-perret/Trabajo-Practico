@@ -65,6 +65,11 @@ namespace LogicaPrincipal
                 }
             }
         }
+
+        public void CrearReceta()
+        {
+
+        }
         public List<Producto> BuscarProductosReceta(List<int> lista)
         {
             List<Producto> listaIngredientes = new List<Producto>();
