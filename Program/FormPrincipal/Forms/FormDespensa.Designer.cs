@@ -46,6 +46,8 @@
             // 
             // dgvDespensa
             // 
+            this.dgvDespensa.AllowUserToResizeColumns = false;
+            this.dgvDespensa.AllowUserToResizeRows = false;
             this.dgvDespensa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDespensa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -113,7 +115,7 @@
             // 
             // Categoria
             // 
-            this.Categoria.DataPropertyName = "categoria";
+            this.Categoria.DataPropertyName = "TipoProducto";
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;

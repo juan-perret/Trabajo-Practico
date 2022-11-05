@@ -50,6 +50,8 @@
             // 
             // dgvSeleccionReceta
             // 
+            this.dgvSeleccionReceta.AllowUserToResizeColumns = false;
+            this.dgvSeleccionReceta.AllowUserToResizeRows = false;
             this.dgvSeleccionReceta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSeleccionReceta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -119,7 +121,7 @@
             this.dtpFechaComida.Name = "dtpFechaComida";
             this.dtpFechaComida.Size = new System.Drawing.Size(185, 20);
             this.dtpFechaComida.TabIndex = 2;
-            this.dtpFechaComida.Value = new System.DateTime(2022, 11, 2, 0, 0, 0, 0);
+            this.dtpFechaComida.Value = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             // 
             // lblFecha
             // 

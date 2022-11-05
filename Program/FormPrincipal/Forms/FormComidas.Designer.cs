@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvComidas = new System.Windows.Forms.DataGridView();
-            this.CodigoReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MsComidas = new System.Windows.Forms.MenuStrip();
             this.registrarComidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrarPorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,12 +44,19 @@
             this.tsmiFecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CodigoReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComidas)).BeginInit();
             this.MsComidas.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvComidas
             // 
+            this.dgvComidas.AllowUserToResizeColumns = false;
+            this.dgvComidas.AllowUserToResizeRows = false;
             this.dgvComidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoReceta,
@@ -66,42 +68,6 @@
             this.dgvComidas.Name = "dgvComidas";
             this.dgvComidas.Size = new System.Drawing.Size(445, 350);
             this.dgvComidas.TabIndex = 0;
-            // 
-            // CodigoReceta
-            // 
-            this.CodigoReceta.DataPropertyName = "CodigoReceta";
-            this.CodigoReceta.HeaderText = "CodigoReceta";
-            this.CodigoReceta.Name = "CodigoReceta";
-            this.CodigoReceta.Visible = false;
-            // 
-            // Fecha_hora
-            // 
-            this.Fecha_hora.DataPropertyName = "FechaDeRegistro";
-            this.Fecha_hora.HeaderText = "Fecha y hora";
-            this.Fecha_hora.Name = "Fecha_hora";
-            this.Fecha_hora.ReadOnly = true;
-            // 
-            // Nombre_Receta
-            // 
-            this.Nombre_Receta.DataPropertyName = "Nombre";
-            this.Nombre_Receta.HeaderText = "Nombre de la Receta";
-            this.Nombre_Receta.Name = "Nombre_Receta";
-            this.Nombre_Receta.ReadOnly = true;
-            // 
-            // Tipo_de_comida
-            // 
-            this.Tipo_de_comida.DataPropertyName = "TipoComida";
-            this.Tipo_de_comida.HeaderText = "Tipo de Comida";
-            this.Tipo_de_comida.Name = "Tipo_de_comida";
-            this.Tipo_de_comida.ReadOnly = true;
-            // 
-            // Saludable
-            // 
-            this.Saludable.HeaderText = "Es saludable?";
-            this.Saludable.Name = "Saludable";
-            this.Saludable.ReadOnly = true;
-            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // MsComidas
             // 
@@ -141,7 +107,7 @@
             this.tsmiSiSaludable,
             this.tsmiNoSaludable});
             this.tsmiFiltroSaludable.Name = "tsmiFiltroSaludable";
-            this.tsmiFiltroSaludable.Size = new System.Drawing.Size(180, 22);
+            this.tsmiFiltroSaludable.Size = new System.Drawing.Size(172, 22);
             this.tsmiFiltroSaludable.Text = "Saludable";
             // 
             // tsmiSiSaludable
@@ -166,7 +132,7 @@
             this.tsmiMerienda,
             this.tsmiCena});
             this.tsmiTipoComida.Name = "tsmiTipoComida";
-            this.tsmiTipoComida.Size = new System.Drawing.Size(180, 22);
+            this.tsmiTipoComida.Size = new System.Drawing.Size(172, 22);
             this.tsmiTipoComida.Text = "Tipo de comida";
             // 
             // tsmiDesayuno
@@ -200,21 +166,21 @@
             // tsmiReceta
             // 
             this.tsmiReceta.Name = "tsmiReceta";
-            this.tsmiReceta.Size = new System.Drawing.Size(180, 22);
+            this.tsmiReceta.Size = new System.Drawing.Size(172, 22);
             this.tsmiReceta.Text = "Receta";
             this.tsmiReceta.Click += new System.EventHandler(this.tsmiReceta_Click);
             // 
             // tsmiFecha
             // 
             this.tsmiFecha.Name = "tsmiFecha";
-            this.tsmiFecha.Size = new System.Drawing.Size(180, 22);
+            this.tsmiFecha.Size = new System.Drawing.Size(172, 22);
             this.tsmiFecha.Text = "Fecha";
             this.tsmiFecha.Click += new System.EventHandler(this.tsmiFecha_Click);
             // 
             // tsmiQuitarFiltro
             // 
             this.tsmiQuitarFiltro.Name = "tsmiQuitarFiltro";
-            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(180, 22);
+            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(172, 22);
             this.tsmiQuitarFiltro.Text = "Quitar filtro";
             this.tsmiQuitarFiltro.Click += new System.EventHandler(this.tsmiQuitarFiltro_Click);
             // 
@@ -224,6 +190,43 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // CodigoReceta
+            // 
+            this.CodigoReceta.DataPropertyName = "CodigoReceta";
+            this.CodigoReceta.HeaderText = "CodigoReceta";
+            this.CodigoReceta.Name = "CodigoReceta";
+            this.CodigoReceta.ReadOnly = true;
+            this.CodigoReceta.Visible = false;
+            // 
+            // Fecha_hora
+            // 
+            this.Fecha_hora.DataPropertyName = "FechaDeRegistro";
+            this.Fecha_hora.HeaderText = "Fecha y hora";
+            this.Fecha_hora.Name = "Fecha_hora";
+            this.Fecha_hora.ReadOnly = true;
+            // 
+            // Nombre_Receta
+            // 
+            this.Nombre_Receta.DataPropertyName = "Nombre";
+            this.Nombre_Receta.HeaderText = "Nombre de la Receta";
+            this.Nombre_Receta.Name = "Nombre_Receta";
+            this.Nombre_Receta.ReadOnly = true;
+            // 
+            // Tipo_de_comida
+            // 
+            this.Tipo_de_comida.DataPropertyName = "TipoComida";
+            this.Tipo_de_comida.HeaderText = "Tipo de Comida";
+            this.Tipo_de_comida.Name = "Tipo_de_comida";
+            this.Tipo_de_comida.ReadOnly = true;
+            // 
+            // Saludable
+            // 
+            this.Saludable.HeaderText = "Es saludable?";
+            this.Saludable.Name = "Saludable";
+            this.Saludable.ReadOnly = true;
+            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FormComidas
             // 
@@ -255,11 +258,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTipoComida;
         private System.Windows.Forms.ToolStripMenuItem tsmiReceta;
         private System.Windows.Forms.ToolStripMenuItem tsmiFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoReceta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_comida;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Saludable;
         private System.Windows.Forms.ToolStripMenuItem tsmiSiSaludable;
         private System.Windows.Forms.ToolStripMenuItem tsmiNoSaludable;
         private System.Windows.Forms.ToolStripMenuItem tsmiDesayuno;
@@ -267,5 +265,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiMerienda;
         private System.Windows.Forms.ToolStripMenuItem tsmiCena;
         private System.Windows.Forms.ToolStripMenuItem tsmiQuitarFiltro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoReceta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Receta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_de_comida;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Saludable;
     }
 }

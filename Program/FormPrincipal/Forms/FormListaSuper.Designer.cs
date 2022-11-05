@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvListaSuper = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Punto_de_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoComida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MsListaSuper = new System.Windows.Forms.MenuStrip();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,21 +45,29 @@
             this.tsmiBebidaAlcoholica = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCosto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUnidadMedida = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiKg = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLitros = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUnidad = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPuntoPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCosto = new System.Windows.Forms.Label();
             this.lblResultadoTotal = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.tsmiKg = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLitros = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiUnidad = new System.Windows.Forms.ToolStripMenuItem();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Punto_de_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoComida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSuper)).BeginInit();
             this.MsListaSuper.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvListaSuper
             // 
+            this.dgvListaSuper.AllowUserToResizeColumns = false;
+            this.dgvListaSuper.AllowUserToResizeRows = false;
             this.dgvListaSuper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaSuper.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -79,51 +81,6 @@
             this.dgvListaSuper.RowHeadersWidth = 51;
             this.dgvListaSuper.Size = new System.Drawing.Size(531, 350);
             this.dgvListaSuper.TabIndex = 0;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 125;
-            // 
-            // Punto_de_Pedido
-            // 
-            this.Punto_de_Pedido.DataPropertyName = "PuntoPedido";
-            this.Punto_de_Pedido.HeaderText = "Punto de Pedido";
-            this.Punto_de_Pedido.MinimumWidth = 6;
-            this.Punto_de_Pedido.Name = "Punto_de_Pedido";
-            this.Punto_de_Pedido.Width = 125;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // TipoComida
-            // 
-            this.TipoComida.DataPropertyName = "TipoProducto";
-            this.TipoComida.HeaderText = "TipoComida";
-            this.TipoComida.Name = "TipoComida";
-            this.TipoComida.Visible = false;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
             // 
             // MsListaSuper
             // 
@@ -265,6 +222,27 @@
             this.tsmiUnidadMedida.Size = new System.Drawing.Size(183, 22);
             this.tsmiUnidadMedida.Text = "Unidad medida";
             // 
+            // tsmiKg
+            // 
+            this.tsmiKg.Name = "tsmiKg";
+            this.tsmiKg.Size = new System.Drawing.Size(140, 22);
+            this.tsmiKg.Text = "Kilogramo";
+            this.tsmiKg.Click += new System.EventHandler(this.kilogramoToolStripMenuItem_Click);
+            // 
+            // tsmiLitros
+            // 
+            this.tsmiLitros.Name = "tsmiLitros";
+            this.tsmiLitros.Size = new System.Drawing.Size(140, 22);
+            this.tsmiLitros.Text = "Litros";
+            this.tsmiLitros.Click += new System.EventHandler(this.litrosToolStripMenuItem_Click);
+            // 
+            // tsmiUnidad
+            // 
+            this.tsmiUnidad.Name = "tsmiUnidad";
+            this.tsmiUnidad.Size = new System.Drawing.Size(140, 22);
+            this.tsmiUnidad.Text = "Unidad";
+            this.tsmiUnidad.Click += new System.EventHandler(this.unidadToolStripMenuItem_Click);
+            // 
             // tsmiPuntoPedido
             // 
             this.tsmiPuntoPedido.Name = "tsmiPuntoPedido";
@@ -314,26 +292,56 @@
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
-            // tsmiKg
+            // Nombre
             // 
-            this.tsmiKg.Name = "tsmiKg";
-            this.tsmiKg.Size = new System.Drawing.Size(180, 22);
-            this.tsmiKg.Text = "Kilogramo";
-            this.tsmiKg.Click += new System.EventHandler(this.kilogramoToolStripMenuItem_Click);
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 125;
             // 
-            // tsmiLitros
+            // Precio
             // 
-            this.tsmiLitros.Name = "tsmiLitros";
-            this.tsmiLitros.Size = new System.Drawing.Size(180, 22);
-            this.tsmiLitros.Text = "Litros";
-            this.tsmiLitros.Click += new System.EventHandler(this.litrosToolStripMenuItem_Click);
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 125;
             // 
-            // tsmiUnidad
+            // Punto_de_Pedido
             // 
-            this.tsmiUnidad.Name = "tsmiUnidad";
-            this.tsmiUnidad.Size = new System.Drawing.Size(180, 22);
-            this.tsmiUnidad.Text = "Unidad";
-            this.tsmiUnidad.Click += new System.EventHandler(this.unidadToolStripMenuItem_Click);
+            this.Punto_de_Pedido.DataPropertyName = "PuntoPedido";
+            this.Punto_de_Pedido.HeaderText = "Punto de Pedido";
+            this.Punto_de_Pedido.MinimumWidth = 6;
+            this.Punto_de_Pedido.Name = "Punto_de_Pedido";
+            this.Punto_de_Pedido.ReadOnly = true;
+            this.Punto_de_Pedido.Width = 125;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // TipoComida
+            // 
+            this.TipoComida.DataPropertyName = "TipoProducto";
+            this.TipoComida.HeaderText = "TipoComida";
+            this.TipoComida.Name = "TipoComida";
+            this.TipoComida.ReadOnly = true;
+            this.TipoComida.Visible = false;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // FormListaSuper
             // 
@@ -371,12 +379,6 @@
         private System.Windows.Forms.Label lblCosto;
         private System.Windows.Forms.Label lblResultadoTotal;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Punto_de_Pedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoComida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.ToolStripMenuItem tsmiHortalizasYVerduras;
         private System.Windows.Forms.ToolStripMenuItem tsmiFruta;
         private System.Windows.Forms.ToolStripMenuItem tsmiQueso;
@@ -391,5 +393,11 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiKg;
         private System.Windows.Forms.ToolStripMenuItem tsmiLitros;
         private System.Windows.Forms.ToolStripMenuItem tsmiUnidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Punto_de_Pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoComida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }

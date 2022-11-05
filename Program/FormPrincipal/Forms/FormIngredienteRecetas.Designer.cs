@@ -57,6 +57,8 @@
             // 
             // dgvIngredientesRecetas
             // 
+            this.dgvIngredientesRecetas.AllowUserToResizeColumns = false;
+            this.dgvIngredientesRecetas.AllowUserToResizeRows = false;
             this.dgvIngredientesRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngredientesRecetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,

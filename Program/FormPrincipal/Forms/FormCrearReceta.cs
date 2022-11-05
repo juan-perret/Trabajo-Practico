@@ -69,26 +69,28 @@ namespace FormPrincipal
             dgvIngredientesRecetas.DataSource = logica.LeerProductos();
         }
         private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            
+        {           
             Enum.TryParse(cmbTipoReceta.Text, out TiposComida tipo);
             string resutlado = logica.ValidadDatos(this.id, txtNombre.Text, checkbSaludable.Checked,tipo);
             MessageBox.Show(resutlado);
+            //resutlado = ValidarCantidad();
+            //MessageBox.Show(resutlado);
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)
             {
                 padre.CargarGrilla();
             }
-            this.Close();
             if(resutlado == "La receta se ha guardado correctamente")
                 this.Close();
             
         }
-
-       
-
+        public void ValidarCantidad(string validacion)
+        {
+             MessageBox.Show(validacion);
+        }
         private void dgvIngredientesRecetas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            double numero;
             if (dgvIngredientesRecetas.Columns[e.ColumnIndex].Name == "Seleccion")
             {
                 DataGridViewRow row = dgvIngredientesRecetas.Rows[e.RowIndex];
@@ -119,7 +121,11 @@ namespace FormPrincipal
                 DataGridViewCheckBoxCell cellSeleccion = row.Cells["Seleccion"] as DataGridViewCheckBoxCell;
                 if(cellCantidad.Value != null)
                 {
-                    if (Convert.ToBoolean(cellSeleccion.Value))
+                    if (double.TryParse(cellCantidad.Value.ToString(), out numero) == false)
+                    {
+                        ValidarCantidad ("Verificar el valor de cantidad este correctamente ingresado");
+                    }
+                    else if (Convert.ToBoolean(cellSeleccion.Value))
                     {
                         DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
                         int codigo = Convert.ToInt32(celdaCodigo.Value);

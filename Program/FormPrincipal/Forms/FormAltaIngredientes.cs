@@ -37,7 +37,7 @@ namespace FormPrincipal
         {
             Enum.TryParse(CmbBoxCategoria.Text, out TiposProducto tipo);
             string resultadoValidacion = logica.ValidarDatos(this.Id, txtNombre.Text, tipo, txtPrecio.Text, txtStockPedido.Text, txtCantidad.Text);
-            MessageBox.Show(logica.ValidarDatos(this.Id, txtNombre.Text, tipo, txtPrecio.Text, txtStockPedido.Text, txtCantidad.Text));
+            MessageBox.Show(resultadoValidacion);
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)
             {
