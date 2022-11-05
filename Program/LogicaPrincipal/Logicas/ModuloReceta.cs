@@ -86,10 +86,20 @@ namespace LogicaPrincipal
                     receta.TipoComida = tipo;
                     break;
             }
+            GuardarReceta(receta);
         }
         public string ValidadDatos(string id, string nombre, bool saludable, TiposComida tipo)
         {
-            return "asd";
+            int numero;
+            if (string.IsNullOrEmpty(nombre) || int.TryParse(nombre, out numero) == true )
+            {
+                return "Verificar el nombre ingresado";
+            }
+            else
+            {
+                CrearReceta(id, nombre, saludable, tipo);
+                return "La receta se ha guardado correctamente";
+            }
         }
         
         public List<Producto> BuscarProductosReceta(List<int> lista)

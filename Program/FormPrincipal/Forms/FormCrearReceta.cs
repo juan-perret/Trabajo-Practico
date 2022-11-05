@@ -70,15 +70,19 @@ namespace FormPrincipal
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            
             Enum.TryParse(cmbTipoReceta.Text, out TiposComida tipo);
-            logica.ValidadDatos(this.id, txtNombre.Text, checkbSaludable.Checked,tipo);
+            string resutlado = logica.ValidadDatos(this.id, txtNombre.Text, checkbSaludable.Checked,tipo);
+            MessageBox.Show(resutlado);
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)
             {
                 padre.CargarGrilla();
             }
             this.Close();
-          
+            if(resutlado == "La receta se ha guardado correctamente")
+                this.Close();
+            
         }
 
        
@@ -131,6 +135,7 @@ namespace FormPrincipal
                     logica.EliminarAListaCodigos(codigo);
                 }
             }
+            
         }
     }
 }
