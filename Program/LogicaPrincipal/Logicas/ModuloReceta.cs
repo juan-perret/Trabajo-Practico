@@ -88,23 +88,20 @@ namespace LogicaPrincipal
             }
             GuardarReceta(receta);
         }
-        public string ValidadDatos(string id, string nombre, bool saludable, TiposComida tipo)
+        public string ValidadDatos(string id, string nombre, bool saludable, TiposComida tipo, string resultado)
         {
             int numero;
             if (string.IsNullOrEmpty(nombre) || int.TryParse(nombre, out numero) == true )
             {
                 return "Verificar el nombre ingresado";
             }
-            else
+            else if(resultado == "La receta se ha creado correctamente")
             {
                 CrearReceta(id, nombre, saludable, tipo);
                 return "La receta se ha guardado correctamente";
             }
+            return resultado;
         }
-        //public string ValidarCheckbox()
-        //{
-
-        //}
         public List<Producto> BuscarProductosReceta(List<int> lista)
         {
             List<Producto> listaIngredientes = new List<Producto>();

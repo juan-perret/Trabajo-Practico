@@ -24,22 +24,45 @@ namespace FormPrincipal.Forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int puntoPedido = Convert.ToInt32(txtPuntoPedido.Text);
-            bool max = true;
-            if (cmbMaxMin.Text == "Max")
+            if(ValidarCosto() == true && ValidarMaxMin() == true)
             {
-                max = true;
+                int puntoPedido = Convert.ToInt32(txtPuntoPedido.Text);
+                bool max = true;
+                if (cmbMaxMin.Text == "Max")
+                {
+                    max = true;
+                }
+                if (cmbMaxMin.Text == "Min")
+                {
+                    max = false;
+                }
+                ActualizarGrillaSuper padre = this.Owner as ActualizarGrillaSuper;
+                if (padre != null)
+                {
+                    padre.ActualizarGrilla(puntoPedido, max);
+                }
+                this.Close();
             }
-            if (cmbMaxMin.Text == "Min")
+            else
             {
-                max = false;
+                MessageBox.Show("Complete los datos correctamente");
             }
-            ActualizarGrillaSuper padre = this.Owner as ActualizarGrillaSuper;
-            if (padre != null)
-            {
-                padre.ActualizarGrilla(puntoPedido, max);
-            }
-            this.Close();
+            
+        }
+
+        private bool ValidarCosto()
+        {
+            int numero;
+            if (string.IsNullOrEmpty(txtPuntoPedido.Text) || int.TryParse(txtPuntoPedido.Text, out numero) == false)
+                return false;
+            return true;
+        }
+
+        private bool ValidarMaxMin()
+        {
+            if (string.IsNullOrEmpty(cmbMaxMin.Text))
+                return false;
+            return true;
         }
     }
 }

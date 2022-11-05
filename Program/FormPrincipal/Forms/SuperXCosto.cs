@@ -24,22 +24,46 @@ namespace FormPrincipal.Forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            decimal costo = Convert.ToDecimal(txtCosto.Text);
-            bool max = true;
-            if (cmbMaxMin.Text == "Max")
+            
+            if(ValidarCosto() == true && ValidarMaxMin() == true)
             {
-                max = true;
+                decimal costo = Convert.ToDecimal(txtCosto.Text);
+                bool max = true;
+                if (cmbMaxMin.Text == "Max")
+                {
+                    max = true;
+                }
+                if (cmbMaxMin.Text == "Min")
+                {
+                    max = false;
+                }
+                ActualizarGrillaSuper padre = this.Owner as ActualizarGrillaSuper;
+                if (padre != null)
+                {
+                    padre.ActualizarGrilla(costo, max);
+                }
+                this.Close();
             }
-            if (cmbMaxMin.Text == "Min")
+            else
             {
-                max = false;
+                MessageBox.Show("Complete los datos correctamente");
             }
-            ActualizarGrillaSuper padre = this.Owner as ActualizarGrillaSuper;
-            if (padre != null)
-            {
-                padre.ActualizarGrilla(costo, max);
-            }
-            this.Close();
+            
+        }
+
+        private bool ValidarCosto()
+        {
+            decimal numero;
+            if (string.IsNullOrEmpty(txtCosto.Text) || decimal.TryParse(txtCosto.Text, out numero) == false)
+                return false;
+            return true;
+        }
+
+        private bool ValidarMaxMin()
+        {
+            if (string.IsNullOrEmpty(cmbMaxMin.Text))
+                return false;
+            return true;
         }
     }
 }

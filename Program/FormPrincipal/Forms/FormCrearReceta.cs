@@ -71,22 +71,55 @@ namespace FormPrincipal
         private void btnAceptar_Click(object sender, EventArgs e)
         {           
             Enum.TryParse(cmbTipoReceta.Text, out TiposComida tipo);
-            string resutlado = logica.ValidadDatos(this.id, txtNombre.Text, checkbSaludable.Checked,tipo);
-            MessageBox.Show(resutlado);
-            //resutlado = ValidarCantidad();
-            //MessageBox.Show(resutlado);
+            string resultado2 = ValidarCantidad();
+            string resultado = logica.ValidadDatos(this.id, txtNombre.Text, checkbSaludable.Checked,tipo, resultado2);
+            if (resultado == "La receta se ha guardado correctamente")
+            {
+                if(resultado2 == "La receta se ha creado correctamente")
+                {
+                    MessageBox.Show(resultado);
+                    this.Close();
+                }
+                else
+                    MessageBox.Show(resultado2);
+            }
+            else
+            {
+                MessageBox.Show(resultado);
+            }    
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)
             {
                 padre.CargarGrilla();
             }
-            if(resutlado == "La receta se ha guardado correctamente")
-                this.Close();
+            
             
         }
-        public void ValidarCantidad(string validacion)
+        public string ValidarCantidad()
         {
-             MessageBox.Show(validacion);
+            int indiceAgregar = UtilidadesGrilla.ObtenerIndice(dgvIngredientesRecetas, "Seleccion");
+            int indiceCantidad = UtilidadesGrilla.ObtenerIndice(dgvIngredientesRecetas, "Cantidad");
+            double numero;
+            foreach (DataGridViewRow row in dgvIngredientesRecetas.Rows)
+            {
+                if (row.Cells[indiceAgregar].Value != null)
+                {
+                    if (row.Cells[indiceCantidad].Value == null)
+                    {
+                        return "Debe ingresar una cantidad";
+                    }
+                    else if (double.TryParse(row.Cells[indiceCantidad].Value.ToString(), out numero ) == false)
+                    {
+                        return "Debe ingresar valor numerico para la cantidad";
+                    }
+                    else if (Convert.ToDouble(row.Cells[indiceCantidad].Value) <= 0)
+                    {
+                        return "El valor ingresado debe ser mayor que 0";
+                    }
+                    
+                }
+            }
+            return "La receta se ha creado correctamente";
         }
         private void dgvIngredientesRecetas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -102,7 +135,7 @@ namespace FormPrincipal
                     {
                         if (double.TryParse(cellCantidad.Value.ToString(), out numero) == false)
                         {
-                            ValidarCantidad("Verificar el valor de cantidad este correctamente ingresado");
+                            MessageBox.Show("Verificar el valor de cantidad este correctamente ingresado");
                         }
                         else
                         {
@@ -130,7 +163,7 @@ namespace FormPrincipal
                 {
                     if (double.TryParse(cellCantidad.Value.ToString(), out numero) == false)
                     {
-                        ValidarCantidad ("Verificar el valor de cantidad este correctamente ingresado");
+                        MessageBox.Show("Verificar el valor de cantidad este correctamente ingresado");
                     }
                     else if (Convert.ToBoolean(cellSeleccion.Value))
                     {
