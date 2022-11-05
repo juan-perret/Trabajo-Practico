@@ -35,7 +35,7 @@ namespace FormPrincipal
             comida.FechaDeRegistro = dtpFechaComida.Value;
             comida.CodigoReceta = Convert.ToInt32(dgvSeleccionReceta.SelectedRows[0].Cells[0].Value);
             logica.GuardarComida(comida);
-            ActualizarGrilla padre = this.Owner as ActualizarGrilla;
+            ActualizarGrillaComidas padre = this.Owner as ActualizarGrillaComidas;
             if (padre != null)
             {
                 padre.CargarGrilla();

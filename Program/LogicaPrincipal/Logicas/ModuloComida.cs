@@ -118,7 +118,7 @@ namespace LogicaPrincipal
             List<Comida> comidasXReceta = new List<Comida>();
             foreach (Comida comida in comidas)
             {
-                if (comida.RecetaElegida == logica.DevolverReceta(idReceta))
+                if (comida.RecetaElegida.Id == idReceta)
                 {
                     comidasXReceta.Add(comida);
                 }

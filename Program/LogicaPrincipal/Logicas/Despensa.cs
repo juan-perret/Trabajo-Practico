@@ -231,14 +231,85 @@ namespace LogicaPrincipal
             List<Producto> listaAComprar = new List<Producto>();
             foreach (Producto p in despensa)
             {
-                if (p.Cantidad <= p.PuntoPedido && p.TipoProducto == tipoProducto)
+                if (p.Cantidad < p.PuntoPedido && p.TipoProducto == tipoProducto)
                 {
                     listaAComprar.Add(p);
                 }
             }
             return listaAComprar;   
         }
-
+        public List<Producto> ProductosAComprarPorUnidad(string unidadMedida)
+        {
+            List<Producto> listaAComprar = new List<Producto>();
+            foreach (Producto p in despensa)
+            {
+                if (p.Cantidad < p.PuntoPedido)
+                {
+                    switch (unidadMedida)
+                    {
+                        case "Kilogramo":
+                            if(p.TipoProducto == TiposProducto.Carnes || p.TipoProducto == TiposProducto.Panaderia ||
+                                p.TipoProducto == TiposProducto.Pescados || p.TipoProducto == TiposProducto.Quesos)
+                            {
+                                listaAComprar.Add(p);
+                            }
+                            break;
+                        case "Unidad":
+                            if(p.TipoProducto == TiposProducto.Hortalizas_y_Verduras || p.TipoProducto == TiposProducto.Frutas || p.TipoProducto == TiposProducto.Bebidas_Alcoholicas 
+                                || p.TipoProducto == TiposProducto.Bebidas_Alta_en_Azucar || p.TipoProducto == TiposProducto.Bebidas_Normal)
+                            {
+                                listaAComprar.Add(p);
+                            }
+                            break;
+                        case "Litros":
+                            if(p.TipoProducto == TiposProducto.Lacteos)
+                            {
+                                listaAComprar.Add(p);
+                            }
+                            break;
+                    }                  
+                }
+            }
+            return listaAComprar;
+        }
+        public List<Producto> ProductosAComprarPorCosto(decimal costo, bool max)
+        {
+            List<Producto> listaAComprar = new List<Producto>();
+            foreach (Producto p in despensa)
+            {
+                if (p.Cantidad < p.PuntoPedido)
+                {
+                    if (max == true && (Convert.ToDecimal(p.Precio)*Convert.ToDecimal(p.PuntoPedido) <= costo))
+                    {
+                        listaAComprar.Add(p);
+                    }
+                    if (max == false && (Convert.ToDecimal(p.Precio) * Convert.ToDecimal(p.PuntoPedido) >= costo))
+                    {
+                        listaAComprar.Add(p);
+                    }
+                }
+            }
+            return listaAComprar;
+        }
+        public List<Producto> ProductosAComprarPorPuntoPedido(int puntoPedido, bool max)
+        {
+            List<Producto> listaAComprar = new List<Producto>();
+            foreach (Producto p in despensa)
+            {
+                if (p.Cantidad < p.PuntoPedido)
+                {
+                    if (max == true && p.PuntoPedido <= puntoPedido)
+                    {
+                        listaAComprar.Add(p);
+                    }
+                    if (max == false && p.PuntoPedido >= puntoPedido)
+                    {
+                        listaAComprar.Add(p);
+                    }
+                }
+            }
+            return listaAComprar;
+        }
         //Metodos para recetas
         public void EliminarCantidadProducto(int idProducto, double cantidad)
         {

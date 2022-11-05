@@ -38,7 +38,7 @@
             this.MsListaSuper = new System.Windows.Forms.MenuStrip();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.t = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTipoProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHortalizasYVerduras = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFruta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQueso = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,14 +49,17 @@
             this.tsmiBebidaAltaAzucar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBebidaNormal = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBebidaAlcoholica = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtro2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtro3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtro4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCosto = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUnidadMedida = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPuntoPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCosto = new System.Windows.Forms.Label();
             this.lblResultadoTotal = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
+            this.tsmiKg = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLitros = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUnidad = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSuper)).BeginInit();
             this.MsListaSuper.SuspendLayout();
             this.SuspendLayout();
@@ -146,18 +149,18 @@
             // filtrosToolStripMenuItem
             // 
             this.filtrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.t,
-            this.filtro2ToolStripMenuItem,
-            this.filtro3ToolStripMenuItem,
-            this.filtro4ToolStripMenuItem,
+            this.tsmiTipoProducto,
+            this.tsmiCosto,
+            this.tsmiUnidadMedida,
+            this.tsmiPuntoPedido,
             this.tsmiQuitarFiltro});
             this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
             this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(82, 21);
             this.filtrosToolStripMenuItem.Text = "Filtrar por";
             // 
-            // t
+            // tsmiTipoProducto
             // 
-            this.t.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTipoProducto.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiHortalizasYVerduras,
             this.tsmiFruta,
             this.tsmiQueso,
@@ -168,10 +171,10 @@
             this.tsmiBebidaAltaAzucar,
             this.tsmiBebidaNormal,
             this.tsmiBebidaAlcoholica});
-            this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(194, 22);
-            this.t.Text = "Tipo de producto";
-            this.t.Click += new System.EventHandler(this.filtro1ToolStripMenuItem_Click);
+            this.tsmiTipoProducto.Name = "tsmiTipoProducto";
+            this.tsmiTipoProducto.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTipoProducto.Text = "Tipo de producto";
+            this.tsmiTipoProducto.Click += new System.EventHandler(this.filtro1ToolStripMenuItem_Click);
             // 
             // tsmiHortalizasYVerduras
             // 
@@ -245,28 +248,34 @@
             this.tsmiBebidaAlcoholica.Text = "Bebidas alcoholicas";
             this.tsmiBebidaAlcoholica.Click += new System.EventHandler(this.tsmiBebidaAlcoholica_Click);
             // 
-            // filtro2ToolStripMenuItem
+            // tsmiCosto
             // 
-            this.filtro2ToolStripMenuItem.Name = "filtro2ToolStripMenuItem";
-            this.filtro2ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.filtro2ToolStripMenuItem.Text = "Costo max/min";
+            this.tsmiCosto.Name = "tsmiCosto";
+            this.tsmiCosto.Size = new System.Drawing.Size(183, 22);
+            this.tsmiCosto.Text = "Costo";
+            this.tsmiCosto.Click += new System.EventHandler(this.tsmiCosto_Click);
             // 
-            // filtro3ToolStripMenuItem
+            // tsmiUnidadMedida
             // 
-            this.filtro3ToolStripMenuItem.Name = "filtro3ToolStripMenuItem";
-            this.filtro3ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.filtro3ToolStripMenuItem.Text = "Por unidad medida";
+            this.tsmiUnidadMedida.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiKg,
+            this.tsmiLitros,
+            this.tsmiUnidad});
+            this.tsmiUnidadMedida.Name = "tsmiUnidadMedida";
+            this.tsmiUnidadMedida.Size = new System.Drawing.Size(183, 22);
+            this.tsmiUnidadMedida.Text = "Unidad medida";
             // 
-            // filtro4ToolStripMenuItem
+            // tsmiPuntoPedido
             // 
-            this.filtro4ToolStripMenuItem.Name = "filtro4ToolStripMenuItem";
-            this.filtro4ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.filtro4ToolStripMenuItem.Text = "Filtro 4";
+            this.tsmiPuntoPedido.Name = "tsmiPuntoPedido";
+            this.tsmiPuntoPedido.Size = new System.Drawing.Size(183, 22);
+            this.tsmiPuntoPedido.Text = "Punto pedido";
+            this.tsmiPuntoPedido.Click += new System.EventHandler(this.tsmiPuntoPedido_Click);
             // 
             // tsmiQuitarFiltro
             // 
             this.tsmiQuitarFiltro.Name = "tsmiQuitarFiltro";
-            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(194, 22);
+            this.tsmiQuitarFiltro.Size = new System.Drawing.Size(183, 22);
             this.tsmiQuitarFiltro.Text = "Quitar Filtro";
             this.tsmiQuitarFiltro.Click += new System.EventHandler(this.tsmiQuitarFiltro_Click);
             // 
@@ -305,6 +314,27 @@
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
+            // tsmiKg
+            // 
+            this.tsmiKg.Name = "tsmiKg";
+            this.tsmiKg.Size = new System.Drawing.Size(180, 22);
+            this.tsmiKg.Text = "Kilogramo";
+            this.tsmiKg.Click += new System.EventHandler(this.kilogramoToolStripMenuItem_Click);
+            // 
+            // tsmiLitros
+            // 
+            this.tsmiLitros.Name = "tsmiLitros";
+            this.tsmiLitros.Size = new System.Drawing.Size(180, 22);
+            this.tsmiLitros.Text = "Litros";
+            this.tsmiLitros.Click += new System.EventHandler(this.litrosToolStripMenuItem_Click);
+            // 
+            // tsmiUnidad
+            // 
+            this.tsmiUnidad.Name = "tsmiUnidad";
+            this.tsmiUnidad.Size = new System.Drawing.Size(180, 22);
+            this.tsmiUnidad.Text = "Unidad";
+            this.tsmiUnidad.Click += new System.EventHandler(this.unidadToolStripMenuItem_Click);
+            // 
             // FormListaSuper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,10 +363,10 @@
         private System.Windows.Forms.MenuStrip MsListaSuper;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem t;
-        private System.Windows.Forms.ToolStripMenuItem filtro2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filtro3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filtro4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTipoProducto;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCosto;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUnidadMedida;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPuntoPedido;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Label lblCosto;
         private System.Windows.Forms.Label lblResultadoTotal;
@@ -358,5 +388,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiBebidaNormal;
         private System.Windows.Forms.ToolStripMenuItem tsmiBebidaAlcoholica;
         private System.Windows.Forms.ToolStripMenuItem tsmiQuitarFiltro;
+        private System.Windows.Forms.ToolStripMenuItem tsmiKg;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLitros;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUnidad;
     }
 }

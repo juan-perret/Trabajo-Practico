@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FormPrincipal.Forms;
 using LogicaPrincipal;
 
 namespace FormPrincipal
 {
-    public partial class FormListaSuper : Form
+    public partial class FormListaSuper : Form , ActualizarGrillaSuper
     {
         private Super logica;
         public FormListaSuper()
@@ -75,6 +76,42 @@ namespace FormPrincipal
             }
             lblResultadoTotal.Text = Convert.ToString(total);
         }
+        private void ActualizarGrilla(string unidadMedida)
+        {
+            decimal total = 0;
+            dgvListaSuper.DataSource = null;
+            dgvListaSuper.DataSource = logica.DevolverLista(unidadMedida);
+            foreach (DataGridViewRow row in dgvListaSuper.Rows)
+            {
+                row.Cells["Total"].Value = Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+                total += Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+            }
+            lblResultadoTotal.Text = Convert.ToString(total);
+        }
+        public void ActualizarGrilla(decimal costo, bool max)
+        {
+            decimal total = 0;
+            dgvListaSuper.DataSource = null;
+            dgvListaSuper.DataSource = logica.DevolverLista(costo, max);
+            foreach (DataGridViewRow row in dgvListaSuper.Rows)
+            {
+                row.Cells["Total"].Value = Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+                total += Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+            }
+            lblResultadoTotal.Text = Convert.ToString(total);
+        }
+        public void ActualizarGrilla(int puntoPedido, bool max)
+        {
+            decimal total = 0;
+            dgvListaSuper.DataSource = null;
+            dgvListaSuper.DataSource = logica.DevolverLista(puntoPedido, max);
+            foreach (DataGridViewRow row in dgvListaSuper.Rows)
+            {
+                row.Cells["Total"].Value = Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+                total += Convert.ToDecimal(row.Cells["Precio"].Value) * Convert.ToDecimal(row.Cells["Punto_de_Pedido"].Value);
+            }
+            lblResultadoTotal.Text = Convert.ToString(total);
+        }
 
         private void tsmiHortalizasYVerduras_Click(object sender, EventArgs e)
         {
@@ -129,6 +166,33 @@ namespace FormPrincipal
         private void tsmiQuitarFiltro_Click(object sender, EventArgs e)
         {
             ActualizarGrilla();
+        }
+
+        private void tsmiCosto_Click(object sender, EventArgs e)
+        {
+            SuperXCosto superXCosto = new SuperXCosto();
+            superXCosto.ShowDialog(this);
+        }
+
+        private void kilogramoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla("Kilogramo");
+        }
+
+        private void litrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla("Litros");
+        }
+
+        private void unidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla("Unidad");
+        }
+
+        private void tsmiPuntoPedido_Click(object sender, EventArgs e)
+        {
+            SuperXPuntoPedido puntoPedido = new SuperXPuntoPedido();
+            puntoPedido.ShowDialog(this);
         }
     }
 }

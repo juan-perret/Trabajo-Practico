@@ -11,7 +11,7 @@ using LogicaPrincipal;
 
 namespace FormPrincipal
 {
-    public partial class FormComidas : Form, ActualizarGrilla
+    public partial class FormComidas : Form, ActualizarGrillaComidas
     {
         private ModuloComida logica;
         public FormComidas()
@@ -91,7 +91,7 @@ namespace FormPrincipal
                 }
             }
         }
-        private void ActualizarGrilla(int idReceta)
+        public void ActualizarGrilla(int idReceta)
         {
             dgvComidas.DataSource = null;
             List<Comida> comidas = logica.ObtenerComidasXReceta(idReceta);
@@ -109,7 +109,7 @@ namespace FormPrincipal
                 }
             }
         }
-        private void ActualizarGrilla(DateTime fecha1, DateTime fecha2)
+        public void ActualizarGrilla(DateTime fecha1, DateTime fecha2)
         {
             dgvComidas.DataSource = null;
             List<Comida> comidas = logica.ObtenerComidasXFecha(fecha1, fecha2);

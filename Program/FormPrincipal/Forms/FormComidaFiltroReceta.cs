@@ -36,8 +36,12 @@ namespace FormPrincipal
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             int idReceta = Convert.ToInt32(dgvComidaFiltroReceta.SelectedRows[0].Cells[UtilidadesGrilla.ObtenerIndice(dgvComidaFiltroReceta, "Id")].Value);
+            ActualizarGrillaComidas padre = this.Owner as ActualizarGrillaComidas;
+            if (padre != null)
+            {
+                padre.ActualizarGrilla(idReceta);
+            }
             this.Close();
-            //ActualizarGrilla(idReceta);
         }
     }
 }

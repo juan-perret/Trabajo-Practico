@@ -35,7 +35,12 @@ namespace FormPrincipal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //ActualizarGrilla(dtpFecha1.Value, dtpFecha2.Value); 
+            ActualizarGrillaComidas padre = this.Owner as ActualizarGrillaComidas;
+            if (padre != null)
+            {
+                padre.ActualizarGrilla(dtpFecha1.Value.Date, dtpFecha2.Value.Date);
+            }
+            this.Close();
         }
     }
 }
