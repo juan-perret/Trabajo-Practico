@@ -70,28 +70,8 @@ namespace FormPrincipal
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-                  
-            Receta receta = new Receta();
-            receta.Id = Convert.ToInt32(id);
-            receta.Nombre = txtNombre.Text;
-            receta.Saludable = checkbSaludable.Checked;
             Enum.TryParse(cmbTipoReceta.Text, out TiposComida tipo);
-            switch (tipo)
-            {
-                case TiposComida.Desayuno:
-                    receta.TipoComida = tipo;
-                    break;
-                case TiposComida.Almuerzo:
-                    receta.TipoComida = tipo;
-                    break;
-                case TiposComida.Merienda:
-                    receta.TipoComida = tipo;
-                    break;
-                case TiposComida.Cena:
-                    receta.TipoComida = tipo;
-                    break;
-            }
-            logica.GuardarReceta(receta);
+            logica.ValidadDatos(this.id, txtNombre.Text, checkbSaludable.Checked,tipo);
             ActualizarGrilla padre = this.Owner as ActualizarGrilla;
             if (padre != null)
             {

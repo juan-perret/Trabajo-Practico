@@ -65,7 +65,32 @@ namespace LogicaPrincipal
                 }
             }
         }
-
+        public void CrearReceta(string id, string nombre, bool saludable,TiposComida tipo)
+        {
+            Receta receta = new Receta();
+            receta.Id = Convert.ToInt32(id);
+            receta.Nombre = nombre;
+            receta.Saludable = saludable;
+            switch (tipo)
+            {
+                case TiposComida.Desayuno:
+                    receta.TipoComida = tipo;
+                    break;
+                case TiposComida.Almuerzo:
+                    receta.TipoComida = tipo;
+                    break;
+                case TiposComida.Merienda:
+                    receta.TipoComida = tipo;
+                    break;
+                case TiposComida.Cena:
+                    receta.TipoComida = tipo;
+                    break;
+            }
+        }
+        public string ValidadDatos(string id, string nombre, bool saludable, TiposComida tipo)
+        {
+            return "asd";
+        }
         
         public List<Producto> BuscarProductosReceta(List<int> lista)
         {
