@@ -36,7 +36,6 @@
             this.TipoComida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MsListaSuper = new System.Windows.Forms.MenuStrip();
-            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTipoProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHortalizasYVerduras = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,7 +137,6 @@
             this.MsListaSuper.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MsListaSuper.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MsListaSuper.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarToolStripMenuItem,
             this.filtrosToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.MsListaSuper.Location = new System.Drawing.Point(0, 0);
@@ -147,12 +145,6 @@
             this.MsListaSuper.Size = new System.Drawing.Size(557, 25);
             this.MsListaSuper.TabIndex = 1;
             this.MsListaSuper.Text = "menuStrip1";
-            // 
-            // consultarToolStripMenuItem
-            // 
-            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
-            this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // filtrosToolStripMenuItem
             // 
@@ -372,7 +364,6 @@
 
         private System.Windows.Forms.DataGridView dgvListaSuper;
         private System.Windows.Forms.MenuStrip MsListaSuper;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiTipoProducto;
         private System.Windows.Forms.ToolStripMenuItem tsmiCosto;
