@@ -101,7 +101,10 @@ namespace LogicaPrincipal
                 return "La receta se ha guardado correctamente";
             }
         }
-        
+        //public string ValidarCheckbox()
+        //{
+
+        //}
         public List<Producto> BuscarProductosReceta(List<int> lista)
         {
             List<Producto> listaIngredientes = new List<Producto>();

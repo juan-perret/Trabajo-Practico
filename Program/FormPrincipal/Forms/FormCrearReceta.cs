@@ -100,11 +100,18 @@ namespace FormPrincipal
                 {
                     if (cellCantidad.Value != null)
                     {
-                        DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
-                        int codigo = Convert.ToInt32(celdaCodigo.Value);
-                        DataGridViewCell celdaCantidad = row.Cells["Cantidad"] as DataGridViewCell;
-                        double cantidad = Convert.ToInt32(celdaCantidad.Value);
-                        logica.AgregarAListaCodigos(codigo, cantidad);
+                        if (double.TryParse(cellCantidad.Value.ToString(), out numero) == false)
+                        {
+                            ValidarCantidad("Verificar el valor de cantidad este correctamente ingresado");
+                        }
+                        else
+                        {
+                            DataGridViewCell celdaCodigo = row.Cells["Id"] as DataGridViewCell;
+                            int codigo = Convert.ToInt32(celdaCodigo.Value);
+                            DataGridViewCell celdaCantidad = row.Cells["Cantidad"] as DataGridViewCell;
+                            double cantidad = Convert.ToInt32(celdaCantidad.Value);
+                            logica.AgregarAListaCodigos(codigo, cantidad);
+                        }                       
                     }
                 }
                 else
