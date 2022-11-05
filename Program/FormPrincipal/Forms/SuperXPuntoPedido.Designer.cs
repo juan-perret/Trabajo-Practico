@@ -104,7 +104,10 @@
             this.Controls.Add(this.txtPuntoPedido);
             this.Controls.Add(this.cmbMaxMin);
             this.Controls.Add(this.lblPuntoPedido);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "SuperXPuntoPedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuperXPuntoPedido";
             this.ResumeLayout(false);
             this.PerformLayout();

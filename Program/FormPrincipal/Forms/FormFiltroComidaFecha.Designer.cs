@@ -100,7 +100,10 @@
             this.Controls.Add(this.lblfecha1);
             this.Controls.Add(this.dtpFecha2);
             this.Controls.Add(this.dtpFecha1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormFiltroComidaFecha";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtrar comida por fecha";
             this.Load += new System.EventHandler(this.FormFiltroComidaFecha_Load);
             this.ResumeLayout(false);

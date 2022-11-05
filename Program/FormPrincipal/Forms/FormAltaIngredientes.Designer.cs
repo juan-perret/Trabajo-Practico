@@ -180,7 +180,10 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormAltaIngredientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dar de alta un Ingrediente";
             this.Load += new System.EventHandler(this.FormAltaIngredientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).EndInit();

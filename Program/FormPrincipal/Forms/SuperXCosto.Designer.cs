@@ -104,7 +104,10 @@
             this.Controls.Add(this.txtCosto);
             this.Controls.Add(this.cmbMaxMin);
             this.Controls.Add(this.lblCosto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "SuperXCosto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuperXCosto";
             this.ResumeLayout(false);
             this.PerformLayout();

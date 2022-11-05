@@ -114,7 +114,10 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvComidaFiltroReceta);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormComidaFiltroReceta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormComidaFiltroReceta";
             this.Load += new System.EventHandler(this.FormComidaFiltroReceta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComidaFiltroReceta)).EndInit();

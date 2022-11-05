@@ -62,7 +62,7 @@
             this.dgvSeleccionReceta.Name = "dgvSeleccionReceta";
             this.dgvSeleccionReceta.RowHeadersWidth = 51;
             this.dgvSeleccionReceta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeleccionReceta.Size = new System.Drawing.Size(460, 170);
+            this.dgvSeleccionReceta.Size = new System.Drawing.Size(406, 170);
             this.dgvSeleccionReceta.TabIndex = 0;
             // 
             // Id
@@ -198,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 345);
+            this.ClientSize = new System.Drawing.Size(584, 345);
             this.Controls.Add(this.btn_QuitarFiltro);
             this.Controls.Add(this.lblFiltroComida);
             this.Controls.Add(this.cmbFiltro);
@@ -209,7 +209,10 @@
             this.Controls.Add(this.dtpFechaComida);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvSeleccionReceta);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormRegistrarComida";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registra tus comidas";
             this.Load += new System.EventHandler(this.FormRegistrarComida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionReceta)).EndInit();

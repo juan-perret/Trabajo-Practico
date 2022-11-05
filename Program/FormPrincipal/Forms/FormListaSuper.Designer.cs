@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvListaSuper = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Punto_de_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoComida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MsListaSuper = new System.Windows.Forms.MenuStrip();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,12 +60,6 @@
             this.lblCosto = new System.Windows.Forms.Label();
             this.lblResultadoTotal = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Punto_de_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoComida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSuper)).BeginInit();
             this.MsListaSuper.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,57 @@
             this.dgvListaSuper.RowHeadersWidth = 51;
             this.dgvListaSuper.Size = new System.Drawing.Size(531, 350);
             this.dgvListaSuper.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 125;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 125;
+            // 
+            // Punto_de_Pedido
+            // 
+            this.Punto_de_Pedido.DataPropertyName = "PuntoPedido";
+            this.Punto_de_Pedido.HeaderText = "Punto de Pedido";
+            this.Punto_de_Pedido.MinimumWidth = 6;
+            this.Punto_de_Pedido.Name = "Punto_de_Pedido";
+            this.Punto_de_Pedido.ReadOnly = true;
+            this.Punto_de_Pedido.Width = 125;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // TipoComida
+            // 
+            this.TipoComida.DataPropertyName = "TipoProducto";
+            this.TipoComida.HeaderText = "TipoComida";
+            this.TipoComida.Name = "TipoComida";
+            this.TipoComida.ReadOnly = true;
+            this.TipoComida.Visible = false;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // MsListaSuper
             // 
@@ -292,57 +343,6 @@
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 125;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 125;
-            // 
-            // Punto_de_Pedido
-            // 
-            this.Punto_de_Pedido.DataPropertyName = "PuntoPedido";
-            this.Punto_de_Pedido.HeaderText = "Punto de Pedido";
-            this.Punto_de_Pedido.MinimumWidth = 6;
-            this.Punto_de_Pedido.Name = "Punto_de_Pedido";
-            this.Punto_de_Pedido.ReadOnly = true;
-            this.Punto_de_Pedido.Width = 125;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // TipoComida
-            // 
-            this.TipoComida.DataPropertyName = "TipoProducto";
-            this.TipoComida.HeaderText = "TipoComida";
-            this.TipoComida.Name = "TipoComida";
-            this.TipoComida.ReadOnly = true;
-            this.TipoComida.Visible = false;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
             // FormListaSuper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,8 +353,11 @@
             this.Controls.Add(this.lblCosto);
             this.Controls.Add(this.dgvListaSuper);
             this.Controls.Add(this.MsListaSuper);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.MsListaSuper;
+            this.MaximizeBox = false;
             this.Name = "FormListaSuper";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista del Super";
             this.Load += new System.EventHandler(this.FormListaSuper_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSuper)).EndInit();

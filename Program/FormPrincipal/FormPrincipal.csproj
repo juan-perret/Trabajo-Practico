@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActualizarGrillaComidas.cs" />
-    <Compile Include="ActualizarGrillaSuper.cs" />
+    <Compile Include="Clases - Form\ActualizarGrillaComidas.cs" />
+    <Compile Include="Clases - Form\ActualizarGrillaSuper.cs" />
     <Compile Include="Clases - Form\ActualizarGrilla.cs" />
     <Compile Include="Forms\FormComidaFiltroReceta.cs">
       <SubType>Form</SubType>

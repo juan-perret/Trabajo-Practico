@@ -164,8 +164,11 @@
             this.ClientSize = new System.Drawing.Size(838, 384);
             this.Controls.Add(this.dgvRecetas);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FormRecetas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recetas";
             this.Load += new System.EventHandler(this.FormRecetas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecetas)).EndInit();

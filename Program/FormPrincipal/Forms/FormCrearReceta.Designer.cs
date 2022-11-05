@@ -152,7 +152,7 @@
             this.Seleccion});
             this.dgvIngredientesRecetas.Location = new System.Drawing.Point(162, 212);
             this.dgvIngredientesRecetas.Name = "dgvIngredientesRecetas";
-            this.dgvIngredientesRecetas.Size = new System.Drawing.Size(347, 124);
+            this.dgvIngredientesRecetas.Size = new System.Drawing.Size(378, 124);
             this.dgvIngredientesRecetas.TabIndex = 10;
             this.dgvIngredientesRecetas.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientesRecetas_CellValueChanged);
             // 
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 405);
+            this.ClientSize = new System.Drawing.Size(564, 400);
             this.Controls.Add(this.dgvIngredientesRecetas);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
@@ -215,7 +215,10 @@
             this.Controls.Add(this.lblTipoReceta);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormCrearReceta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crea tu Receta";
             this.Load += new System.EventHandler(this.FormCrearReceta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientesRecetas)).EndInit();

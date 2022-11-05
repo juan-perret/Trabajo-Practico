@@ -173,8 +173,11 @@
             this.ClientSize = new System.Drawing.Size(429, 395);
             this.Controls.Add(this.PbLogo);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Pag_Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cook This";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

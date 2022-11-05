@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvComidas = new System.Windows.Forms.DataGridView();
+            this.CodigoReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MsComidas = new System.Windows.Forms.MenuStrip();
             this.registrarComidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrarPorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,11 +49,6 @@
             this.tsmiFecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQuitarFiltro = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CodigoReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Receta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo_de_comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saludable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComidas)).BeginInit();
             this.MsComidas.SuspendLayout();
             this.SuspendLayout();
@@ -66,8 +66,45 @@
             this.Saludable});
             this.dgvComidas.Location = new System.Drawing.Point(12, 27);
             this.dgvComidas.Name = "dgvComidas";
-            this.dgvComidas.Size = new System.Drawing.Size(445, 350);
+            this.dgvComidas.Size = new System.Drawing.Size(472, 350);
             this.dgvComidas.TabIndex = 0;
+            // 
+            // CodigoReceta
+            // 
+            this.CodigoReceta.DataPropertyName = "CodigoReceta";
+            this.CodigoReceta.HeaderText = "CodigoReceta";
+            this.CodigoReceta.Name = "CodigoReceta";
+            this.CodigoReceta.ReadOnly = true;
+            this.CodigoReceta.Visible = false;
+            // 
+            // Fecha_hora
+            // 
+            this.Fecha_hora.DataPropertyName = "FechaDeRegistro";
+            this.Fecha_hora.HeaderText = "Fecha y hora";
+            this.Fecha_hora.Name = "Fecha_hora";
+            this.Fecha_hora.ReadOnly = true;
+            // 
+            // Nombre_Receta
+            // 
+            this.Nombre_Receta.DataPropertyName = "Nombre";
+            this.Nombre_Receta.HeaderText = "Nombre de la Receta";
+            this.Nombre_Receta.Name = "Nombre_Receta";
+            this.Nombre_Receta.ReadOnly = true;
+            // 
+            // Tipo_de_comida
+            // 
+            this.Tipo_de_comida.DataPropertyName = "TipoComida";
+            this.Tipo_de_comida.HeaderText = "Tipo de Comida";
+            this.Tipo_de_comida.Name = "Tipo_de_comida";
+            this.Tipo_de_comida.ReadOnly = true;
+            // 
+            // Saludable
+            // 
+            this.Saludable.HeaderText = "Es saludable?";
+            this.Saludable.Name = "Saludable";
+            this.Saludable.ReadOnly = true;
+            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // MsComidas
             // 
@@ -78,7 +115,7 @@
             this.salirToolStripMenuItem});
             this.MsComidas.Location = new System.Drawing.Point(0, 0);
             this.MsComidas.Name = "MsComidas";
-            this.MsComidas.Size = new System.Drawing.Size(467, 25);
+            this.MsComidas.Size = new System.Drawing.Size(504, 25);
             this.MsComidas.TabIndex = 1;
             this.MsComidas.Text = "menuStrip1";
             // 
@@ -191,52 +228,18 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // CodigoReceta
-            // 
-            this.CodigoReceta.DataPropertyName = "CodigoReceta";
-            this.CodigoReceta.HeaderText = "CodigoReceta";
-            this.CodigoReceta.Name = "CodigoReceta";
-            this.CodigoReceta.ReadOnly = true;
-            this.CodigoReceta.Visible = false;
-            // 
-            // Fecha_hora
-            // 
-            this.Fecha_hora.DataPropertyName = "FechaDeRegistro";
-            this.Fecha_hora.HeaderText = "Fecha y hora";
-            this.Fecha_hora.Name = "Fecha_hora";
-            this.Fecha_hora.ReadOnly = true;
-            // 
-            // Nombre_Receta
-            // 
-            this.Nombre_Receta.DataPropertyName = "Nombre";
-            this.Nombre_Receta.HeaderText = "Nombre de la Receta";
-            this.Nombre_Receta.Name = "Nombre_Receta";
-            this.Nombre_Receta.ReadOnly = true;
-            // 
-            // Tipo_de_comida
-            // 
-            this.Tipo_de_comida.DataPropertyName = "TipoComida";
-            this.Tipo_de_comida.HeaderText = "Tipo de Comida";
-            this.Tipo_de_comida.Name = "Tipo_de_comida";
-            this.Tipo_de_comida.ReadOnly = true;
-            // 
-            // Saludable
-            // 
-            this.Saludable.HeaderText = "Es saludable?";
-            this.Saludable.Name = "Saludable";
-            this.Saludable.ReadOnly = true;
-            this.Saludable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Saludable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // FormComidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 391);
+            this.ClientSize = new System.Drawing.Size(504, 391);
             this.Controls.Add(this.dgvComidas);
             this.Controls.Add(this.MsComidas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.MsComidas;
+            this.MaximizeBox = false;
             this.Name = "FormComidas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comidas";
             this.Load += new System.EventHandler(this.FormComidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComidas)).EndInit();
